@@ -1,87 +1,117 @@
 @font-face{font-family:"Inter";font-style:normal;font-weight:100 900;font-display:swap;src:url(fonts/inter-latin-wght-normal.woff2) format("woff2")}
-@font-face{font-family:"Lora";font-style:normal;font-weight:400;font-display:swap;src:url(fonts/lora-latin-400-normal.woff2) format("woff2")}
-@font-face{font-family:"Lora";font-style:italic;font-weight:400;font-display:swap;src:url(fonts/lora-latin-400-italic.woff2) format("woff2")}
-@font-face{font-family:"Lora";font-style:normal;font-weight:500;font-display:swap;src:url(fonts/lora-latin-500-normal.woff2) format("woff2")}
-@font-face{font-family:"Lora";font-style:normal;font-weight:600;font-display:swap;src:url(fonts/lora-latin-600-normal.woff2) format("woff2")}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
 
-    /* Custom refined global styles */
-    body {
-      background-color: theme('colors.oak');
-      color: theme('colors.charcoal');
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-    
-    /* Smooth focus states for accessibility */
-    a:focus-visible {
-      outline: 2px solid theme('colors.burgundy.DEFAULT');
-      outline-offset: 4px;
-      border-radius: 4px;
-    }
-    
-    /* Subtle background texture for a more tactile, less digital feel */
-    .bg-texture {
-      background-image: radial-gradient(theme('colors.burgundy.DEFAULT') 0.5px, transparent 0.5px);
-      background-size: 32px 32px;
-      background-color: theme('colors.oak');
-      opacity: 0.03;
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: -1;
-    }
+body {
+  background-color: theme('colors.ivory');
+  color: theme('colors.ink');
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
 
-    /* Link hover animation */
-    .link-underline {
-      position: relative;
-      color: theme('colors.burgundy.DEFAULT');
-      text-decoration: none;
-      font-weight: 500;
-    }
-    .link-underline::after {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 1px;
-      bottom: 0;
-      left: 0;
-      background-color: theme('colors.burgundy.light');
-      transform: scaleX(0);
-      transform-origin: bottom right;
-      transition: transform 0.3s ease-out;
-    }
-    .link-underline:hover::after {
-      transform: scaleX(1);
-      transform-origin: bottom left;
-    }
+a:focus-visible {
+  outline: 2px solid theme('colors.burgundy.DEFAULT');
+  outline-offset: 4px;
+  border-radius: 6px;
+}
 
-    /* Interactive 3D Tilt Card Styles */
-    .tilt-card {
-      transition: transform 0.1s ease-out, box-shadow 0.1s ease-out;
-      transform-style: preserve-3d;
-      position: relative;
-      overflow: hidden;
-      will-change: transform;
-    }
-    .tilt-card:hover {
-      box-shadow: 0 25px 50px -12px rgba(130, 38, 60, 0.15), 0 10px 15px -3px rgba(130, 38, 60, 0.05);
-      z-index: 10;
-    }
-    .tilt-card .glare {
-      position: absolute;
-      top: 0; 
-      left: 0;
-      width: 200%; 
-      height: 200%;
-      background: radial-gradient(circle at center, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 50%);
-      pointer-events: none;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      mix-blend-mode: overlay;
-    }
-  
+/* ---------- Hero ---------- */
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+.fade-in { animation: fadeIn 0.9s ease-out both; }
+.fade-in-2 { animation-delay: 0.15s; }
+.fade-in-3 { animation-delay: 0.3s; }
+
+.blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(90px);
+  animation: float 12s ease-in-out infinite alternate;
+}
+.blob-1 { width: 420px; height: 420px; top: -120px; left: -120px; background: theme('colors.burgundy.light'); opacity: 0.35; }
+.blob-2 { width: 520px; height: 520px; top: 15%; right: -180px; background: theme('colors.sage.DEFAULT'); opacity: 0.3; animation-delay: -3s; }
+.blob-3 { width: 320px; height: 320px; top: 45%; left: 25%; background: #C9A27C; opacity: 0.25; animation-delay: -6s; }
+@keyframes float {
+  from { transform: translate(0, 0) scale(1); }
+  to { transform: translate(30px, -30px) scale(1.1); }
+}
+
+.link-underline {
+  position: relative;
+  color: theme('colors.burgundy.DEFAULT');
+  font-weight: 500;
+  text-decoration: none;
+}
+.link-underline::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: -2px;
+  width: 100%; height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease-out;
+}
+.link-underline:hover::after { transform: scaleX(1); transform-origin: left; }
+
+/* ---------- Project cards ---------- */
+.tilt-card {
+  transition: transform 0.15s ease-out, box-shadow 0.3s ease, border-color 0.3s ease;
+  will-change: transform;
+}
+.tilt-card:hover, .tilt-card:focus-within {
+  box-shadow: theme('boxShadow.card');
+  border-color: #E0C9CD;
+}
+.art * { transform-box: fill-box; transform-origin: center; }
+.art-shape { transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), fill 0.4s ease, stroke 0.4s ease, opacity 0.4s ease; }
+
+/* eng-agents: work flows through a human checkpoint */
+@keyframes dash-flow { to { stroke-dashoffset: -24; } }
+@keyframes gate-pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.18); } }
+.card:hover .a-flow, .card:focus-within .a-flow { animation: dash-flow 1s linear infinite; }
+.card:hover .a-gate, .card:focus-within .a-gate { animation: gate-pulse 1.6s ease-in-out infinite; fill: theme('colors.burgundy.DEFAULT'); }
+.card:hover .a-end, .card:focus-within .a-end { fill: theme('colors.sage.deep'); }
+
+/* Workshop: panels settle into place */
+.card:hover .w-side, .card:focus-within .w-side { transform: translateX(4px); fill: theme('colors.slate'); opacity: 0.25; }
+.card:hover .w-frame, .card:focus-within .w-frame { stroke: theme('colors.burgundy.DEFAULT'); }
+.card:hover .w-row1, .card:focus-within .w-row1 { transform: scaleX(1.15); stroke: theme('colors.burgundy.light'); }
+.card:hover .w-row2, .card:focus-within .w-row2 { transform: scaleX(0.8); }
+
+/* TaskLedger: a trend line draws in */
+@keyframes draw { from { stroke-dashoffset: 120; } to { stroke-dashoffset: 0; } }
+@keyframes pop { from { opacity: 0; transform: scale(0.4); } to { opacity: 1; transform: scale(1); } }
+.l-line { stroke-dasharray: 120; stroke-dashoffset: 0; }
+.card:hover .l-line, .card:focus-within .l-line { animation: draw 1.1s ease-out both; stroke: theme('colors.slate'); }
+.card:hover .l-dot, .card:focus-within .l-dot { animation: pop 0.4s ease-out 0.9s both; fill: theme('colors.burgundy.DEFAULT'); }
+
+/* Everyday tools: small blocks rearrange */
+.card:hover .t-1, .card:focus-within .t-1 { transform: translateY(-6px) rotate(-8deg); fill: theme('colors.burgundy.light'); }
+.card:hover .t-2, .card:focus-within .t-2 { transform: translateY(4px); fill: theme('colors.sage.DEFAULT'); }
+.card:hover .t-3, .card:focus-within .t-3 { transform: translateY(-4px) rotate(10deg); fill: #C9A27C; }
+
+/* ---------- Timeline ---------- */
+.js .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+.js .reveal.is-visible { opacity: 1; transform: none; }
+.timeline-progress { transform-origin: top; transform: scaleY(1); }
+.js .timeline-progress { transform: scaleY(0); }
+
+.t-icon * { transform-box: fill-box; transition: transform 0.5s ease, stroke 0.4s ease, fill 0.4s ease; }
+@keyframes swing { 0%, 100% { transform: rotate(-10deg); } 50% { transform: rotate(10deg); } }
+@keyframes blink { 50% { opacity: 0; } }
+@keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+.era:hover .i-compass { animation: swing 3s ease-in-out infinite; transform-origin: top center; stroke: theme('colors.burgundy.DEFAULT'); }
+.era:hover .i-cursor { animation: blink 1s step-end infinite; fill: theme('colors.burgundy.DEFAULT'); }
+.era:hover .i-prompt { stroke: theme('colors.slate'); }
+.era:hover .i-letter { animation: bob 2s ease-in-out infinite; stroke: theme('colors.sage.deep'); }
+.era:hover .i-node { fill: theme('colors.burgundy.DEFAULT'); transform: scale(1.25); transform-origin: center; }
+.era:hover .i-cap { animation: bob 3s ease-in-out infinite; stroke: theme('colors.burgundy.DEFAULT'); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .js .reveal { opacity: 1; transform: none; }
+  .js .timeline-progress { transform: scaleY(1); }
+}

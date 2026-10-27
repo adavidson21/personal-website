@@ -8,182 +8,289 @@
   <meta name="color-scheme" content="light">
   <meta name="referrer" content="no-referrer">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; script-src 'self'; form-action 'none'; base-uri 'none'">
-  <link rel="preload" href="fonts/lora-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="site.css">
+  <script src="site.js"></script>
 </head>
 <body class="font-sans text-lg selection:bg-burgundy selection:text-white">
-  
-  <div class="bg-texture"></div>
 
-  <main class="max-w-4xl mx-auto px-6 py-16 md:py-24 lg:py-32">
-    
-    <!-- Hero / Intro Section -->
-    <header class="mb-24 md:mb-32 max-w-3xl animate-[fadeIn_0.8s_ease-out]">
-      <h1 class="font-serif text-5xl md:text-6xl text-burgundy mb-6 leading-tight tracking-tight font-medium">
-        Hi, I am Alexis.
-      </h1>
-      <p class="text-xl text-muted leading-relaxed font-light">
-        I am an engineering manager who cares about the people on both ends of the software: the team building it and the people it affects. I have spent my career in health care technology, where a bug is not just a bug. It can be someone's coverage or a letter they never understood. That has shaped how I think about building things, and it matters even more now that AI is part of so much of the work.
-      </p>
+  <!-- Soft background color in the hero -->
+  <div class="absolute inset-x-0 top-0 h-screen overflow-hidden -z-10 pointer-events-none" aria-hidden="true">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <main>
+
+    <!-- Hero -->
+    <header class="max-w-5xl mx-auto px-6 pt-24 md:pt-36 pb-20 md:pb-28">
+      <div class="max-w-3xl">
+        <p class="fade-in text-sm uppercase tracking-widest text-oak font-semibold mb-6">Engineering Manager</p>
+        <h1 class="fade-in text-5xl md:text-6xl text-burgundy font-semibold tracking-tight mb-8">
+          Hi, I'm Alexis.
+        </h1>
+        <p class="fade-in fade-in-2 text-2xl md:text-3xl text-ink font-light leading-relaxed mb-8">
+          I'm an engineering manager who cares about the people on both ends of the software: the team building it and the people it affects.
+        </p>
+        <p class="fade-in fade-in-2 text-lg md:text-xl text-muted font-light leading-relaxed mb-10">
+          I've spent my career in health care technology, where a bug isn't just a bug. It can be someone's coverage or a letter they never understood. That has shaped how I think about building things, and it matters even more now that AI is part of so much of the work.
+        </p>
+        <div class="fade-in fade-in-3 flex flex-wrap items-center gap-4 text-base">
+          <a href="mailto:hello@alexisdavidson.org" class="inline-flex items-center gap-2 rounded-full bg-burgundy px-6 py-3 font-medium text-white shadow-sm transition-colors hover:bg-burgundy-light">
+            Get in touch
+            <span aria-hidden="true">&rarr;</span>
+          </a>
+          <a href="https://github.com/adavidson21" class="inline-flex items-center rounded-full border border-line bg-surface/70 px-6 py-3 font-medium text-ink transition-colors hover:border-burgundy hover:text-burgundy">
+            GitHub
+          </a>
+        </div>
+      </div>
     </header>
 
-    <!-- How I Work Section -->
-    <section class="mb-24 md:mb-32 max-w-3xl">
-      <h2 class="font-serif text-3xl text-burgundy mb-8 flex items-center gap-4">
-        How I work
-        <span class="h-px flex-1 bg-line mt-2"></span>
-      </h2>
-      <div class="space-y-6 text-charcoal leading-relaxed font-light">
-        <p>
-          I try to be the kind of manager I would want to have: honest, steady, and in the work with my team rather than above it. Most of my job is clearing the way so good people can do their best work and still have a life outside of it.
-        </p>
-        <p>
-          I am hopeful about AI and use it every day. I also think it is on us to keep it safe and humane: protect people's private information, keep a person in the loop on decisions that affect someone's life, and be honest about what these tools get wrong.
-        </p>
+    <!-- How I work -->
+    <section class="bg-surface border-y border-line">
+      <div class="max-w-5xl mx-auto px-6 py-20 md:py-24">
+        <h2 class="text-sm uppercase tracking-widest text-oak font-semibold mb-10">How I work</h2>
+        <div class="grid md:grid-cols-2 gap-10 md:gap-12 text-ink/90 font-light leading-relaxed">
+          <p>
+            I try to be the kind of manager I'd want to have: honest, steady, and in the work with my team rather than above it. Most of my job is clearing the way so good people can do their best work and still have a life outside of it.
+          </p>
+          <p>
+            I'm hopeful about AI and use it every day. I also think it's on us to keep it safe and humane: protect people's private information, keep a person in the loop on decisions that affect someone's life, and be honest about what these tools get wrong.
+          </p>
+        </div>
       </div>
     </section>
 
-    <!-- Projects Section -->
-    <section class="mb-24 md:mb-32">
-      <h2 class="font-serif text-3xl text-burgundy mb-8 flex items-center gap-4">
+    <!-- Things I've built -->
+    <section class="max-w-5xl mx-auto px-6 py-24 md:py-32">
+      <h2 class="text-3xl text-ink font-medium mb-14 flex items-center gap-6">
         Things I've built
-        <span class="h-px flex-1 bg-line mt-2"></span>
+        <span class="h-px flex-1 bg-line mt-1"></span>
       </h2>
-      
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
         <!-- Workshop -->
-        <article class="tilt-card bg-surface p-8 rounded-2xl border border-line shadow-sm group">
-          <div class="glare"></div>
-          <h3 class="font-serif text-2xl text-charcoal mb-3 group-hover:text-burgundy transition-colors relative z-10">
-            <a href="https://github.com/adavidson21/workshop" class="after:absolute after:inset-0">Workshop</a>
-          </h3>
-          <p class="text-muted text-base leading-relaxed font-light relative z-10">
-            A calm home base for my workday as a manager: what to focus on next, and a clearer picture of what my team has on its plate. It runs entirely on my own computer, because work data should not have to live on someone else's server.
-          </p>
-        </article>
+        <div class="card group">
+          <article class="tilt-card relative h-full rounded-2xl border border-line bg-surface p-8">
+            <div class="mb-6 h-40 rounded-xl border border-line bg-ivory flex items-center justify-center overflow-hidden" aria-hidden="true">
+              <svg viewBox="0 0 160 80" class="art w-full h-full">
+                <rect x="30" y="14" width="100" height="52" rx="5" fill="none" stroke="#C9B5B9" stroke-width="2" class="art-shape w-frame"/>
+                <rect x="30" y="14" width="30" height="52" rx="5" fill="#C9B5B9" opacity="0.35" class="art-shape w-side"/>
+                <line x1="70" y1="30" x2="115" y2="30" stroke="#C9B5B9" stroke-width="3" stroke-linecap="round" class="art-shape w-row1"/>
+                <line x1="70" y1="44" x2="100" y2="44" stroke="#C9B5B9" stroke-width="3" stroke-linecap="round" class="art-shape w-row2"/>
+                <line x1="70" y1="56" x2="108" y2="56" stroke="#E0D2D4" stroke-width="3" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-semibold text-ink mb-3 transition-colors group-hover:text-burgundy">
+              <a href="https://github.com/adavidson21/workshop" class="after:absolute after:inset-0 after:rounded-2xl focus:outline-none">Workshop</a>
+            </h3>
+            <p class="text-muted text-base font-light leading-relaxed">
+              A calm home base for my workday as a manager: what to focus on next, and a clearer picture of what my team has on its plate. It runs entirely on my own computer, because work data shouldn't have to live on someone else's server.
+            </p>
+          </article>
+        </div>
 
         <!-- eng-agents -->
-        <article class="tilt-card bg-surface p-8 rounded-2xl border border-line shadow-sm group">
-          <div class="glare"></div>
-          <h3 class="font-serif text-2xl text-charcoal mb-3 group-hover:text-burgundy transition-colors relative z-10">
-            <a href="https://github.com/adavidson21/eng-agents" class="after:absolute after:inset-0">eng-agents</a>
-          </h3>
-          <p class="text-muted text-base leading-relaxed font-light relative z-10">
-            AI helpers that take on coding tasks in small, reviewable steps. They cannot push, merge, or deploy anything without a person saying yes. I built it to see what helpful but supervised AI looks like in practice.
-          </p>
-        </article>
+        <div class="card group">
+          <article class="tilt-card relative h-full rounded-2xl border border-line bg-surface p-8">
+            <div class="mb-6 h-40 rounded-xl border border-line bg-ivory flex items-center justify-center overflow-hidden" aria-hidden="true">
+              <svg viewBox="0 0 160 80" class="art w-full h-full">
+                <line x1="36" y1="40" x2="124" y2="40" stroke="#E0D2D4" stroke-width="2"/>
+                <line x1="36" y1="40" x2="124" y2="40" stroke="#A04F6C" stroke-width="2" stroke-dasharray="6 6" class="a-flow"/>
+                <circle cx="36" cy="40" r="7" fill="#9C8A90" class="art-shape"/>
+                <rect x="73" y="33" width="14" height="14" rx="3" fill="#4F6B78" class="art-shape a-gate"/>
+                <circle cx="124" cy="40" r="7" fill="#9C8A90" class="art-shape a-end"/>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-semibold text-ink mb-3 transition-colors group-hover:text-burgundy">
+              <a href="https://github.com/adavidson21/eng-agents" class="after:absolute after:inset-0 after:rounded-2xl focus:outline-none">eng-agents</a>
+            </h3>
+            <p class="text-muted text-base font-light leading-relaxed">
+              AI helpers that take on coding tasks in small, reviewable steps. They can't push, merge, or deploy anything without a person saying yes. I built it to see what helpful but supervised AI looks like in practice.
+            </p>
+          </article>
+        </div>
+
+        <!-- Everyday tools -->
+        <div class="card group">
+          <article class="tilt-card relative h-full rounded-2xl border border-line bg-surface p-8">
+            <div class="mb-6 h-40 rounded-xl border border-line bg-ivory flex items-center justify-center overflow-hidden" aria-hidden="true">
+              <svg viewBox="0 0 160 80" class="art w-full h-full">
+                <rect x="42" y="32" width="18" height="18" rx="4" fill="#C9B5B9" class="art-shape t-1"/>
+                <circle cx="80" cy="41" r="10" fill="#C9B5B9" class="art-shape t-2"/>
+                <polygon points="109,30 120,41 109,52 98,41" fill="#C9B5B9" class="art-shape t-3"/>
+                <line x1="36" y1="62" x2="124" y2="62" stroke="#E0D2D4" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-semibold text-ink mb-3 transition-colors group-hover:text-burgundy">
+              <a href="https://tools.alexisdavidson.org/" class="after:absolute after:inset-0 after:rounded-2xl focus:outline-none">Everyday tools</a>
+            </h3>
+            <p class="text-muted text-base font-light leading-relaxed">
+              Small things I've built to make everyday tasks easier for the people around me, like thrift reselling helpers and classroom helpers for report comments and open house letters.
+            </p>
+          </article>
+        </div>
 
         <!-- TaskLedger -->
-        <article class="tilt-card bg-surface p-8 rounded-2xl border border-line shadow-sm group">
-          <div class="glare"></div>
-          <h3 class="font-serif text-2xl text-charcoal mb-3 group-hover:text-burgundy transition-colors relative z-10">
-            TaskLedger <span class="ml-2 align-middle font-sans text-xs font-medium text-muted bg-oak rounded-full px-2.5 py-0.5">private for now</span>
-          </h3>
-          <p class="text-muted text-base leading-relaxed font-light relative z-10">
-            A little phone app for noting small wins before I forget them. It scrubs out links, emails, and ticket numbers before anything is sent to an AI model.
-          </p>
-        </article>
-
-        <!-- Everyday Tools -->
-        <article class="tilt-card bg-surface p-8 rounded-2xl border border-line shadow-sm group">
-          <div class="glare"></div>
-          <h3 class="font-serif text-2xl text-charcoal mb-3 group-hover:text-burgundy transition-colors relative z-10">
-            <a href="https://tools.alexisdavidson.org/" class="after:absolute after:inset-0">Everyday tools</a>
-          </h3>
-          <p class="text-muted text-base leading-relaxed font-light relative z-10">
-            Small things I have built to make everyday tasks easier for the people around me, like thrift reselling helpers and classroom helpers for report comments and open house letters.
-          </p>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- Path / Timeline Section -->
-    <section class="mb-24 md:mb-32 max-w-3xl">
-      <h2 class="font-serif text-3xl text-burgundy mb-10 flex items-center gap-4">
-        How I got here
-        <span class="h-px flex-1 bg-line mt-2"></span>
-      </h2>
-      
-      <div class="relative border-l border-line ml-4 space-y-10 py-2">
-        
-        <!-- Timeline Item 1 -->
-        <div class="relative pl-8">
-          <div class="absolute -left-[5px] top-1.5 w-[9px] h-[9px] rounded-full bg-burgundy shadow-[0_0_0_4px_theme('colors.oak')]"></div>
-          <span class="text-sm font-semibold text-burgundy uppercase tracking-widest mb-1 block">Before tech</span>
-          <p class="text-charcoal leading-relaxed font-light">
-            Taught math, which taught me more about patience and explaining things than anything since.
-          </p>
-        </div>
-
-        <!-- Timeline Item 2 -->
-        <div class="relative pl-8">
-          <div class="absolute -left-[5px] top-1.5 w-[9px] h-[9px] rounded-full bg-line shadow-[0_0_0_4px_theme('colors.oak')]"></div>
-          <span class="text-sm font-semibold text-muted uppercase tracking-widest mb-1 block">2019</span>
-          <p class="text-charcoal leading-relaxed font-light">
-            Joined a health care technology company as a junior developer while finishing a math and computer science degree.
-          </p>
-        </div>
-
-        <!-- Timeline Item 3 -->
-        <div class="relative pl-8">
-          <div class="absolute -left-[5px] top-1.5 w-[9px] h-[9px] rounded-full bg-line shadow-[0_0_0_4px_theme('colors.oak')]"></div>
-          <span class="text-sm font-semibold text-muted uppercase tracking-widest mb-1 block">2020 to 2024</span>
-          <p class="text-charcoal leading-relaxed font-light">
-            Built tools that helped non-engineers write clearer letters to the people they serve.
-          </p>
-        </div>
-
-        <!-- Timeline Item 4 -->
-        <div class="relative pl-8">
-          <div class="absolute -left-[5px] top-1.5 w-[9px] h-[9px] rounded-full bg-line shadow-[0_0_0_4px_theme('colors.oak')]"></div>
-          <span class="text-sm font-semibold text-muted uppercase tracking-widest mb-1 block">2024</span>
-          <p class="text-charcoal leading-relaxed font-light">
-            Moved into management, leading a platform team overseeing a wide breadth of products, microservices, and internal systems.
-          </p>
-        </div>
-
-        <!-- Timeline Item 5 -->
-        <div class="relative pl-8">
-          <div class="absolute -left-[5px] top-1.5 w-[9px] h-[9px] rounded-full bg-line shadow-[0_0_0_4px_theme('colors.oak')]"></div>
-          <span class="text-sm font-semibold text-muted uppercase tracking-widest mb-1 block">2025</span>
-          <p class="text-charcoal leading-relaxed font-light">
-            Finished a master's in applied computer science, mostly on nights and weekends.
-          </p>
+        <div class="card group">
+          <article class="tilt-card relative h-full rounded-2xl border border-line bg-surface p-8">
+            <div class="mb-6 h-40 rounded-xl border border-line bg-ivory flex items-center justify-center overflow-hidden" aria-hidden="true">
+              <svg viewBox="0 0 160 80" class="art w-full h-full">
+                <line x1="30" y1="62" x2="130" y2="62" stroke="#E0D2D4" stroke-width="1"/>
+                <line x1="30" y1="42" x2="130" y2="42" stroke="#E0D2D4" stroke-width="1" stroke-dasharray="2 3"/>
+                <line x1="30" y1="22" x2="130" y2="22" stroke="#E0D2D4" stroke-width="1" stroke-dasharray="2 3"/>
+                <path d="M 30 54 L 60 36 L 90 46 L 122 18" fill="none" stroke="#C9B5B9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="art-shape l-line"/>
+                <circle cx="122" cy="18" r="4.5" fill="#C9B5B9" class="art-shape l-dot"/>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-semibold text-ink mb-3 flex flex-wrap items-center gap-3">
+              TaskLedger
+              <span class="text-xs uppercase tracking-wider bg-oak/10 text-oak rounded-full px-3 py-1 font-semibold">Private for now</span>
+            </h3>
+            <p class="text-muted text-base font-light leading-relaxed">
+              A little phone app for noting small wins before I forget them. It scrubs out links, emails, and ticket numbers before anything is sent to an AI model.
+            </p>
+          </article>
         </div>
 
       </div>
     </section>
 
-    <!-- Outside Work Section -->
-    <section class="mb-24 md:mb-32 max-w-3xl">
-      <h2 class="font-serif text-3xl text-burgundy mb-8 flex items-center gap-4">
+    <!-- How I got here -->
+    <section class="bg-sage-faint border-y border-sage/20 relative overflow-hidden">
+      <div class="absolute right-0 top-0 w-72 h-72 -mr-24 -mt-24 rounded-full bg-sage opacity-20 blur-[100px] pointer-events-none" aria-hidden="true"></div>
+      <div class="max-w-5xl mx-auto px-6 py-24 md:py-32 relative">
+        <h2 class="text-3xl text-ink font-medium mb-16 flex items-center gap-6">
+          How I got here
+          <span class="h-px flex-1 bg-sage/30 mt-1"></span>
+        </h2>
+
+        <div id="timeline" class="relative max-w-4xl mx-auto">
+        <div class="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 -translate-x-1/2 bg-line" aria-hidden="true">
+          <div id="timeline-progress" class="timeline-progress absolute inset-0 rounded-full bg-burgundy"></div>
+        </div>
+        <ol class="relative space-y-14 md:space-y-20">
+
+          <!-- Before tech -->
+          <li class="era reveal relative pl-20 md:pl-0 md:grid md:grid-cols-2 md:gap-24">
+            <div class="md:text-right">
+              <div class="rounded-2xl border border-line bg-surface p-6 shadow-sm transition-shadow hover:shadow-md">
+                <span class="block text-sm uppercase tracking-widest text-sage-deep font-semibold mb-2">Before tech</span>
+                <p class="text-ink/80 font-light leading-relaxed">Taught math, which taught me more about patience and explaining things than anything since.</p>
+              </div>
+            </div>
+            <div class="absolute left-8 md:left-1/2 top-2 -translate-x-1/2 w-14 h-14 rounded-full bg-ivory border-4 border-surface shadow-sm flex items-center justify-center" aria-hidden="true">
+              <svg viewBox="0 0 50 50" class="t-icon w-9 h-9" fill="none" stroke="#9C8A90" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <g class="i-compass"><path d="M25 13 L16 39 M25 13 L34 39"/><circle cx="25" cy="13" r="3" fill="#9C8A90"/></g>
+                <path d="M13 30 L37 30" stroke="#C9B5B9"/>
+              </svg>
+            </div>
+          </li>
+
+          <!-- 2019 -->
+          <li class="era reveal relative pl-20 md:pl-0 md:grid md:grid-cols-2 md:gap-24">
+            <div class="md:col-start-2">
+              <div class="rounded-2xl border border-line bg-surface p-6 shadow-sm transition-shadow hover:shadow-md">
+                <span class="block text-sm uppercase tracking-widest text-slate font-semibold mb-2">2019</span>
+                <p class="text-ink/80 font-light leading-relaxed">Joined a health care technology company as a junior developer while finishing a math and computer science degree.</p>
+              </div>
+            </div>
+            <div class="absolute left-8 md:left-1/2 top-2 -translate-x-1/2 w-14 h-14 rounded-full bg-ivory border-4 border-surface shadow-sm flex items-center justify-center" aria-hidden="true">
+              <svg viewBox="0 0 50 50" class="t-icon w-9 h-9" fill="none" stroke="#9C8A90" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="8" y="12" width="34" height="26" rx="3"/>
+                <path d="M8 19 L42 19"/>
+                <path d="M15 25 L20 29 L15 33" class="i-prompt"/>
+                <rect x="23" y="31" width="7" height="2" fill="#9C8A90" stroke="none" class="i-cursor"/>
+              </svg>
+            </div>
+          </li>
+
+          <!-- 2020 to 2024 -->
+          <li class="era reveal relative pl-20 md:pl-0 md:grid md:grid-cols-2 md:gap-24">
+            <div class="md:text-right">
+              <div class="rounded-2xl border border-line bg-surface p-6 shadow-sm transition-shadow hover:shadow-md">
+                <span class="block text-sm uppercase tracking-widest text-sage-deep font-semibold mb-2">2020 to 2024</span>
+                <p class="text-ink/80 font-light leading-relaxed">Built tools that helped non-engineers write clearer letters to the people they serve.</p>
+              </div>
+            </div>
+            <div class="absolute left-8 md:left-1/2 top-2 -translate-x-1/2 w-14 h-14 rounded-full bg-ivory border-4 border-surface shadow-sm flex items-center justify-center" aria-hidden="true">
+              <svg viewBox="0 0 50 50" class="t-icon w-9 h-9" fill="none" stroke="#9C8A90" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <g class="i-letter"><rect x="10" y="15" width="30" height="21" rx="2"/><path d="M10 17 L25 28 L40 17"/></g>
+              </svg>
+            </div>
+          </li>
+
+          <!-- 2024 -->
+          <li class="era reveal relative pl-20 md:pl-0 md:grid md:grid-cols-2 md:gap-24">
+            <div class="md:col-start-2">
+              <div class="rounded-2xl border border-line bg-surface p-6 shadow-sm transition-shadow hover:shadow-md">
+                <span class="block text-sm uppercase tracking-widest text-oak font-semibold mb-2">2024</span>
+                <p class="text-ink/80 font-light leading-relaxed">Moved into management, leading a platform team overseeing a wide breadth of products, microservices, and internal systems.</p>
+              </div>
+            </div>
+            <div class="absolute left-8 md:left-1/2 top-2 -translate-x-1/2 w-14 h-14 rounded-full bg-ivory border-4 border-surface shadow-sm flex items-center justify-center" aria-hidden="true">
+              <svg viewBox="0 0 50 50" class="t-icon w-9 h-9" fill="none" stroke="#9C8A90" stroke-width="2" stroke-linecap="round">
+                <path d="M25 17 L14 32 M25 17 L25 35 M25 17 L36 32"/>
+                <circle cx="14" cy="32" r="3" fill="#9C8A90" stroke="none" class="i-node"/>
+                <circle cx="25" cy="35" r="3" fill="#9C8A90" stroke="none" class="i-node"/>
+                <circle cx="36" cy="32" r="3" fill="#9C8A90" stroke="none" class="i-node"/>
+                <circle cx="25" cy="16" r="5" fill="#8B6340" stroke="none"/>
+              </svg>
+            </div>
+          </li>
+
+          <!-- 2025 -->
+          <li class="era reveal relative pl-20 md:pl-0 md:grid md:grid-cols-2 md:gap-24">
+            <div class="md:text-right">
+              <div class="rounded-2xl border border-line bg-surface p-6 shadow-sm transition-shadow hover:shadow-md">
+                <span class="block text-sm uppercase tracking-widest text-burgundy font-semibold mb-2">2025</span>
+                <p class="text-ink/80 font-light leading-relaxed">Finished a master's in applied computer science, mostly on nights and weekends.</p>
+              </div>
+            </div>
+            <div class="absolute left-8 md:left-1/2 top-2 -translate-x-1/2 w-14 h-14 rounded-full bg-ivory border-4 border-surface shadow-sm flex items-center justify-center" aria-hidden="true">
+              <svg viewBox="0 0 50 50" class="t-icon w-9 h-9" fill="none" stroke="#9C8A90" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <g class="i-cap"><path d="M25 12 L41 19 L25 26 L9 19 Z"/><path d="M15 22 L15 30 C15 34 35 34 35 30 L35 22"/></g>
+                <path d="M41 19 L41 29"/>
+              </svg>
+            </div>
+          </li>
+        </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- Outside work -->
+    <section class="max-w-5xl mx-auto px-6 py-24 md:py-32">
+      <h2 class="text-3xl text-ink font-medium mb-10 flex items-center gap-6">
         Outside work
-        <span class="h-px flex-1 bg-line mt-2"></span>
+        <span class="h-px flex-1 bg-line mt-1"></span>
       </h2>
-      <div class="space-y-6 text-charcoal leading-relaxed font-light">
+      <div class="grid md:grid-cols-2 gap-10 md:gap-12 text-ink/90 font-light leading-relaxed">
         <p>
-          I share a home with my husband and our three cats, who supervise most of my work from the nearest keyboard. When I am not working, I am usually playing video games, listening to music, or reading up on whatever is happening in the world.
+          I share a home with my husband and our three cats, who supervise most of my work from the nearest keyboard. When I'm not working, I'm usually playing video games, listening to music, or reading up on whatever is happening in the world.
         </p>
         <p>
-          I am a problem solver at heart, at work and everywhere else. I also care a lot about fairness and about women having a real seat at the table, in tech and beyond.
+          I'm a problem solver at heart, at work and everywhere else. I also care a lot about fairness and about women having a real seat at the table, in tech and beyond.
         </p>
       </div>
     </section>
-
-    <!-- Contact & Footer -->
-    <footer class="mt-20 text-center border-t border-line pt-12 pb-8">
-      <p class="text-muted font-light mb-4">
-        Email me at <a href="mailto:hello@alexisdavidson.org" class="link-underline">hello@alexisdavidson.org</a>.
-      </p>
-      <p class="text-sm text-muted/70 font-light">
-        This site has no trackers, cookies, or third-party scripts.
-      </p>
-    </footer>
 
   </main>
 
-  <script src="tilt.js" defer></script>
+  <footer class="bg-surface border-t border-line">
+    <div class="max-w-5xl mx-auto px-6 py-16 text-center">
+      <p class="text-2xl text-ink font-light mb-4">Let's talk.</p>
+      <p class="text-muted font-light mb-10">
+        Email me at <a href="mailto:hello@alexisdavidson.org" class="link-underline">hello@alexisdavidson.org</a>.
+      </p>
+      <p class="text-sm text-muted/80 font-light">
+        This site has no trackers, cookies, or third-party scripts.
+      </p>
+    </div>
+  </footer>
+
 </body>
 </html>
