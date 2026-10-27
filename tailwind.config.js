@@ -1,0 +1,1 @@
+module.exports={content:["./index.html"],theme:{extend:{colors:{burgundy:{DEFAULT:'#82263C',light:'#A53A55'},oak:'#F4EFE6',surface:'#FCFBFA',charcoal:'#2B2B2B',muted:'#635F5E',line:'#E3DDD3'},fontFamily:{serif:['Lora','Georgia','serif'],sans:['Inter','system-ui','sans-serif']}}}}

@@ -1,210 +1,189 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Alexis Davidson</title>
-  <meta name="description" content="Alexis Davidson is an engineering manager in health care technology who cares about keeping AI safe and humane.">
-  <meta name="referrer" content="no-referrer">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alexis Davidson | Engineering Manager</title>
+  <meta name="description" content="Alexis Davidson is an engineering manager building safe, humane, and human-centric software.">
   <meta name="color-scheme" content="light">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self'; script-src 'none'; frame-ancestors 'none'; form-action 'none'; base-uri 'none'">
-  <link rel="preload" href="fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <style>
-    @font-face {
-      font-family: "Inter";
-      font-style: normal;
-      font-weight: 100 900;
-      font-display: swap;
-      src: url(fonts/inter-latin-wght-normal.woff2) format("woff2");
-    }
-    :root {
-      /* Workshop's Rosé and Ivory themes */
-      --bg: #FBF5F2;
-      --surface: #FFFBF9;
-      --ink: #3B2F33;
-      --muted: #6F5D63;
-      --rose: #A04F6C;
-      --blush: #F3E3E3;
-      --line: #EADCD9;
-      color-scheme: light;
-    }
-    * { box-sizing: border-box; }
-    html { -webkit-text-size-adjust: 100%; }
-    body {
-      margin: 0;
-      background:
-        radial-gradient(1100px 520px at 85% -10%, #F6E4E6 0%, transparent 60%),
-        var(--bg);
-      color: var(--ink);
-      font: 400 17px/1.7 Inter, "Segoe UI", system-ui, -apple-system, sans-serif;
-      font-feature-settings: "cv11", "ss01";
-    }
-    main {
-      max-width: 680px;
-      margin: 0 auto;
-      padding: 96px 24px 72px;
-    }
-    a {
-      color: var(--rose);
-      text-decoration-thickness: 1px;
-      text-underline-offset: 4px;
-    }
-    a:hover { text-decoration-thickness: 2px; }
-    a:focus-visible {
-      outline: 2px solid var(--rose);
-      outline-offset: 3px;
-      border-radius: 2px;
-    }
-
-    .hello {
-      color: var(--rose);
-      font-weight: 500;
-      margin: 0 0 18px;
-    }
-    .intro {
-      font-size: clamp(1.75rem, 4.6vw, 2.5rem);
-      line-height: 1.25;
-      font-weight: 300;
-      letter-spacing: -0.022em;
-      margin: 0 0 32px;
-      max-width: 22em;
-    }
-    .lede {
-      color: var(--muted);
-      font-size: 1.06rem;
-      max-width: 34em;
-      margin: 0;
-    }
-
-    section { margin-top: 88px; }
-    h2 {
-      font-size: 1.05rem;
-      font-weight: 600;
-      letter-spacing: -0.005em;
-      color: var(--rose);
-      margin: 0 0 18px;
-    }
-    p { margin: 0 0 16px; }
-
-    .builds { display: grid; gap: 14px; }
-    .build {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 22px 24px;
-    }
-    .build h3 {
-      font-size: 1.08rem;
-      font-weight: 600;
-      margin: 0 0 6px;
-      letter-spacing: -0.01em;
-    }
-    .build h3 a { color: var(--ink); text-decoration-color: var(--rose); }
-    .build p { margin: 0; color: var(--muted); }
-    .private {
-      font-size: 0.8rem;
-      font-weight: 500;
-      color: var(--muted);
-      background: var(--blush);
-      border-radius: 999px;
-      padding: 2px 9px;
-      margin-left: 8px;
-      vertical-align: 2px;
-    }
-
-    .path { list-style: none; padding: 0; margin: 0; border-left: 2px solid var(--blush); }
-    .path li { position: relative; padding: 0 0 22px 22px; }
-    .path li::before {
-      content: "";
-      position: absolute;
-      left: -6px; top: 9px;
-      width: 10px; height: 10px;
-      border-radius: 50%;
-      background: var(--bg);
-      border: 2px solid var(--rose);
-    }
-    .path li:last-child { padding-bottom: 0; }
-    .path .when { display: block; font-size: 0.88rem; color: var(--muted); }
-
-    .hi {
-      margin-top: 88px;
-      padding: 32px;
-      background: var(--blush);
-      border-radius: 18px;
-    }
-    .hi p { margin: 0 0 8px; }
-    .hi .big { font-size: 1.35rem; font-weight: 300; letter-spacing: -0.01em; }
-
-    footer {
-      margin-top: 40px;
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
-
-    @media (max-width: 520px) {
-      main { padding-top: 64px; }
-      section, .hi { margin-top: 64px; }
-      .build, .hi { padding: 20px; }
-    }
-  </style>
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; script-src 'self'; form-action 'none'; base-uri 'none'">
+  <link rel="preload" href="fonts/lora-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="site.css">
 </head>
-<body>
-  <main>
-    <p class="hello">Hi, I'm Alexis.</p>
-    <p class="intro">I'm an engineering manager who cares about the people on both ends of the software: the team building it and the people it affects.</p>
-    <p class="lede">I've spent my career in health care technology, where a bug isn't just a bug. It can be someone's coverage or a letter they never understood. That has shaped how I think about building things, and it matters even more now that AI is part of so much of the work.</p>
+<body class="font-sans text-lg selection:bg-burgundy selection:text-white">
+  
+  <div class="bg-texture"></div>
 
-    <section>
-      <h2>How I work</h2>
-      <p>I try to be the kind of manager I'd want to have: honest, steady, and in the work with my team rather than above it. Most of my job is clearing the way so good people can do their best work and still have a life outside of it.</p>
-      <p>I'm hopeful about AI and use it every day. I also think it's on us to keep it safe and humane: protect people's private information, keep a person in the loop on decisions that affect someone's life, and be honest about what these tools get wrong.</p>
-    </section>
+  <main class="max-w-4xl mx-auto px-6 py-16 md:py-24 lg:py-32">
+    
+    <!-- Hero / Intro Section -->
+    <header class="mb-24 md:mb-32 max-w-3xl animate-[fadeIn_0.8s_ease-out]">
+      <h1 class="font-serif text-5xl md:text-6xl text-burgundy mb-6 leading-tight tracking-tight font-medium">
+        Hi, I am Alexis.
+      </h1>
+      <p class="text-xl text-muted leading-relaxed font-light">
+        I am an engineering manager who cares about the people on both ends of the software: the team building it and the people it affects. I have spent my career in health care technology, where a bug is not just a bug. It can be someone's coverage or a letter they never understood. That has shaped how I think about building things, and it matters even more now that AI is part of so much of the work.
+      </p>
+    </header>
 
-    <section>
-      <h2>Things I've built</h2>
-      <div class="builds">
-        <article class="build">
-          <h3><a href="https://github.com/adavidson21/workshop">Workshop</a></h3>
-          <p>A calm home base for my workday as a manager: what to focus on next, and a clearer picture of what my team has on its plate. It runs entirely on my own computer, because work data shouldn't have to live on someone else's server.</p>
-        </article>
-        <article class="build">
-          <h3><a href="https://github.com/adavidson21/eng-agents">eng-agents</a></h3>
-          <p>AI helpers that take on coding tasks in small, reviewable steps. They can't push, merge, or deploy anything without a person saying yes. I built it to see what helpful-but-supervised AI looks like in practice.</p>
-        </article>
-        <article class="build">
-          <h3>TaskLedger<span class="private">private for now</span></h3>
-          <p>A little phone app for noting small wins before I forget them. It scrubs out links, emails, and ticket numbers before anything is sent to an AI model.</p>
-        </article>
-        <article class="build">
-          <h3><a href="https://tools.alexisdavidson.org/">Everyday tools</a></h3>
-          <p>Small things I've built to make everyday tasks easier for the people around me: <a href="https://tools.alexisdavidson.org/thrift/">thrift reselling helpers</a> like a Vinted listing generator, and <a href="https://tools.alexisdavidson.org/classroom/">classroom helpers</a> for report comments and open house letters.</p>
-        </article>
+    <!-- How I Work Section -->
+    <section class="mb-24 md:mb-32 max-w-3xl">
+      <h2 class="font-serif text-3xl text-burgundy mb-8 flex items-center gap-4">
+        How I work
+        <span class="h-px flex-1 bg-line mt-2"></span>
+      </h2>
+      <div class="space-y-6 text-charcoal leading-relaxed font-light">
+        <p>
+          I try to be the kind of manager I would want to have: honest, steady, and in the work with my team rather than above it. Most of my job is clearing the way so good people can do their best work and still have a life outside of it.
+        </p>
+        <p>
+          I am hopeful about AI and use it every day. I also think it is on us to keep it safe and humane: protect people's private information, keep a person in the loop on decisions that affect someone's life, and be honest about what these tools get wrong.
+        </p>
       </div>
     </section>
 
-    <section>
-      <h2>How I got here</h2>
-      <ol class="path">
-        <li><span class="when">Before tech</span>Taught math, which taught me more about patience and explaining things than anything since.</li>
-        <li><span class="when">2019</span>Joined a health care technology company as a junior developer while finishing a math and computer science degree.</li>
-        <li><span class="when">2020 to 2024</span>Built tools that helped non-engineers write clearer letters to the people they serve.</li>
-        <li><span class="when">2024</span>Moved into management, leading a platform team.</li>
-        <li><span class="when">2025</span>Finished a master's in applied computer science, mostly on nights and weekends.</li>
-      </ol>
+    <!-- Projects Section -->
+    <section class="mb-24 md:mb-32">
+      <h2 class="font-serif text-3xl text-burgundy mb-8 flex items-center gap-4">
+        Things I've built
+        <span class="h-px flex-1 bg-line mt-2"></span>
+      </h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <!-- Workshop -->
+        <article class="tilt-card bg-surface p-8 rounded-2xl border border-line shadow-sm group">
+          <div class="glare"></div>
+          <h3 class="font-serif text-2xl text-charcoal mb-3 group-hover:text-burgundy transition-colors relative z-10">
+            <a href="https://github.com/adavidson21/workshop" class="after:absolute after:inset-0">Workshop</a>
+          </h3>
+          <p class="text-muted text-base leading-relaxed font-light relative z-10">
+            A calm home base for my workday as a manager: what to focus on next, and a clearer picture of what my team has on its plate. It runs entirely on my own computer, because work data should not have to live on someone else's server.
+          </p>
+        </article>
+
+        <!-- eng-agents -->
+        <article class="tilt-card bg-surface p-8 rounded-2xl border border-line shadow-sm group">
+          <div class="glare"></div>
+          <h3 class="font-serif text-2xl text-charcoal mb-3 group-hover:text-burgundy transition-colors relative z-10">
+            <a href="https://github.com/adavidson21/eng-agents" class="after:absolute after:inset-0">eng-agents</a>
+          </h3>
+          <p class="text-muted text-base leading-relaxed font-light relative z-10">
+            AI helpers that take on coding tasks in small, reviewable steps. They cannot push, merge, or deploy anything without a person saying yes. I built it to see what helpful but supervised AI looks like in practice.
+          </p>
+        </article>
+
+        <!-- TaskLedger -->
+        <article class="tilt-card bg-surface p-8 rounded-2xl border border-line shadow-sm group">
+          <div class="glare"></div>
+          <h3 class="font-serif text-2xl text-charcoal mb-3 group-hover:text-burgundy transition-colors relative z-10">
+            TaskLedger <span class="ml-2 align-middle font-sans text-xs font-medium text-muted bg-oak rounded-full px-2.5 py-0.5">private for now</span>
+          </h3>
+          <p class="text-muted text-base leading-relaxed font-light relative z-10">
+            A little phone app for noting small wins before I forget them. It scrubs out links, emails, and ticket numbers before anything is sent to an AI model.
+          </p>
+        </article>
+
+        <!-- Everyday Tools -->
+        <article class="tilt-card bg-surface p-8 rounded-2xl border border-line shadow-sm group">
+          <div class="glare"></div>
+          <h3 class="font-serif text-2xl text-charcoal mb-3 group-hover:text-burgundy transition-colors relative z-10">
+            <a href="https://tools.alexisdavidson.org/" class="after:absolute after:inset-0">Everyday tools</a>
+          </h3>
+          <p class="text-muted text-base leading-relaxed font-light relative z-10">
+            Small things I have built to make everyday tasks easier for the people around me, like thrift reselling helpers and classroom helpers for report comments and open house letters.
+          </p>
+        </article>
+
+      </div>
     </section>
 
-    <section>
-      <h2>Outside work</h2>
-      <p>I share a home with my husband and our three cats, who supervise most of my work from the nearest keyboard. When I'm not working, I'm usually playing video games (Pokémon included), listening to music, or reading up on whatever is happening in the world.</p>
-      <p>I'm a problem solver at heart, at work and everywhere else. I also care a lot about fairness and about women having a real seat at the table, in tech and beyond.</p>
+    <!-- Path / Timeline Section -->
+    <section class="mb-24 md:mb-32 max-w-3xl">
+      <h2 class="font-serif text-3xl text-burgundy mb-10 flex items-center gap-4">
+        How I got here
+        <span class="h-px flex-1 bg-line mt-2"></span>
+      </h2>
+      
+      <div class="relative border-l border-line ml-4 space-y-10 py-2">
+        
+        <!-- Timeline Item 1 -->
+        <div class="relative pl-8">
+          <div class="absolute -left-[5px] top-1.5 w-[9px] h-[9px] rounded-full bg-burgundy shadow-[0_0_0_4px_theme('colors.oak')]"></div>
+          <span class="text-sm font-semibold text-burgundy uppercase tracking-widest mb-1 block">Before tech</span>
+          <p class="text-charcoal leading-relaxed font-light">
+            Taught math, which taught me more about patience and explaining things than anything since.
+          </p>
+        </div>
+
+        <!-- Timeline Item 2 -->
+        <div class="relative pl-8">
+          <div class="absolute -left-[5px] top-1.5 w-[9px] h-[9px] rounded-full bg-line shadow-[0_0_0_4px_theme('colors.oak')]"></div>
+          <span class="text-sm font-semibold text-muted uppercase tracking-widest mb-1 block">2019</span>
+          <p class="text-charcoal leading-relaxed font-light">
+            Joined a health care technology company as a junior developer while finishing a math and computer science degree.
+          </p>
+        </div>
+
+        <!-- Timeline Item 3 -->
+        <div class="relative pl-8">
+          <div class="absolute -left-[5px] top-1.5 w-[9px] h-[9px] rounded-full bg-line shadow-[0_0_0_4px_theme('colors.oak')]"></div>
+          <span class="text-sm font-semibold text-muted uppercase tracking-widest mb-1 block">2020 to 2024</span>
+          <p class="text-charcoal leading-relaxed font-light">
+            Built tools that helped non-engineers write clearer letters to the people they serve.
+          </p>
+        </div>
+
+        <!-- Timeline Item 4 -->
+        <div class="relative pl-8">
+          <div class="absolute -left-[5px] top-1.5 w-[9px] h-[9px] rounded-full bg-line shadow-[0_0_0_4px_theme('colors.oak')]"></div>
+          <span class="text-sm font-semibold text-muted uppercase tracking-widest mb-1 block">2024</span>
+          <p class="text-charcoal leading-relaxed font-light">
+            Moved into management, leading a platform team overseeing a wide breadth of products, microservices, and internal systems.
+          </p>
+        </div>
+
+        <!-- Timeline Item 5 -->
+        <div class="relative pl-8">
+          <div class="absolute -left-[5px] top-1.5 w-[9px] h-[9px] rounded-full bg-line shadow-[0_0_0_4px_theme('colors.oak')]"></div>
+          <span class="text-sm font-semibold text-muted uppercase tracking-widest mb-1 block">2025</span>
+          <p class="text-charcoal leading-relaxed font-light">
+            Finished a master's in applied computer science, mostly on nights and weekends.
+          </p>
+        </div>
+
+      </div>
     </section>
 
-    <div class="hi">
-      <p class="big">Want to talk?</p>
-      <p>Email me at <a href="mailto:hello@alexisdavidson.org">hello@alexisdavidson.org</a>, or find my work on <a href="https://github.com/adavidson21">GitHub</a>.</p>
-    </div>
+    <!-- Outside Work Section -->
+    <section class="mb-24 md:mb-32 max-w-3xl">
+      <h2 class="font-serif text-3xl text-burgundy mb-8 flex items-center gap-4">
+        Outside work
+        <span class="h-px flex-1 bg-line mt-2"></span>
+      </h2>
+      <div class="space-y-6 text-charcoal leading-relaxed font-light">
+        <p>
+          I share a home with my husband and our three cats, who supervise most of my work from the nearest keyboard. When I am not working, I am usually playing video games, listening to music, or reading up on whatever is happening in the world.
+        </p>
+        <p>
+          I am a problem solver at heart, at work and everywhere else. I also care a lot about fairness and about women having a real seat at the table, in tech and beyond.
+        </p>
+      </div>
+    </section>
 
-    <footer>This site has no trackers, cookies, or third-party scripts.</footer>
+    <!-- Contact & Footer -->
+    <footer class="mt-20 text-center border-t border-line pt-12 pb-8">
+      <p class="text-muted font-light mb-4">
+        Email me at <a href="mailto:hello@alexisdavidson.org" class="link-underline">hello@alexisdavidson.org</a>.
+      </p>
+      <p class="text-sm text-muted/70 font-light">
+        This site has no trackers, cookies, or third-party scripts.
+      </p>
+    </footer>
+
   </main>
+
+  <script src="tilt.js" defer></script>
 </body>
 </html>
