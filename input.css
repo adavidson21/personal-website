@@ -202,8 +202,13 @@ a:focus-visible {
 
 /* Icon cards and tiles */
 @keyframes wiggle { 0%, 100% { transform: rotate(0); } 25% { transform: rotate(-10deg); } 75% { transform: rotate(10deg); } }
-.tile { transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; }
-.tile:hover { transform: translateY(-3px); box-shadow: 0 10px 30px -12px rgba(47, 43, 42, 0.18); border-color: #D8CFC4; }
+.tile { position: relative; }
+.tile::before { content: ''; position: absolute; left: 0; right: 0; top: -1px; height: 2px; background: theme('colors.burgundy.DEFAULT'); transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease; }
+.tile > span:first-child { transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); }
+.tile > span:last-child { transition: color 0.3s ease; }
+.tile:hover::before { transform: scaleX(1); }
+.tile:hover > span:first-child { transform: scale(1.08); }
+.tile:hover > span:last-child { color: theme('colors.burgundy.DEFAULT'); }
 .tile:hover .tile-icon { animation: wiggle 0.5s ease-in-out; }
 .how-card:hover .art-panel { background-color: #E6DFD2; }
 
@@ -232,14 +237,14 @@ a:focus-visible {
 
 /* How I work illustrations */
 .how-card svg * { transform-box: fill-box; }
-.pf-team, .pf-mgr, .pf-rock, .ha-head { transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease; }
-@keyframes flag-wave { 0%, 100% { transform: scaleX(1) skewY(0); } 50% { transform: scaleX(0.8) skewY(6deg); } }
-.pf-flag { transform-origin: left center; animation: flag-wave 2.4s ease-in-out infinite; }
-.how-card:hover .pf-team { transform: translateX(12px); }
-.how-card:hover .pf-mgr { transform: translateX(8px); }
-.how-card:hover .pf-rock1 { transform: translateX(26px) rotate(90deg); opacity: 0; }
-.how-card:hover .pf-rock2 { transform: translateX(22px) rotate(-90deg); opacity: 0; transition-delay: 0.1s; }
-.how-card:hover .pf-flag { animation-duration: 0.8s; }
+.pf-team, .pf-door, .pf-sun, .pf-knob, .pf-mgr { transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
+.ha-head { transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
+.pf-door { transform-origin: 0% 50%; }
+.pf-sun { transform-origin: center; }
+.how-card:hover .pf-team { transform: translateX(20px); }
+.how-card:hover .pf-door { transform: scaleX(0.6); }
+.how-card:hover .pf-knob, .how-card:hover .pf-mgr { transform: translateX(-5px); }
+.how-card:hover .pf-sun { transform: scale(1.25); }
 
 @keyframes ha-dash { to { stroke-dashoffset: -12; } }
 @keyframes ha-nod { 0%, 100% { transform: rotate(0); } 40% { transform: rotate(10deg); } 70% { transform: rotate(-4deg); } }
