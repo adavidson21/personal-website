@@ -9,3 +9,10 @@ Everything is served from this repo: no CDNs, third-party scripts, trackers, or 
 ```
 npx tailwindcss@3.4.17 -c tailwind.config.js -i input.css -o site.css --minify
 ```
+
+## Adding a field note
+
+1. Copy `notes/_template.html` to `notes/your-note-name.html` and fill in the bracketed parts.
+2. In `index.html`, find the `FIELD NOTES` comment. The first time, delete the two `REMOVE TO ENABLE` lines to show the section.
+3. Copy one `<article class="note-card">` per note and update its link, label, title, and summary.
+4. Rebuild `site.css` with the command above.
