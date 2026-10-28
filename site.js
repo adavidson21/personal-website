@@ -3,23 +3,6 @@ document.documentElement.classList.add('js');
 
 document.addEventListener('DOMContentLoaded', () => {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const canHover = window.matchMedia('(hover: hover)').matches;
-
-  // 3D tilt on project cards (mouse devices only)
-  if (!reduceMotion && canHover) {
-    document.querySelectorAll('.card').forEach((wrapper) => {
-      const card = wrapper.querySelector('.tilt-card');
-      wrapper.addEventListener('mousemove', (e) => {
-        const r = wrapper.getBoundingClientRect();
-        const rx = ((e.clientY - r.top) / r.height - 0.5) * -10;
-        const ry = ((e.clientX - r.left) / r.width - 0.5) * 10;
-        card.style.transform = `perspective(1200px) rotateX(${rx}deg) rotateY(${ry}deg)`;
-      });
-      wrapper.addEventListener('mouseleave', () => {
-        card.style.transform = 'perspective(1200px) rotateX(0deg) rotateY(0deg)';
-      });
-    });
-  }
 
   if (reduceMotion) return;
 

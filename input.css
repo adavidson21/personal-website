@@ -1,4 +1,7 @@
+/* Editorial style, shared with tools.alexisdavidson.org: Fraunces headings, JetBrains Mono labels, Inter body (all OFL, in fonts/). */
 @font-face{font-family:"Inter";font-style:normal;font-weight:100 900;font-display:swap;src:url(fonts/inter-latin-wght-normal.woff2) format("woff2")}
+@font-face{font-family:"Fraunces";font-style:normal;font-weight:100 900;font-display:swap;src:url(fonts/fraunces-latin-opsz-normal.woff2) format("woff2")}
+@font-face{font-family:"JetBrains Mono";font-style:normal;font-weight:100 800;font-display:swap;src:url(fonts/jetbrains-mono-latin-wght-normal.woff2) format("woff2")}
 
 @tailwind base;
 @tailwind components;
@@ -15,8 +18,13 @@ body {
 a:focus-visible {
   outline: 2px solid theme('colors.burgundy.DEFAULT');
   outline-offset: 4px;
-  border-radius: 6px;
+  border-radius: 4px;
 }
+
+/* Serif headings use the large optical size; the oak period finishes the hero title */
+.font-serif { font-variation-settings: 'opsz' 72; }
+.display { font-variation-settings: 'opsz' 144; }
+.dot { color: theme('colors.oak'); }
 
 /* ---------- Hero ---------- */
 @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
@@ -43,14 +51,13 @@ a:focus-visible {
 .link-underline:hover::after { transform: scaleX(1); transform-origin: left; }
 
 /* ---------- Project cards ---------- */
-.tilt-card {
-  transition: transform 0.15s ease-out, box-shadow 0.3s ease, border-color 0.3s ease;
-  will-change: transform;
-}
-.tilt-card:hover, .tilt-card:focus-within {
-  box-shadow: theme('boxShadow.card');
-  border-color: #D8CFC4;
-}
+/* Ink rule on top, hairlines between, no boxes. The right hairline is a shadow the grid clips at
+   its edge, so it only shows between columns. */
+.ruled { border-top: 1px solid theme('colors.ink'); overflow: hidden; }
+.ruled > .card { border-bottom: 1px solid theme('colors.line'); box-shadow: 1px 0 0 theme('colors.line'); }
+.tilt-card { transition: background-color 0.3s ease; }
+.tilt-card:hover, .tilt-card:focus-within { background-color: theme('colors.surface'); }
+.tilt-card:hover .art-panel, .tilt-card:focus-within .art-panel { background-color: #E6DFD2; }
 .art * { transform-box: fill-box; transform-origin: center; }
 .art-shape { transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), fill 0.4s ease, stroke 0.4s ease, opacity 0.4s ease; }
 
@@ -134,14 +141,14 @@ a:focus-visible {
 .note-card {
   background: theme('colors.ivory');
   border: 1px solid theme('colors.line');
-  border-left: 4px solid theme('colors.oak');
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-top: 1px solid theme('colors.ink');
+  transition: background-color 0.3s ease;
 }
-.note-card:hover, .note-card:focus-within { transform: translateY(-4px); box-shadow: 0 10px 40px -10px rgba(59, 47, 51, 0.12); }
+.note-card:hover, .note-card:focus-within { background: theme('colors.surface'); }
 
 /* Note pages (notes/*.html) */
 .note-body > * + * { margin-top: 1.4em; }
-.note-body h2 { font-size: 1.5rem; font-weight: 500; color: theme('colors.ink'); margin-top: 2.2em; }
+.note-body h2 { font-family: theme('fontFamily.serif'); font-size: 1.75rem; font-weight: 500; color: theme('colors.ink'); margin-top: 2.2em; }
 .note-body a { color: theme('colors.burgundy.DEFAULT'); text-decoration: underline; text-underline-offset: 3px; }
 .note-body blockquote { border-left: 3px solid theme('colors.line'); padding-left: 1.25em; font-style: italic; color: theme('colors.muted'); }
 .note-body ul { list-style: disc; padding-left: 1.4em; }
