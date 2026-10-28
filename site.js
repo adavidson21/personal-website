@@ -23,6 +23,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (reduceMotion) return;
 
+  // Paw prints walk across "Outside work" once
+  const outside = document.getElementById('outside');
+  if (outside) {
+    const pawObserver = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) { outside.classList.add('walking'); pawObserver.disconnect(); }
+    }, { threshold: 0.4 });
+    pawObserver.observe(outside);
+  }
+
   // Fade timeline entries in as they scroll into view
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {

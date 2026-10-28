@@ -164,8 +164,67 @@ a:focus-visible {
 .era:hover .i-node { fill: theme('colors.burgundy.DEFAULT'); transform: scale(1.25); transform-origin: center; }
 .era:hover .i-cap { animation: bob 3s ease-in-out infinite; stroke: theme('colors.burgundy.DEFAULT'); }
 
+/* ---------- Personality illustrations ---------- */
+.cat *, .plant *, .sleepy *, .paw, .tile-icon, .how-icon { transform-box: fill-box; }
+@keyframes tail-sway { 0%, 100% { transform: rotate(-8deg); } 50% { transform: rotate(8deg); } }
+@keyframes cat-blink { 0%, 92%, 100% { transform: scaleY(1); } 95% { transform: scaleY(0.1); } }
+.cat-tail { transform-origin: 0% 100%; }
+.cat-eyes { transform-origin: center; }
+.hero-cat .cat-tail { animation: tail-sway 4s ease-in-out infinite; }
+.hero-cat .cat-eyes { animation: cat-blink 5s ease-in-out infinite; }
+.mini-cat2 .cat-eyes { animation: cat-blink 6s ease-in-out 1.5s infinite; }
+.mini-cat3 .cat-eyes { animation: cat-blink 7s ease-in-out 3s infinite; }
+.mini-cat1 .cat-eyes { animation: cat-blink 6.5s ease-in-out infinite; }
+.mini-cat { cursor: default; }
+.mini-cat:hover .cat-tail { animation: tail-sway 0.6s ease-in-out infinite; }
+.mini-cat { transition: transform 0.3s ease; }
+
+/* Hero desk scene */
+@keyframes type-line { 0% { transform: scaleX(0); } 10%, 85% { transform: scaleX(1); opacity: 1; } 95%, 100% { transform: scaleX(1); opacity: 0; } }
+@keyframes cursor-blink { 50% { opacity: 0; } }
+@keyframes steam-rise { 0% { opacity: 0; transform: translateY(4px); } 40% { opacity: 0.9; } 100% { opacity: 0; transform: translateY(-10px); } }
+@keyframes leaf-sway { 0%, 100% { transform: rotate(-2deg); } 50% { transform: rotate(2deg); } }
+.code-line { transform-box: fill-box; transform-origin: left center; animation: type-line 9s ease-out infinite; }
+.code-line2 { animation-delay: 0.5s; } .code-line3 { animation-delay: 1s; } .code-line4 { animation-delay: 1.5s; }
+.code-line5 { animation-delay: 2s; } .code-line6 { animation-delay: 2.5s; }
+.code-cursor { animation: cursor-blink 1.1s step-end infinite; }
+.steam { animation: steam-rise 3s ease-out infinite; }
+.steam2 { animation-delay: 1.5s; }
+.leaf { transform-origin: 50% 100%; animation: leaf-sway 5s ease-in-out infinite; }
+.leaf2 { animation-delay: -1.5s; } .leaf3 { animation-delay: -3s; }
+
+/* Icon cards and tiles */
+@keyframes wiggle { 0%, 100% { transform: rotate(0); } 25% { transform: rotate(-10deg); } 75% { transform: rotate(10deg); } }
+.how-card, .tile { transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; }
+.how-card:hover, .tile:hover { transform: translateY(-3px); box-shadow: 0 10px 30px -12px rgba(47, 43, 42, 0.18); border-color: #D8CFC4; }
+.how-card:hover .how-icon, .tile:hover .tile-icon { animation: wiggle 0.5s ease-in-out; }
+
+/* Paw trail */
+@keyframes paw-in { from { opacity: 0; transform: scale(0.5); } to { opacity: 1; transform: scale(1); } }
+.paw { transform-origin: center; }
+.js .paw { opacity: 0; }
+.walking .paw { animation: paw-in 0.35s ease-out forwards; }
+.walking .paw1 { animation-delay: 0.00s; }
+.walking .paw2 { animation-delay: 0.25s; }
+.walking .paw3 { animation-delay: 0.50s; }
+.walking .paw4 { animation-delay: 0.75s; }
+.walking .paw5 { animation-delay: 1.00s; }
+.walking .paw6 { animation-delay: 1.25s; }
+.walking .paw7 { animation-delay: 1.50s; }
+.walking .paw8 { animation-delay: 1.75s; }
+
+/* Sleeping footer cat */
+@keyframes breathe { 0%, 100% { transform: scaleY(1); } 50% { transform: scaleY(1.04); } }
+@keyframes tail-flick { 0%, 100% { transform: rotate(0); } 50% { transform: rotate(10deg); } }
+@keyframes zz-float { 0% { opacity: 0; transform: translateY(4px); } 30% { opacity: 1; } 100% { opacity: 0; transform: translateY(-8px); } }
+.sleep-body { transform-origin: 50% 100%; animation: breathe 3.5s ease-in-out infinite; }
+.sleep-tail { transform-origin: 0% 0%; animation: tail-flick 4s ease-in-out infinite; }
+.zz { animation: zz-float 3s ease-out infinite; }
+.zz2 { animation-delay: 0.6s; } .zz3 { animation-delay: 1.2s; }
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .js .reveal { opacity: 1; transform: none; }
   .js .timeline-progress { transform: scaleY(1); }
+  .js .paw { opacity: 1; }
 }
