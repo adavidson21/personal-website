@@ -50,6 +50,12 @@ a:focus-visible {
 }
 .link-underline:hover::after { transform: scaleX(1); transform-origin: left; }
 
+/* Profile links: words, a small outward arrow, dot separators */
+.social { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 14px; }
+.social .sep { color: theme('colors.muted'); opacity: .6; }
+.social .ext { display: inline-block; width: 0.7em; height: 0.7em; margin-left: 4px; vertical-align: 0.05em; transition: transform 0.25s ease; }
+.social a:hover .ext { transform: translate(2px, -2px); }
+
 /* ---------- Project cards ---------- */
 /* Ink rule on top, hairlines between, no boxes. The right hairline is a shadow the grid clips at
    its edge, so it only shows between columns. */
