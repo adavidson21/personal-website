@@ -10,6 +10,10 @@ Everything is served from this repo: no CDNs, third-party scripts, trackers, or 
 npx tailwindcss@3.4.17 -c tailwind.config.js -i input.css -o site.css --minify
 ```
 
+## Tab icon
+
+`favicon.svg` is the source (serif A with the oak period on the ink tile). `favicon.ico` (16, 32, 48 px) and `apple-touch-icon.png` (180 px, square for iOS) are exported from it. New pages need the three `<link>` tags under `<title>`, as in `notes/_template.html`.
+
 ## Adding a field note
 
 1. Copy `notes/_template.html` to `notes/your-note-name.html` and fill in the bracketed parts.
