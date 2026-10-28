@@ -88,7 +88,7 @@ a:focus-visible {
 .card:is(:hover, :focus-within) .w-text { stroke: #E3D4D7; }
 .card:is(:hover, :focus-within) .w-badge { animation: pop-in 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) 1.2s both; }
 
-/* ProxyDev: packets flow, agent blinks, checkpoint approves, server lights up */
+/* Tandem: packets flow, agent blinks, checkpoint approves, server lights up */
 @keyframes travel { 0% { opacity: 0; transform: translateX(0); } 15% { opacity: 1; } 85% { opacity: 1; } 100% { opacity: 0; transform: translateX(13px); } }
 @keyframes blink { 0%, 90%, 100% { transform: scaleY(1); } 95% { transform: scaleY(0.1); } }
 @keyframes antenna { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
