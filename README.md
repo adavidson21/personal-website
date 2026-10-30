@@ -10,6 +10,10 @@ Everything is served from this repo: no CDNs, third-party scripts, trackers, or 
 npx tailwindcss@3.4.17 -c tailwind.config.js -i input.css -o site.css --minify
 ```
 
+## Light and dark
+
+The site follows the device's light or dark setting until you use the round toggle in the top right corner (`theme.js`, the same toggle as tools.alexisdavidson.org; the choice is saved per browser). Colors are CSS variables in `input.css`, so Tailwind classes like `bg-surface` or `text-ink` switch on their own. Illustrations draw with fixed hex colors; `input.css` maps their paper and line neutrals to dark versions (the cats' cream fur, `#F5F2EB` and `#E5DEC9`, is left alone). A new illustration that uses only those neutrals and the theme classes darkens without changes.
+
 ## Tab icon
 
 `favicon.svg` is the source (serif A with the oak period on the ink tile). `favicon.ico` (16, 32, 48 px) and `apple-touch-icon.png` (180 px, square for iOS) are exported from it. New pages need the three `<link>` tags under `<title>`, as in `notes/_template.html`.

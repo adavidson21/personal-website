@@ -2,17 +2,18 @@ module.exports = {
   content: ["./index.html", "./notes/**/*.html"],
   theme: {
     extend: {
+      // Colors are CSS variables (input.css), so dark mode only changes the variables.
       colors: {
-        ivory: '#F4F1EA',
-        surface: '#FBF9F5',
-        ink: '#2A2627',
-        muted: '#675F5A',
-        burgundy: { DEFAULT: '#82263C', light: '#A04F6C' },
-        oak: '#8B6340',
-        slate: '#4F6B78',
-        sage: { DEFAULT: '#8B9E8B', deep: '#5E735E', faint: '#EEF1EE' },
-        line: '#DCD4C6',
-        panel: '#ECE7DD',
+        ivory: 'rgb(var(--c-ivory) / <alpha-value>)',
+        surface: 'rgb(var(--c-surface) / <alpha-value>)',
+        ink: 'rgb(var(--c-ink) / <alpha-value>)',
+        muted: 'rgb(var(--c-muted) / <alpha-value>)',
+        burgundy: { DEFAULT: 'rgb(var(--c-burgundy) / <alpha-value>)', light: 'rgb(var(--c-burgundy-light) / <alpha-value>)' },
+        oak: 'rgb(var(--c-oak) / <alpha-value>)',
+        slate: 'rgb(var(--c-slate) / <alpha-value>)',
+        sage: { DEFAULT: 'rgb(var(--c-sage) / <alpha-value>)', deep: 'rgb(var(--c-sage-deep) / <alpha-value>)', faint: 'rgb(var(--c-sage-faint) / <alpha-value>)' },
+        line: 'rgb(var(--c-line) / <alpha-value>)',
+        panel: 'rgb(var(--c-panel) / <alpha-value>)',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
