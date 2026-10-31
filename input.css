@@ -127,6 +127,22 @@ a:focus-visible {
 .tilt-card { transition: background-color 0.3s ease; }
 .tilt-card:hover, .tilt-card:focus-within { background-color: rgb(var(--c-surface)); }
 .tilt-card:hover .art-panel, .tilt-card:focus-within .art-panel { background-color: var(--t-panel-hover); }
+
+/* Live apps: a "Live" badge on the art, and an "Open app" button with the real address. The whole
+   card is the link (stretched title link), so the button fills in on hover anywhere on the card. */
+.live-badge { position: absolute; top: 10px; left: 10px; display: inline-flex; align-items: center; gap: 6px;
+  padding: 3px 9px 3px 7px; border: 1px solid rgb(var(--c-line)); border-radius: 999px; background: rgb(var(--c-surface));
+  font: 500 10px/1.4 theme('fontFamily.mono'); letter-spacing: .08em; text-transform: uppercase; color: rgb(var(--c-sage-deep)); }
+.live-badge i { position: relative; width: 6px; height: 6px; border-radius: 50%; background: rgb(var(--c-sage-deep)); }
+.live-badge i::after { content: ''; position: absolute; inset: 0; border-radius: 50%; background: rgb(var(--c-sage-deep)); animation: live-ping 2.2s ease-out infinite; }
+@keyframes live-ping { 0% { transform: scale(1); opacity: .6; } 80%, 100% { transform: scale(2.8); opacity: 0; } }
+.app-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; margin-top: 22px; }
+.app-cta .open { display: inline-flex; align-items: center; gap: 7px; padding: 8px 14px; border: 1px solid rgb(var(--c-ink)); border-radius: 4px;
+  font-size: 14px; font-weight: 500; line-height: 1; color: rgb(var(--c-ink)); transition: background-color .25s ease, color .25s ease; }
+.app-cta .open svg { width: 11px; height: 11px; transition: transform .25s ease; }
+.app-cta .host { font: 400 12px/1.4 theme('fontFamily.mono'); color: rgb(var(--c-muted)); }
+.card:hover .app-cta .open, .card:focus-within .app-cta .open { background: rgb(var(--c-ink)); color: rgb(var(--c-ivory)); }
+.card:hover .app-cta .open svg, .card:focus-within .app-cta .open svg { transform: translate(2px, -2px); }
 .art * { transform-box: fill-box; transform-origin: center; }
 .art-shape { transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), fill 0.4s ease, stroke 0.4s ease, opacity 0.4s ease; }
 
