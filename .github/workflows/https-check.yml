@@ -1,0 +1,13 @@
+name: HTTPS check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  https-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: bash scripts/check-https.sh

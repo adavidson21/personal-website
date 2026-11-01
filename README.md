@@ -24,3 +24,13 @@ The site follows the device's light or dark setting until you use the round togg
 2. In `index.html`, find the `FIELD NOTES` comment. The first time, delete the two `REMOVE TO ENABLE` lines to show the section.
 3. Copy one `<article class="note-card">` per note and update its link, label, title, and summary.
 4. Rebuild `site.css` with the command above.
+
+## HTTPS safeguards
+
+`scripts/check-https.sh` fails if any served file references `http://`, if a page's Content-Security-Policy is missing `default-src 'self'` or `upgrade-insecure-requests` (or allows `http:` or `*`), or if `CNAME` changes. It runs on every push and PR via `.github/workflows/https-check.yml`.
+
+To also run it before each commit, enable the hook once per clone:
+
+```
+git config core.hooksPath .githooks
+```
