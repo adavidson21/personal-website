@@ -253,96 +253,370 @@
           </g>
         </svg>
       </div>
-            <div class="ruled grid grid-cols-1 md:grid-cols-2">
-
-        <!-- Workshop: tasks get checked off, nav moves, a badge pops -->
-        <div class="card group">
-          <article class="tilt-card relative h-full px-1 py-8 md:p-8">
-            <div class="art-panel relative mb-6 h-44 rounded bg-panel transition-colors flex items-center justify-center overflow-hidden" aria-hidden="true">
-              <span class="live-badge"><i></i>Live</span>
-              <svg viewBox="0 0 160 80" class="art w-full h-full" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="20" y="8" width="120" height="64" rx="5" fill="#FDFCFA" stroke="#C4BDB4" stroke-width="1.5" class="art-shape w-frame"/>
-                <line x1="20" y1="18" x2="140" y2="18" stroke="#DED8CF" stroke-width="1.5"/>
-                <circle cx="27" cy="13" r="1.6" fill="#D4A8A0" class="w-dot w-dot1"/>
-                <circle cx="33" cy="13" r="1.6" fill="#D8C29F" class="w-dot w-dot2"/>
-                <circle cx="39" cy="13" r="1.6" fill="#B5C3B5" class="w-dot w-dot3"/>
-                <path d="M20.75 18.75 H48 V71.25 H25 a4.25 4.25 0 0 1 -4.25 -4.25 Z" fill="#EFEBE5"/>
-                <rect x="24" y="23" width="20" height="6" rx="2" fill="#E6DCCF" class="art-shape w-active"/>
-                <line x1="27" y1="26" x2="40" y2="26" stroke="#A89F95" stroke-width="1.5"/>
-                <line x1="27" y1="34" x2="38" y2="34" stroke="#C4BDB4" stroke-width="1.5"/>
-                <line x1="27" y1="42" x2="41" y2="42" stroke="#C4BDB4" stroke-width="1.5"/>
-                <line x1="27" y1="50" x2="36" y2="50" stroke="#C4BDB4" stroke-width="1.5"/>
-                <rect x="56" y="25" width="7" height="7" rx="1.5" stroke="#A89F95" stroke-width="1.3" class="art-shape w-box w-box1"/>
-                <rect x="56" y="39" width="7" height="7" rx="1.5" stroke="#A89F95" stroke-width="1.3" class="art-shape w-box w-box2"/>
-                <rect x="56" y="53" width="7" height="7" rx="1.5" stroke="#A89F95" stroke-width="1.3" class="art-shape w-box w-box3"/>
-                <path d="M57.6 28.6 L59.3 30.3 L61.8 27" stroke="#82263C" stroke-width="1.4" class="w-check w-check1"/>
-                <path d="M57.6 42.6 L59.3 44.3 L61.8 41" stroke="#82263C" stroke-width="1.4" class="w-check w-check2"/>
-                <path d="M57.6 56.6 L59.3 58.3 L61.8 55" stroke="#82263C" stroke-width="1.4" class="w-check w-check3"/>
-                <line x1="68" y1="28.5" x2="112" y2="28.5" stroke="#C4BDB4" stroke-width="2" class="art-shape w-text w-text1"/>
-                <line x1="68" y1="42.5" x2="102" y2="42.5" stroke="#C4BDB4" stroke-width="2" class="art-shape w-text w-text2"/>
-                <line x1="68" y1="56.5" x2="120" y2="56.5" stroke="#C4BDB4" stroke-width="2" class="art-shape w-text w-text3"/>
-                <circle cx="131" cy="28.5" r="4" fill="#82263C" class="w-badge"/>
-              </svg>
-            </div>
-            <h3 class="font-serif text-[26px] font-semibold text-ink mb-3 tracking-tight flex items-center justify-between gap-3">
-              <a href="https://workshop.alexisdavidson.org/" class="transition-colors group-hover:text-burgundy after:absolute after:inset-0 focus:outline-none">Workshop</a>
-              <a href="https://github.com/adavidson21/workshop" class="relative z-10 inline-flex items-center justify-center w-8 h-8 rounded text-muted hover:text-ink hover:bg-panel transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2" aria-label="Workshop source code on GitHub" title="View the source on GitHub"><svg viewBox="0 0 16 16" class="w-[18px] h-[18px]" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
+      <!-- Workshop, the suite: a little window you can click through, like Workshop's own app rail (site.js).
+           Without JS the rail is hidden and every app is listed one after another. -->
+      <div class="suite border-t border-ink pt-10 md:pt-12" data-suite>
+        <div class="grid md:grid-cols-12 gap-8 md:gap-12 items-end mb-10">
+          <div class="md:col-span-7">
+            <p class="font-mono text-xs uppercase tracking-wider text-oak font-medium mb-4">The big one</p>
+            <h3 class="font-serif text-4xl md:text-5xl font-semibold text-ink tracking-tight mb-5 flex flex-wrap items-center gap-x-4 gap-y-2">
+              Workshop
+              <span class="live-badge live-badge-inline"><i></i>Live</span>
             </h3>
-            <p class="text-muted text-base font-light leading-relaxed">
-              A calm home base for my workday as a manager: what to focus on next, and a clearer picture of what my team has on its plate. It runs entirely on my own computer, because work data shouldn't have to live on someone else's server.
+            <p class="text-muted text-lg font-light leading-relaxed">
+              My home base as an engineering manager: six apps behind one rail, with one look, one command palette and one list of people. There are no accounts and no server holding my data. It lives in my browser, or in files on my own computer.
             </p>
-            <div class="app-cta" aria-hidden="true">
-              <span class="open">Open app<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 8.5l5-5M4.5 3.5h4v4"/></svg></span>
+            <div class="suite-cta">
+              <a href="https://workshop.alexisdavidson.org/" class="suite-open">Open Workshop<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 8.5l5-5M4.5 3.5h4v4"/></svg></a>
+              <a href="https://github.com/adavidson21/workshop" class="inline-flex items-center justify-center w-9 h-9 rounded text-muted hover:text-ink hover:bg-panel transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2" aria-label="Workshop source code on GitHub" title="View the source on GitHub"><svg viewBox="0 0 16 16" class="w-[18px] h-[18px]" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
               <span class="host">workshop.alexisdavidson.org</span>
             </div>
-          </article>
+          </div>
+          <dl class="suite-stats md:col-span-5">
+            <div><dt>Apps</dt><dd data-count="6">6</dd></div>
+            <div><dt>Also run on their own</dt><dd data-count="4">4</dd></div>
+            <div><dt>Accounts needed</dt><dd>0</dd></div>
+          </dl>
         </div>
 
-        <!-- Dispatch (built on Tandem): work flows from task to agent, waits at a human checkpoint, then ships -->
+        <div class="suite-window">
+          <div class="suite-bar" aria-hidden="true">
+            <span class="suite-dots"><i></i><i></i><i></i></span>
+            <span class="suite-url">workshop.alexisdavidson.org/<b data-suite-path></b></span>
+            <span class="suite-hint">Click around</span>
+          </div>
+          <div class="suite-body">
+            <div class="suite-rail" role="tablist" aria-label="Apps in Workshop" aria-orientation="vertical">
+              <button type="button" class="suite-tab" role="tab" id="tab-home" aria-controls="app-home" aria-selected="true">
+                <svg class="ico" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.2 9 3l6 5.2V15H3z"/><path d="M7.2 15v-4h3.6v4"/></svg>
+                <span>Home</span><span class="tick" aria-hidden="true"><i></i></span>
+              </button>
+              <button type="button" class="suite-tab" role="tab" id="tab-docket" aria-controls="app-docket" aria-selected="false" tabindex="-1">
+                <svg class="ico" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="12" height="12" rx="2.5"/><path d="M6.2 9.2 8.1 11l3.8-4"/></svg>
+                <span>Docket</span><span class="tick" aria-hidden="true"><i></i></span>
+              </button>
+              <button type="button" class="suite-tab" role="tab" id="tab-dispatch" aria-controls="app-dispatch" aria-selected="false" tabindex="-1">
+                <svg class="ico" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="6" width="11" height="9" rx="3"/><path d="M9 6V3.5"/><circle cx="9" cy="3" r=".6" fill="currentColor"/><path d="M7 10h.01M11 10h.01" stroke-width="2"/></svg>
+                <span>Dispatch</span><span class="tick" aria-hidden="true"><i></i></span>
+              </button>
+              <button type="button" class="suite-tab" role="tab" id="tab-rapport" aria-controls="app-rapport" aria-selected="false" tabindex="-1">
+                <svg class="ico" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h9v13l-2.25-1.5L9 15.5 6.75 14 4.5 15.5z"/><path d="M7 6.5h4M7 9.5h3"/></svg>
+                <span>Rapport</span><span class="tick" aria-hidden="true"><i></i></span>
+              </button>
+              <button type="button" class="suite-tab" role="tab" id="tab-runway" aria-controls="app-runway" aria-selected="false" tabindex="-1">
+                <svg class="ico" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h6M6 9h7M4.5 13h5"/><path d="M15 3v12" stroke-dasharray="1.5 2"/></svg>
+                <span>Runway</span><span class="tick" aria-hidden="true"><i></i></span>
+              </button>
+              <button type="button" class="suite-tab" role="tab" id="tab-notes" aria-controls="app-notes" aria-selected="false" tabindex="-1">
+                <svg class="ico" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 2.5h6l3 3v10H5z"/><path d="M11 2.5v3h3M7.5 9h4M7.5 12h3"/></svg>
+                <span>Notes</span><span class="tick" aria-hidden="true"><i></i></span>
+              </button>
+            </div>
+
+            <div class="suite-stage">
+
+              <!-- Home: the tiles of the day fill in -->
+              <div class="suite-panel is-active" id="app-home" role="tabpanel" aria-labelledby="tab-home" tabindex="0" data-path="">
+                <div class="art-panel relative h-44 rounded bg-panel flex items-center justify-center overflow-hidden" aria-hidden="true">
+                  <svg viewBox="0 0 160 80" class="art w-full h-full" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="14" y="8" width="132" height="64" rx="5" fill="#FDFCFA" stroke="#C4BDB4" stroke-width="1.5" class="art-shape h-frame"/>
+                    <line x1="22" y1="17" x2="58" y2="17" stroke="#A89F95" stroke-width="2.5"/>
+                    <line x1="22" y1="23.5" x2="44" y2="23.5" stroke="#C4BDB4" stroke-width="1.5"/>
+                    <g class="h-tile h-tile1">
+                      <rect x="22" y="30" width="46" height="34" rx="3" fill="#EFEBE5" class="art-shape h-bg"/>
+                      <rect x="27" y="36" width="5" height="5" rx="1.2" stroke="#A89F95" stroke-width="1.2"/>
+                      <rect x="27" y="45" width="5" height="5" rx="1.2" stroke="#A89F95" stroke-width="1.2"/>
+                      <rect x="27" y="54" width="5" height="5" rx="1.2" stroke="#A89F95" stroke-width="1.2"/>
+                      <path d="M28.2 38.6 L29.4 39.8 L31.2 37.4" stroke="#82263C" stroke-width="1.2" class="h-check"/>
+                      <line x1="36" y1="38.5" x2="60" y2="38.5" stroke="#C4BDB4" stroke-width="1.6"/>
+                      <line x1="36" y1="47.5" x2="56" y2="47.5" stroke="#C4BDB4" stroke-width="1.6"/>
+                      <line x1="36" y1="56.5" x2="62" y2="56.5" stroke="#C4BDB4" stroke-width="1.6"/>
+                    </g>
+                    <g class="h-tile h-tile2">
+                      <rect x="74" y="30" width="32" height="15" rx="3" fill="#EFEBE5" class="art-shape h-bg"/>
+                      <line x1="79" y1="37.5" x2="92" y2="37.5" stroke="#C4BDB4" stroke-width="1.6"/>
+                      <circle cx="99" cy="37.5" r="3.6" fill="#82263C" class="h-count"/>
+                    </g>
+                    <g class="h-tile h-tile3">
+                      <rect x="74" y="49" width="32" height="15" rx="3" fill="#EFEBE5" class="art-shape h-bg"/>
+                      <circle cx="82" cy="56.5" r="3.2" fill="#C9A27C"/>
+                      <circle cx="90" cy="56.5" r="3.2" fill="#8B9E8B"/>
+                      <circle cx="98" cy="56.5" r="3.2" fill="#7E9AA6"/>
+                    </g>
+                    <g class="h-tile h-tile4">
+                      <rect x="112" y="30" width="26" height="34" rx="3" fill="#EFEBE5" class="art-shape h-bg"/>
+                      <rect x="117" y="40" width="16" height="13" rx="4" fill="#FDFCFA" stroke="#4F6B78" stroke-width="1.3"/>
+                      <circle cx="122" cy="46.5" r="1.3" fill="#4F6B78" class="p-eye"/>
+                      <circle cx="128" cy="46.5" r="1.3" fill="#4F6B78" class="p-eye"/>
+                      <circle cx="133" cy="38" r="2.6" fill="#A04F6C" class="h-wait"/>
+                    </g>
+                  </svg>
+                </div>
+                <div class="suite-copy">
+                  <p class="suite-kicker">Your day at a glance</p>
+                  <h4>Home</h4>
+                  <p>Opens on what matters today: what to triage, my top three tasks, who I'm due to meet with, and any AI helpers waiting on me. One quick-capture box sends a task, a win or an idea to the right app.</p>
+                  <ul class="suite-tags"><li>Ctrl+K for everything</li><li>Installs like a desktop app</li></ul>
+                  <div class="suite-links">
+                    <a href="https://workshop.alexisdavidson.org/" class="suite-go">Open Home<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 8.5l5-5M4.5 3.5h4v4"/></svg></a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Docket: tasks get checked off, the active row moves, a badge pops -->
+              <div class="suite-panel" id="app-docket" role="tabpanel" aria-labelledby="tab-docket" tabindex="0" data-path="#/prioritizer">
+                <div class="art-panel relative h-44 rounded bg-panel flex items-center justify-center overflow-hidden" aria-hidden="true">
+                  <svg viewBox="0 0 160 80" class="art w-full h-full" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="20" y="8" width="120" height="64" rx="5" fill="#FDFCFA" stroke="#C4BDB4" stroke-width="1.5" class="art-shape w-frame"/>
+                    <line x1="20" y1="18" x2="140" y2="18" stroke="#DED8CF" stroke-width="1.5"/>
+                    <circle cx="27" cy="13" r="1.6" fill="#D4A8A0" class="w-dot w-dot1"/>
+                    <circle cx="33" cy="13" r="1.6" fill="#D8C29F" class="w-dot w-dot2"/>
+                    <circle cx="39" cy="13" r="1.6" fill="#B5C3B5" class="w-dot w-dot3"/>
+                    <path d="M20.75 18.75 H48 V71.25 H25 a4.25 4.25 0 0 1 -4.25 -4.25 Z" fill="#EFEBE5"/>
+                    <rect x="24" y="23" width="20" height="6" rx="2" fill="#E6DCCF" class="art-shape w-active"/>
+                    <line x1="27" y1="26" x2="40" y2="26" stroke="#A89F95" stroke-width="1.5"/>
+                    <line x1="27" y1="34" x2="38" y2="34" stroke="#C4BDB4" stroke-width="1.5"/>
+                    <line x1="27" y1="42" x2="41" y2="42" stroke="#C4BDB4" stroke-width="1.5"/>
+                    <line x1="27" y1="50" x2="36" y2="50" stroke="#C4BDB4" stroke-width="1.5"/>
+                    <rect x="56" y="25" width="7" height="7" rx="1.5" stroke="#A89F95" stroke-width="1.3" class="art-shape w-box w-box1"/>
+                    <rect x="56" y="39" width="7" height="7" rx="1.5" stroke="#A89F95" stroke-width="1.3" class="art-shape w-box w-box2"/>
+                    <rect x="56" y="53" width="7" height="7" rx="1.5" stroke="#A89F95" stroke-width="1.3" class="art-shape w-box w-box3"/>
+                    <path d="M57.6 28.6 L59.3 30.3 L61.8 27" stroke="#82263C" stroke-width="1.4" class="w-check w-check1"/>
+                    <path d="M57.6 42.6 L59.3 44.3 L61.8 41" stroke="#82263C" stroke-width="1.4" class="w-check w-check2"/>
+                    <path d="M57.6 56.6 L59.3 58.3 L61.8 55" stroke="#82263C" stroke-width="1.4" class="w-check w-check3"/>
+                    <line x1="68" y1="28.5" x2="112" y2="28.5" stroke="#C4BDB4" stroke-width="2" class="art-shape w-text w-text1"/>
+                    <line x1="68" y1="42.5" x2="102" y2="42.5" stroke="#C4BDB4" stroke-width="2" class="art-shape w-text w-text2"/>
+                    <line x1="68" y1="56.5" x2="120" y2="56.5" stroke="#C4BDB4" stroke-width="2" class="art-shape w-text w-text3"/>
+                    <circle cx="131" cy="28.5" r="4" fill="#82263C" class="w-badge"/>
+                  </svg>
+                </div>
+                <div class="suite-copy">
+                  <p class="suite-kicker">What to work on next</p>
+                  <h4>Docket</h4>
+                  <p>A calm, keyboard-first task app. Give each task a value and an effort and it tells me what's next, then helps me plan the day around my sprint and wrap it up at the end.</p>
+                  <ul class="suite-tags"><li>Runs on its own</li><li>Android app</li><li>Azure DevOps optional</li></ul>
+                  <div class="suite-links">
+                    <a href="https://docket.alexisdavidson.org/" class="suite-go">Open Docket<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 8.5l5-5M4.5 3.5h4v4"/></svg></a>
+                    <a href="https://github.com/adavidson21/docket" class="suite-gh" aria-label="Docket source code on GitHub" title="View the source on GitHub"><svg viewBox="0 0 16 16" class="w-[18px] h-[18px]" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
+                    <span class="host">docket.alexisdavidson.org</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Dispatch: work flows from task to agent, waits at a human checkpoint, then ships -->
+              <div class="suite-panel" id="app-dispatch" role="tabpanel" aria-labelledby="tab-dispatch" tabindex="0" data-path="#/agents">
+                <div class="art-panel relative h-44 rounded bg-panel flex items-center justify-center overflow-hidden" aria-hidden="true">
+                  <svg viewBox="0 0 160 80" class="art w-full h-full" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="34" y1="40" x2="52" y2="40" stroke="#DED8CF" stroke-width="1.5"/>
+                    <line x1="72" y1="40" x2="91" y2="40" stroke="#DED8CF" stroke-width="1.5"/>
+                    <line x1="109" y1="40" x2="124" y2="40" stroke="#DED8CF" stroke-width="1.5" class="p-link-end"/>
+                    <circle cx="38" cy="40" r="2" fill="#A04F6C" class="p-packet p-packet1"/>
+                    <circle cx="76" cy="40" r="2" fill="#A04F6C" class="p-packet p-packet2"/>
+                    <circle cx="113" cy="40" r="2" fill="#5E735E" class="p-packet p-packet3"/>
+                    <rect x="14" y="27" width="20" height="26" rx="3" fill="#FDFCFA" stroke="#A89F95" stroke-width="1.5" class="art-shape p-file"/>
+                    <line x1="18" y1="34" x2="29" y2="34" stroke="#C4BDB4" stroke-width="1.5"/>
+                    <line x1="18" y1="40" x2="27" y2="40" stroke="#C4BDB4" stroke-width="1.5"/>
+                    <line x1="18" y1="46" x2="30" y2="46" stroke="#C4BDB4" stroke-width="1.5"/>
+                    <g class="p-agent">
+                      <line x1="62" y1="31" x2="62" y2="26" stroke="#A89F95" stroke-width="1.5"/>
+                      <circle cx="62" cy="25" r="1.8" fill="#A89F95" class="p-antenna"/>
+                      <rect x="52" y="31" width="20" height="18" rx="5" fill="#FDFCFA" stroke="#4F6B78" stroke-width="1.5" class="art-shape p-head"/>
+                      <circle cx="58" cy="39" r="1.7" fill="#4F6B78" class="p-eye"/>
+                      <circle cx="66" cy="39" r="1.7" fill="#4F6B78" class="p-eye"/>
+                      <line x1="59" y1="44" x2="65" y2="44" stroke="#4F6B78" stroke-width="1.3"/>
+                    </g>
+                    <circle cx="100" cy="40" r="9" fill="#FDFCFA" stroke="#A89F95" stroke-width="1.5" class="art-shape p-gate"/>
+                    <circle cx="100" cy="37" r="2.4" stroke="#A89F95" stroke-width="1.3" class="p-person"/>
+                    <path d="M96 45 a4 4 0 0 1 8 0" stroke="#A89F95" stroke-width="1.3" class="p-person"/>
+                    <circle cx="107" cy="33" r="4" fill="#5E735E" class="p-approve"/>
+                    <path d="M105.3 33 L106.5 34.2 L108.8 31.8" stroke="#FDFCFA" stroke-width="1.2" class="p-approve-check"/>
+                    <rect x="124" y="30" width="22" height="20" rx="3" fill="#FDFCFA" stroke="#A89F95" stroke-width="1.5" class="art-shape p-server"/>
+                    <line x1="128" y1="37" x2="138" y2="37" stroke="#C4BDB4" stroke-width="1.5"/>
+                    <line x1="128" y1="43" x2="135" y2="43" stroke="#C4BDB4" stroke-width="1.5"/>
+                    <circle cx="141" cy="37" r="1.4" fill="#C4BDB4" class="p-light"/>
+                  </svg>
+                </div>
+                <div class="suite-copy">
+                  <p class="suite-kicker">AI helpers, supervised</p>
+                  <h4>Dispatch</h4>
+                  <p>Where I follow AI helpers as they take on coding tasks in small, reviewable steps. I read their changes side by side and send feedback before any pull request exists, and nothing is pushed, merged or deployed without a person saying yes.</p>
+                  <ul class="suite-tags"><li>Runs on Tandem</li><li>One-line install</li><li>Your own AI provider</li></ul>
+                  <div class="suite-links">
+                    <a href="https://dispatch.alexisdavidson.org/" class="suite-go">Open Dispatch<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 8.5l5-5M4.5 3.5h4v4"/></svg></a>
+                    <a href="https://github.com/adavidson21/workshop" class="suite-gh" aria-label="Dispatch source code on GitHub, in the Workshop repo" title="View the source on GitHub"><svg viewBox="0 0 16 16" class="w-[18px] h-[18px]" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
+                    <span class="host">dispatch.alexisdavidson.org</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Rapport: wins land in a list, the trend line climbs -->
+              <div class="suite-panel" id="app-rapport" role="tabpanel" aria-labelledby="tab-rapport" tabindex="0" data-path="#/receipts">
+                <div class="art-panel relative h-44 rounded bg-panel flex items-center justify-center overflow-hidden" aria-hidden="true">
+                  <svg viewBox="0 0 160 80" class="art w-full h-full" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="24" y="7" width="36" height="66" rx="6" fill="#FDFCFA" stroke="#A89F95" stroke-width="1.5" class="art-shape l-phone"/>
+                    <line x1="38" y1="12" x2="46" y2="12" stroke="#C4BDB4" stroke-width="1.5"/>
+                    <g class="l-item l-item1">
+                      <circle cx="31" cy="24" r="2.5" fill="#C4BDB4" class="art-shape l-bullet"/>
+                      <line x1="36" y1="24" x2="53" y2="24" stroke="#C4BDB4" stroke-width="1.8"/>
+                    </g>
+                    <g class="l-item l-item2">
+                      <circle cx="31" cy="34" r="2.5" fill="#C4BDB4" class="art-shape l-bullet"/>
+                      <line x1="36" y1="34" x2="50" y2="34" stroke="#C4BDB4" stroke-width="1.8"/>
+                    </g>
+                    <g class="l-item l-item3">
+                      <circle cx="31" cy="44" r="2.5" fill="#C4BDB4" class="art-shape l-bullet"/>
+                      <line x1="36" y1="44" x2="54" y2="44" stroke="#C4BDB4" stroke-width="1.8"/>
+                    </g>
+                    <rect x="29" y="55" width="26" height="8" rx="4" fill="#EFEBE5" class="art-shape l-btn"/>
+                    <line x1="74" y1="64" x2="144" y2="64" stroke="#DED8CF" stroke-width="1"/>
+                    <line x1="74" y1="46" x2="144" y2="46" stroke="#DED8CF" stroke-width="1" stroke-dasharray="2 3"/>
+                    <line x1="74" y1="28" x2="144" y2="28" stroke="#DED8CF" stroke-width="1" stroke-dasharray="2 3"/>
+                    <rect x="80" y="54" width="8" height="10" rx="1.5" fill="#E9E4DC" class="l-bar l-bar1"/>
+                    <rect x="96" y="48" width="8" height="16" rx="1.5" fill="#E9E4DC" class="l-bar l-bar2"/>
+                    <rect x="112" y="51" width="8" height="13" rx="1.5" fill="#E9E4DC" class="l-bar l-bar3"/>
+                    <rect x="128" y="40" width="8" height="24" rx="1.5" fill="#E9E4DC" class="l-bar l-bar4"/>
+                    <path d="M 78 52 L 100 38 L 116 44 L 136 22" stroke="#C4BDB4" stroke-width="2.5" class="art-shape l-line"/>
+                    <circle cx="136" cy="22" r="3.5" fill="#C4BDB4" class="art-shape l-dot"/>
+                    <path d="M142 11 l1.2 3 3 1.2 -3 1.2 -1.2 3 -1.2 -3 -3 -1.2 3 -1.2 z" fill="#C9A27C" class="l-star"/>
+                  </svg>
+                </div>
+                <div class="suite-copy">
+                  <p class="suite-kicker">Receipts, 1:1s and goals</p>
+                  <h4>Rapport</h4>
+                  <p>Capture wins and feedback as they happen, for me and for each person on my team. It preps every 1:1 from what it already knows, keeps the team's goals as a tree, and turns it all into a review draft when the season comes. It grew out of TaskLedger, my old phone app.</p>
+                  <ul class="suite-tags"><li>Runs on its own</li><li>No AI needed</li><li>Nothing leaves your device</li></ul>
+                  <div class="suite-links">
+                    <a href="https://receipts.alexisdavidson.org/" class="suite-go">Open Rapport<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 8.5l5-5M4.5 3.5h4v4"/></svg></a>
+                    <a href="https://github.com/adavidson21/receipts" class="suite-gh" aria-label="Rapport source code on GitHub" title="View the source on GitHub"><svg viewBox="0 0 16 16" class="w-[18px] h-[18px]" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
+                    <span class="host">receipts.alexisdavidson.org</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Runway: an outline turns into bars on a timeline, the today line drops in -->
+              <div class="suite-panel" id="app-runway" role="tabpanel" aria-labelledby="tab-runway" tabindex="0" data-path="#/runway">
+                <div class="art-panel relative h-44 rounded bg-panel flex items-center justify-center overflow-hidden" aria-hidden="true">
+                  <svg viewBox="0 0 160 80" class="art w-full h-full" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="12" y="14" width="24" height="52" rx="3" fill="#FDFCFA" stroke="#C4BDB4" stroke-width="1.5" class="art-shape rw-doc"/>
+                    <line x1="17" y1="24" x2="31" y2="24" stroke="#A89F95" stroke-width="1.6" class="rw-o rw-o1"/>
+                    <line x1="20" y1="34" x2="31" y2="34" stroke="#C4BDB4" stroke-width="1.6" class="rw-o rw-o2"/>
+                    <line x1="20" y1="44" x2="29" y2="44" stroke="#C4BDB4" stroke-width="1.6" class="rw-o rw-o3"/>
+                    <line x1="17" y1="54" x2="30" y2="54" stroke="#A89F95" stroke-width="1.6" class="rw-o rw-o4"/>
+                    <path d="M39 40 h5 m-2 -2 l2 2 -2 2" stroke="#A89F95" stroke-width="1.3" class="rw-arrow"/>
+                    <line x1="50" y1="12" x2="50" y2="68" stroke="#DED8CF" stroke-width="1" stroke-dasharray="2 3"/>
+                    <line x1="80" y1="12" x2="80" y2="68" stroke="#DED8CF" stroke-width="1" stroke-dasharray="2 3"/>
+                    <line x1="110" y1="12" x2="110" y2="68" stroke="#DED8CF" stroke-width="1" stroke-dasharray="2 3"/>
+                    <line x1="140" y1="12" x2="140" y2="68" stroke="#DED8CF" stroke-width="1" stroke-dasharray="2 3"/>
+                    <rect x="52" y="20" width="46" height="8" rx="4" fill="#E6DCCF" class="art-shape rw-bar rw-bar1"/>
+                    <rect x="72" y="36" width="56" height="8" rx="4" fill="#E9E4DC" class="art-shape rw-bar rw-bar2"/>
+                    <rect x="60" y="52" width="38" height="8" rx="4" fill="#DED8CF" class="art-shape rw-bar rw-bar3"/>
+                    <line x1="104" y1="12" x2="104" y2="68" stroke="#82263C" stroke-width="1.5" class="rw-today"/>
+                    <path d="M136 52 l4 4 -4 4 -4 -4 z" fill="#C9A27C" class="rw-goal"/>
+                  </svg>
+                </div>
+                <div class="suite-copy">
+                  <p class="suite-kicker">Team and project roadmaps</p>
+                  <h4>Runway</h4>
+                  <p>Type an outline, one item per line, and it draws the timeline. Drag the bars to change dates, set what each sprint delivers, and export a clean image or Markdown for the slide everyone asks for.</p>
+                  <ul class="suite-tags"><li>Runs on its own</li><li>Epics to tasks</li><li>Azure DevOps optional</li></ul>
+                  <div class="suite-links">
+                    <a href="https://runway.alexisdavidson.org/" class="suite-go">Open Runway<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 8.5l5-5M4.5 3.5h4v4"/></svg></a>
+                    <a href="https://github.com/adavidson21/runway" class="suite-gh" aria-label="Runway source code on GitHub" title="View the source on GitHub"><svg viewBox="0 0 16 16" class="w-[18px] h-[18px]" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
+                    <span class="host">runway.alexisdavidson.org</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Notes: two notes link up, a tag pops on -->
+              <div class="suite-panel" id="app-notes" role="tabpanel" aria-labelledby="tab-notes" tabindex="0" data-path="#/notes">
+                <div class="art-panel relative h-44 rounded bg-panel flex items-center justify-center overflow-hidden" aria-hidden="true">
+                  <svg viewBox="0 0 160 80" class="art w-full h-full" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <g class="n-page n-page1">
+                      <rect x="22" y="12" width="44" height="56" rx="3" fill="#FDFCFA" stroke="#A89F95" stroke-width="1.5" class="art-shape n-sheet1"/>
+                      <line x1="28" y1="21" x2="48" y2="21" stroke="#A89F95" stroke-width="2.2"/>
+                      <line x1="28" y1="30" x2="58" y2="30" stroke="#C4BDB4" stroke-width="1.5"/>
+                      <line x1="28" y1="37" x2="44" y2="37" stroke="#C4BDB4" stroke-width="1.5"/>
+                      <line x1="46" y1="37" x2="58" y2="37" stroke="#7E9AA6" stroke-width="1.5" class="n-anchor"/>
+                      <line x1="28" y1="44" x2="54" y2="44" stroke="#C4BDB4" stroke-width="1.5"/>
+                      <line x1="28" y1="51" x2="50" y2="51" stroke="#C4BDB4" stroke-width="1.5"/>
+                    </g>
+                    <path d="M60 37 C 78 24, 90 52, 102 33" stroke="#A89F95" stroke-width="1.4" stroke-dasharray="3 3" class="n-link"/>
+                    <g class="n-page n-page2">
+                      <rect x="96" y="18" width="42" height="50" rx="3" fill="#FDFCFA" stroke="#A89F95" stroke-width="1.5" class="art-shape n-sheet2"/>
+                      <line x1="102" y1="27" x2="120" y2="27" stroke="#A89F95" stroke-width="2.2"/>
+                      <line x1="102" y1="36" x2="130" y2="36" stroke="#C4BDB4" stroke-width="1.5"/>
+                      <line x1="102" y1="43" x2="124" y2="43" stroke="#C4BDB4" stroke-width="1.5"/>
+                      <rect x="102" y="52" width="20" height="8" rx="4" fill="#EFEBE5" class="art-shape n-tag"/>
+                      <line x1="106" y1="56" x2="118" y2="56" stroke="#A89F95" stroke-width="1.3"/>
+                    </g>
+                  </svg>
+                </div>
+                <div class="suite-copy">
+                  <p class="suite-kicker">A small Obsidian for work</p>
+                  <h4>Notes</h4>
+                  <p>Markdown notes in a folder on my computer, with links between them, backlinks, tags and search. They're plain files, so they work in any Markdown tool, and one copy pastes cleanly into the company wiki.</p>
+                  <ul class="suite-tags"><li>Plain .md files</li><li>Backlinks and tags</li></ul>
+                  <div class="suite-links">
+                    <a href="https://workshop.alexisdavidson.org/#/notes" class="suite-go">Open Notes<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 8.5l5-5M4.5 3.5h4v4"/></svg></a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="font-mono text-xs uppercase tracking-wider text-oak font-medium mt-20 md:mt-24 mb-6">Beyond Workshop</h3>
+      <div class="ruled grid grid-cols-1 md:grid-cols-2">
+
+        <!-- Tandem: a prompt goes in, steps run one by one, then it stops for a person -->
         <div class="card group">
           <article class="tilt-card relative h-full px-1 py-8 md:p-8">
             <div class="art-panel relative mb-6 h-44 rounded bg-panel transition-colors flex items-center justify-center overflow-hidden" aria-hidden="true">
-              <span class="live-badge"><i></i>Live</span>
+              <span class="live-badge open-badge">Open source</span>
               <svg viewBox="0 0 160 80" class="art w-full h-full" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="34" y1="40" x2="52" y2="40" stroke="#DED8CF" stroke-width="1.5"/>
-                <line x1="72" y1="40" x2="91" y2="40" stroke="#DED8CF" stroke-width="1.5"/>
-                <line x1="109" y1="40" x2="124" y2="40" stroke="#DED8CF" stroke-width="1.5" class="p-link-end"/>
-                <circle cx="38" cy="40" r="2" fill="#A04F6C" class="p-packet p-packet1"/>
-                <circle cx="76" cy="40" r="2" fill="#A04F6C" class="p-packet p-packet2"/>
-                <circle cx="113" cy="40" r="2" fill="#5E735E" class="p-packet p-packet3"/>
-                <rect x="14" y="27" width="20" height="26" rx="3" fill="#FDFCFA" stroke="#A89F95" stroke-width="1.5" class="art-shape p-file"/>
-                <line x1="18" y1="34" x2="29" y2="34" stroke="#C4BDB4" stroke-width="1.5"/>
-                <line x1="18" y1="40" x2="27" y2="40" stroke="#C4BDB4" stroke-width="1.5"/>
-                <line x1="18" y1="46" x2="30" y2="46" stroke="#C4BDB4" stroke-width="1.5"/>
-                <g class="p-agent">
-                  <line x1="62" y1="31" x2="62" y2="26" stroke="#A89F95" stroke-width="1.5"/>
-                  <circle cx="62" cy="25" r="1.8" fill="#A89F95" class="p-antenna"/>
-                  <rect x="52" y="31" width="20" height="18" rx="5" fill="#FDFCFA" stroke="#4F6B78" stroke-width="1.5" class="art-shape p-head"/>
-                  <circle cx="58" cy="39" r="1.7" fill="#4F6B78" class="p-eye"/>
-                  <circle cx="66" cy="39" r="1.7" fill="#4F6B78" class="p-eye"/>
-                  <line x1="59" y1="44" x2="65" y2="44" stroke="#4F6B78" stroke-width="1.3"/>
+                <rect x="22" y="10" width="116" height="60" rx="5" fill="#FDFCFA" stroke="#C4BDB4" stroke-width="1.5" class="art-shape td-frame"/>
+                <line x1="22" y1="20" x2="138" y2="20" stroke="#DED8CF" stroke-width="1.5"/>
+                <circle cx="29" cy="15" r="1.6" fill="#D4A8A0"/>
+                <circle cx="35" cy="15" r="1.6" fill="#D8C29F"/>
+                <circle cx="41" cy="15" r="1.6" fill="#B5C3B5"/>
+                <path d="M30 28 l3 2.5 -3 2.5" stroke="#82263C" stroke-width="1.5"/>
+                <line x1="37" y1="30.5" x2="80" y2="30.5" stroke="#A89F95" stroke-width="1.8" class="td-prompt"/>
+                <g class="td-step td-step1">
+                  <circle cx="33" cy="42" r="2.4" fill="#C4BDB4" class="art-shape td-dot"/>
+                  <line x1="39" y1="42" x2="74" y2="42" stroke="#C4BDB4" stroke-width="1.6"/>
                 </g>
-                <circle cx="100" cy="40" r="9" fill="#FDFCFA" stroke="#A89F95" stroke-width="1.5" class="art-shape p-gate"/>
-                <circle cx="100" cy="37" r="2.4" stroke="#A89F95" stroke-width="1.3" class="p-person"/>
-                <path d="M96 45 a4 4 0 0 1 8 0" stroke="#A89F95" stroke-width="1.3" class="p-person"/>
-                <circle cx="107" cy="33" r="4" fill="#5E735E" class="p-approve"/>
-                <path d="M105.3 33 L106.5 34.2 L108.8 31.8" stroke="#FDFCFA" stroke-width="1.2" class="p-approve-check"/>
-                <rect x="124" y="30" width="22" height="20" rx="3" fill="#FDFCFA" stroke="#A89F95" stroke-width="1.5" class="art-shape p-server"/>
-                <line x1="128" y1="37" x2="138" y2="37" stroke="#C4BDB4" stroke-width="1.5"/>
-                <line x1="128" y1="43" x2="135" y2="43" stroke="#C4BDB4" stroke-width="1.5"/>
-                <circle cx="141" cy="37" r="1.4" fill="#C4BDB4" class="p-light"/>
+                <g class="td-step td-step2">
+                  <circle cx="33" cy="51" r="2.4" fill="#C4BDB4" class="art-shape td-dot"/>
+                  <line x1="39" y1="51" x2="66" y2="51" stroke="#C4BDB4" stroke-width="1.6"/>
+                </g>
+                <g class="td-step td-step3">
+                  <circle cx="33" cy="60" r="2.4" fill="#C4BDB4" class="art-shape td-dot"/>
+                  <line x1="39" y1="60" x2="78" y2="60" stroke="#C4BDB4" stroke-width="1.6"/>
+                </g>
+                <g class="td-agents">
+                  <rect x="94" y="34" width="16" height="14" rx="4" fill="#FDFCFA" stroke="#4F6B78" stroke-width="1.3" class="art-shape td-bot td-bot1"/>
+                  <circle cx="99" cy="41" r="1.3" fill="#4F6B78" class="p-eye"/>
+                  <circle cx="105" cy="41" r="1.3" fill="#4F6B78" class="p-eye"/>
+                  <rect x="114" y="34" width="16" height="14" rx="4" fill="#FDFCFA" stroke="#4F6B78" stroke-width="1.3" class="art-shape td-bot td-bot2"/>
+                  <circle cx="119" cy="41" r="1.3" fill="#4F6B78" class="p-eye"/>
+                  <circle cx="125" cy="41" r="1.3" fill="#4F6B78" class="p-eye"/>
+                </g>
+                <rect x="98" y="54" width="28" height="9" rx="4.5" fill="#EFEBE5" class="art-shape td-gate"/>
+                <circle cx="104" cy="58.5" r="1.8" fill="#A89F95" class="td-you"/>
+                <line x1="109" y1="58.5" x2="120" y2="58.5" stroke="#A89F95" stroke-width="1.3"/>
               </svg>
             </div>
-            <h3 class="font-serif text-[26px] font-semibold text-ink mb-3 tracking-tight flex items-center justify-between gap-3">
-              <a href="https://dispatch.alexisdavidson.org/" class="transition-colors group-hover:text-burgundy after:absolute after:inset-0 focus:outline-none">Dispatch</a>
-              <a href="https://github.com/adavidson21/eng-agents" class="relative z-10 inline-flex items-center justify-center w-8 h-8 rounded text-muted hover:text-ink hover:bg-panel transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2" aria-label="Tandem, the agent scaffolding behind Dispatch, on GitHub" title="View the source on GitHub"><svg viewBox="0 0 16 16" class="w-[18px] h-[18px]" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
+            <h3 class="font-serif text-[26px] font-semibold text-ink mb-3 tracking-tight transition-colors group-hover:text-burgundy">
+              <a href="https://github.com/adavidson21/eng-agents" class="after:absolute after:inset-0 focus:outline-none">Tandem</a>
             </h3>
             <p class="text-muted text-base font-light leading-relaxed">
-              Where I follow AI helpers as they take on coding tasks in small, reviewable steps. It runs on Tandem, my agent scaffolding, so nothing gets pushed, merged, or deployed without a person saying yes. I built it to see what helpful but supervised AI looks like in practice.
+              The agent scaffolding behind Dispatch. It gives opencode a small team of AI agents that scope the work, write code in small steps, and take a first pass at pull requests, then stop for a person at every step that matters.
             </p>
             <div class="app-cta" aria-hidden="true">
-              <span class="open">Open app<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 8.5l5-5M4.5 3.5h4v4"/></svg></span>
-              <span class="host">dispatch.alexisdavidson.org</span>
+              <span class="open">View on GitHub<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 8.5l5-5M4.5 3.5h4v4"/></svg></span>
+              <span class="host">github.com/adavidson21/eng-agents</span>
             </div>
           </article>
         </div>
@@ -389,49 +663,6 @@
             </div>
           </article>
         </div>
-
-        <!-- TaskLedger: wins land in a phone, the trend line climbs -->
-        <div class="card group">
-          <article class="tilt-card relative h-full px-1 py-8 md:p-8">
-            <div class="art-panel mb-6 h-44 rounded bg-panel transition-colors flex items-center justify-center overflow-hidden" aria-hidden="true">
-              <svg viewBox="0 0 160 80" class="art w-full h-full" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="24" y="7" width="36" height="66" rx="6" fill="#FDFCFA" stroke="#A89F95" stroke-width="1.5" class="art-shape l-phone"/>
-                <line x1="38" y1="12" x2="46" y2="12" stroke="#C4BDB4" stroke-width="1.5"/>
-                <g class="l-item l-item1">
-                  <circle cx="31" cy="24" r="2.5" fill="#C4BDB4" class="art-shape l-bullet"/>
-                  <line x1="36" y1="24" x2="53" y2="24" stroke="#C4BDB4" stroke-width="1.8"/>
-                </g>
-                <g class="l-item l-item2">
-                  <circle cx="31" cy="34" r="2.5" fill="#C4BDB4" class="art-shape l-bullet"/>
-                  <line x1="36" y1="34" x2="50" y2="34" stroke="#C4BDB4" stroke-width="1.8"/>
-                </g>
-                <g class="l-item l-item3">
-                  <circle cx="31" cy="44" r="2.5" fill="#C4BDB4" class="art-shape l-bullet"/>
-                  <line x1="36" y1="44" x2="54" y2="44" stroke="#C4BDB4" stroke-width="1.8"/>
-                </g>
-                <rect x="29" y="55" width="26" height="8" rx="4" fill="#EFEBE5" class="art-shape l-btn"/>
-                <line x1="74" y1="64" x2="144" y2="64" stroke="#DED8CF" stroke-width="1"/>
-                <line x1="74" y1="46" x2="144" y2="46" stroke="#DED8CF" stroke-width="1" stroke-dasharray="2 3"/>
-                <line x1="74" y1="28" x2="144" y2="28" stroke="#DED8CF" stroke-width="1" stroke-dasharray="2 3"/>
-                <rect x="80" y="54" width="8" height="10" rx="1.5" fill="#E9E4DC" class="l-bar l-bar1"/>
-                <rect x="96" y="48" width="8" height="16" rx="1.5" fill="#E9E4DC" class="l-bar l-bar2"/>
-                <rect x="112" y="51" width="8" height="13" rx="1.5" fill="#E9E4DC" class="l-bar l-bar3"/>
-                <rect x="128" y="40" width="8" height="24" rx="1.5" fill="#E9E4DC" class="l-bar l-bar4"/>
-                <path d="M 78 52 L 100 38 L 116 44 L 136 22" stroke="#C4BDB4" stroke-width="2.5" class="art-shape l-line"/>
-                <circle cx="136" cy="22" r="3.5" fill="#C4BDB4" class="art-shape l-dot"/>
-                <path d="M142 11 l1.2 3 3 1.2 -3 1.2 -1.2 3 -1.2 -3 -3 -1.2 3 -1.2 z" fill="#C9A27C" class="l-star"/>
-              </svg>
-            </div>
-            <h3 class="font-serif text-[26px] font-semibold text-ink mb-3 tracking-tight flex flex-wrap items-center gap-3">
-              TaskLedger
-              <span class="font-mono text-[11px] uppercase tracking-wider bg-oak/10 text-oak rounded px-2 py-1 font-medium">In progress</span>
-            </h3>
-            <p class="text-muted text-base font-light leading-relaxed">
-              A small phone app for capturing wins as they happen, so they're there when review season comes around. Links, emails, and ticket numbers are stripped out before anything reaches an AI model.
-            </p>
-          </article>
-        </div>
-
       </div>
     </section>
 

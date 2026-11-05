@@ -154,18 +154,18 @@ a:focus-visible {
 .w-check { stroke-dasharray: 12; stroke-dashoffset: 12; }
 .w-badge { opacity: 0; }
 .w-dot { transition: transform 0.3s ease; }
-.card:is(:hover, :focus-within) .w-frame { stroke: rgb(var(--c-burgundy-light)); }
-.card:is(:hover, :focus-within) .w-dot { transform: scale(1.35); }
-.card:is(:hover, :focus-within) .w-dot2 { transition-delay: 0.08s; }
-.card:is(:hover, :focus-within) .w-dot3 { transition-delay: 0.16s; }
-.card:is(:hover, :focus-within) .w-active { transform: translateY(8px); fill: var(--t-warm); }
-.card:is(:hover, :focus-within) .w-check { animation: draw-in 0.35s ease-out both; }
-.card:is(:hover, :focus-within) .w-check1 { animation-delay: 0.2s; }
-.card:is(:hover, :focus-within) .w-check2 { animation-delay: 0.55s; }
-.card:is(:hover, :focus-within) .w-check3 { animation-delay: 0.9s; }
-.card:is(:hover, :focus-within) .w-box { stroke: rgb(var(--c-burgundy)); }
-.card:is(:hover, :focus-within) .w-text { stroke: var(--t-line); }
-.card:is(:hover, :focus-within) .w-badge { animation: pop-in 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) 1.2s both; }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .w-frame { stroke: rgb(var(--c-burgundy-light)); }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .w-dot { transform: scale(1.35); }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .w-dot2 { transition-delay: 0.08s; }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .w-dot3 { transition-delay: 0.16s; }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .w-active { transform: translateY(8px); fill: var(--t-warm); }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .w-check { animation: draw-in 0.35s ease-out both; }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .w-check1 { animation-delay: 0.2s; }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .w-check2 { animation-delay: 0.55s; }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .w-check3 { animation-delay: 0.9s; }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .w-box { stroke: rgb(var(--c-burgundy)); }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .w-text { stroke: var(--t-line); }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .w-badge { animation: pop-in 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) 1.2s both; }
 
 /* Tandem: packets flow, agent blinks, checkpoint approves, server lights up */
 @keyframes travel { 0% { opacity: 0; transform: translateX(0); } 15% { opacity: 1; } 85% { opacity: 1; } 100% { opacity: 0; transform: translateX(13px); } }
@@ -173,34 +173,34 @@ a:focus-visible {
 @keyframes antenna { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
 .p-packet { opacity: 0; }
 .p-approve, .p-approve-check { opacity: 0; }
-.card:is(:hover, :focus-within) .p-packet1 { animation: travel 1.2s ease-in-out infinite; }
-.card:is(:hover, :focus-within) .p-packet2 { animation: travel 1.2s ease-in-out 0.4s infinite; }
-.card:is(:hover, :focus-within) .p-packet3 { animation: travel 1.2s ease-in-out 1.2s infinite; }
-.card:is(:hover, :focus-within) .p-eye { animation: blink 2.4s ease-in-out infinite; }
-.card:is(:hover, :focus-within) .p-antenna { animation: antenna 1s ease-in-out infinite; fill: rgb(var(--c-burgundy-light)); }
-.card:is(:hover, :focus-within) .p-head { stroke: rgb(var(--c-slate)); fill: var(--t-slate-soft); }
-.card:is(:hover, :focus-within) .p-file { transform: translateY(-2px); stroke: rgb(var(--c-burgundy-light)); }
-.card:is(:hover, :focus-within) .p-gate { stroke: rgb(var(--c-sage-deep)); transition-delay: 0.6s; }
-.card:is(:hover, :focus-within) .p-approve { animation: pop-in 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) 0.8s both; }
-.card:is(:hover, :focus-within) .p-approve-check { animation: pop-in 0.2s ease-out 1s both; }
-.card:is(:hover, :focus-within) .p-server { stroke: rgb(var(--c-sage-deep)); transition-delay: 1.1s; }
-.card:is(:hover, :focus-within) .p-light { fill: rgb(var(--c-sage-deep)); transition: fill 0.3s ease 1.2s; }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .p-packet1 { animation: travel 1.2s ease-in-out infinite; }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .p-packet2 { animation: travel 1.2s ease-in-out 0.4s infinite; }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .p-packet3 { animation: travel 1.2s ease-in-out 1.2s infinite; }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .p-eye { animation: blink 2.4s ease-in-out infinite; }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .p-antenna { animation: antenna 1s ease-in-out infinite; fill: rgb(var(--c-burgundy-light)); }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .p-head { stroke: rgb(var(--c-slate)); fill: var(--t-slate-soft); }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .p-file { transform: translateY(-2px); stroke: rgb(var(--c-burgundy-light)); }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .p-gate { stroke: rgb(var(--c-sage-deep)); transition-delay: 0.6s; }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .p-approve { animation: pop-in 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) 0.8s both; }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .p-approve-check { animation: pop-in 0.2s ease-out 1s both; }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .p-server { stroke: rgb(var(--c-sage-deep)); transition-delay: 1.1s; }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .p-light { fill: rgb(var(--c-sage-deep)); transition: fill 0.3s ease 1.2s; }
 
 /* LifeKit: tiles take turns hopping, icons pick up color, sparkles twinkle */
 @keyframes twinkle { 0%, 100% { opacity: 0; transform: scale(0.4) rotate(0deg); } 50% { opacity: 1; transform: scale(1) rotate(45deg); } }
 .k-spark { opacity: 0; }
-.card:is(:hover, :focus-within) .k-tile { animation: bob 1.4s ease-in-out infinite; }
-.card:is(:hover, :focus-within) .k-tile2 { animation-delay: 0.2s; }
-.card:is(:hover, :focus-within) .k-tile3 { animation-delay: 0.4s; }
-.card:is(:hover, :focus-within) .k-tile1 .k-ink { stroke: rgb(var(--c-burgundy)); }
-.card:is(:hover, :focus-within) .k-tile2 .k-ink { stroke: rgb(var(--c-slate)); }
-.card:is(:hover, :focus-within) .k-tile3 .k-ink { stroke: rgb(var(--c-sage-deep)); }
-.card:is(:hover, :focus-within) .k-tile1 .k-bg { fill: var(--t-warm-soft); }
-.card:is(:hover, :focus-within) .k-tile2 .k-bg { fill: var(--t-slate-soft); }
-.card:is(:hover, :focus-within) .k-tile3 .k-bg { fill: var(--t-sage-soft); }
-.card:is(:hover, :focus-within) .k-spark1 { animation: twinkle 1.6s ease-in-out infinite; }
-.card:is(:hover, :focus-within) .k-spark2 { animation: twinkle 1.6s ease-in-out 0.5s infinite; }
-.card:is(:hover, :focus-within) .k-spark3 { animation: twinkle 1.6s ease-in-out 1s infinite; }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .k-tile { animation: bob 1.4s ease-in-out infinite; }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .k-tile2 { animation-delay: 0.2s; }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .k-tile3 { animation-delay: 0.4s; }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .k-tile1 .k-ink { stroke: rgb(var(--c-burgundy)); }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .k-tile2 .k-ink { stroke: rgb(var(--c-slate)); }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .k-tile3 .k-ink { stroke: rgb(var(--c-sage-deep)); }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .k-tile1 .k-bg { fill: var(--t-warm-soft); }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .k-tile2 .k-bg { fill: var(--t-slate-soft); }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .k-tile3 .k-bg { fill: var(--t-sage-soft); }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .k-spark1 { animation: twinkle 1.6s ease-in-out infinite; }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .k-spark2 { animation: twinkle 1.6s ease-in-out 0.5s infinite; }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .k-spark3 { animation: twinkle 1.6s ease-in-out 1s infinite; }
 
 /* TaskLedger: wins slide into the phone, bars grow, the trend line draws, a star pops */
 @keyframes slide-in { from { opacity: 0; transform: translateX(-6px); } to { opacity: 1; transform: none; } }
@@ -208,19 +208,158 @@ a:focus-visible {
 .l-line { stroke-dasharray: 80; stroke-dashoffset: 0; --len: 80; }
 .l-star { opacity: 0; }
 .l-bar { transform-origin: bottom; }
-.card:is(:hover, :focus-within) .l-item { animation: slide-in 0.4s ease-out both; }
-.card:is(:hover, :focus-within) .l-item2 { animation-delay: 0.15s; }
-.card:is(:hover, :focus-within) .l-item3 { animation-delay: 0.3s; }
-.card:is(:hover, :focus-within) .l-bullet { fill: rgb(var(--c-burgundy-light)); }
-.card:is(:hover, :focus-within) .l-btn { fill: var(--t-warm); }
-.card:is(:hover, :focus-within) .l-phone { stroke: rgb(var(--c-burgundy-light)); }
-.card:is(:hover, :focus-within) .l-bar { animation: grow 0.6s cubic-bezier(0.16, 1, 0.3, 1) both; fill: var(--t-slate); }
-.card:is(:hover, :focus-within) .l-bar2 { animation-delay: 0.1s; }
-.card:is(:hover, :focus-within) .l-bar3 { animation-delay: 0.2s; }
-.card:is(:hover, :focus-within) .l-bar4 { animation-delay: 0.3s; }
-.card:is(:hover, :focus-within) .l-line { animation: draw-in 1s ease-out 0.2s both; stroke: rgb(var(--c-slate)); }
-.card:is(:hover, :focus-within) .l-dot { animation: pop-in 0.4s ease-out 1.1s both; fill: rgb(var(--c-burgundy)); }
-.card:is(:hover, :focus-within) .l-star { animation: pop-in 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) 1.3s both; }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .l-item { animation: slide-in 0.4s ease-out both; }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .l-item2 { animation-delay: 0.15s; }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .l-item3 { animation-delay: 0.3s; }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .l-bullet { fill: rgb(var(--c-burgundy-light)); }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .l-btn { fill: var(--t-warm); }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .l-phone { stroke: rgb(var(--c-burgundy-light)); }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .l-bar { animation: grow 0.6s cubic-bezier(0.16, 1, 0.3, 1) both; fill: var(--t-slate); }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .l-bar2 { animation-delay: 0.1s; }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .l-bar3 { animation-delay: 0.2s; }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .l-bar4 { animation-delay: 0.3s; }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .l-line { animation: draw-in 1s ease-out 0.2s both; stroke: rgb(var(--c-slate)); }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .l-dot { animation: pop-in 0.4s ease-out 1.1s both; fill: rgb(var(--c-burgundy)); }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .l-star { animation: pop-in 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) 1.3s both; }
+
+/* ---------- Workshop suite: a window you click through, like Workshop's own app rail ---------- */
+.live-badge-inline { position: static; font-size: 11px; }
+.open-badge { color: rgb(var(--c-slate)); }
+.suite-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; margin-top: 24px; }
+.suite-cta .host, .suite-links .host { font: 400 12px/1.4 theme('fontFamily.mono'); color: rgb(var(--c-muted)); }
+.suite-open, .suite-go { display: inline-flex; align-items: center; gap: 7px; border-radius: 4px; font-weight: 500; line-height: 1;
+  transition: background-color .25s ease, color .25s ease, border-color .25s ease; }
+.suite-open { padding: 11px 18px; font-size: 15px; background: rgb(var(--c-ink)); color: rgb(var(--c-ivory)); border: 1px solid rgb(var(--c-ink)); }
+.suite-open:hover { background: rgb(var(--c-burgundy)); border-color: rgb(var(--c-burgundy)); }
+.suite-go { padding: 8px 14px; font-size: 14px; color: rgb(var(--c-ink)); border: 1px solid rgb(var(--c-ink)); }
+.suite-go:hover { background: rgb(var(--c-ink)); color: rgb(var(--c-ivory)); }
+:is(.suite-open, .suite-go) svg { width: 11px; height: 11px; transition: transform .25s ease; }
+:is(.suite-open, .suite-go):hover svg { transform: translate(2px, -2px); }
+:is(.suite-open, .suite-go, .suite-gh, .suite-tab):focus-visible { outline: 2px solid rgb(var(--c-burgundy)); outline-offset: 2px; }
+.suite-gh { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 4px; color: rgb(var(--c-muted)); transition: color .2s ease, background-color .2s ease; }
+.suite-gh:hover { color: rgb(var(--c-ink)); background: rgb(var(--c-panel)); }
+
+.suite-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid rgb(var(--c-line)); }
+.suite-stats > div { padding: 14px 12px 0 0; }
+.suite-stats > div + div { padding-left: 14px; border-left: 1px solid rgb(var(--c-line)); }
+.suite-stats dd { order: -1; font-family: theme('fontFamily.serif'); font-variation-settings: 'opsz' 144; font-size: 44px; line-height: 1; font-weight: 600; color: rgb(var(--c-ink)); font-variant-numeric: tabular-nums; }
+.suite-stats > div { display: flex; flex-direction: column; gap: 8px; }
+.suite-stats dt { font: 500 11px/1.35 theme('fontFamily.mono'); letter-spacing: .06em; text-transform: uppercase; color: rgb(var(--c-muted)); }
+
+.suite-window { border: 1px solid rgb(var(--c-line)); border-radius: 10px; background: rgb(var(--c-surface)); overflow: hidden; box-shadow: theme('boxShadow.card'); }
+.suite-bar { display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: rgb(var(--c-panel)); border-bottom: 1px solid rgb(var(--c-line)); }
+.suite-dots { display: inline-flex; gap: 6px; flex: none; }
+.suite-dots i { width: 9px; height: 9px; border-radius: 50%; background: #D4A8A0; }
+.suite-dots i:nth-child(2) { background: #D8C29F; }
+.suite-dots i:nth-child(3) { background: #B5C3B5; }
+.suite-url { flex: 0 1 auto; min-width: 0; margin: 0 auto; padding: 4px 14px; border: 1px solid rgb(var(--c-line)); border-radius: 999px; background: rgb(var(--c-surface));
+  font: 400 12px/1.4 theme('fontFamily.mono'); color: rgb(var(--c-muted)); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.suite-url b { font-weight: 500; color: rgb(var(--c-burgundy)); }
+.suite-hint { flex: none; font: 500 10px/1 theme('fontFamily.mono'); letter-spacing: .08em; text-transform: uppercase; color: rgb(var(--c-oak)); display: none; }
+.js .suite-hint { display: inline; }
+.suite.is-touched .suite-hint { visibility: hidden; }
+@media (max-width: 639px) { .js .suite-hint { display: none; } }
+
+.suite-body { display: grid; grid-template-columns: minmax(0, 1fr); }
+.suite-rail { display: none; }
+.js .suite-rail { display: flex; gap: 4px; padding: 8px; overflow-x: auto; scrollbar-width: none; border-bottom: 1px solid rgb(var(--c-line)); }
+.js .suite-rail::-webkit-scrollbar { display: none; }
+.suite-tab { position: relative; flex: none; display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 6px; cursor: pointer;
+  font-size: 15px; font-weight: 500; line-height: 1; color: rgb(var(--c-muted)); white-space: nowrap; transition: color .2s ease, background-color .2s ease; }
+.suite-tab .ico { width: 18px; height: 18px; flex: none; transition: transform .35s cubic-bezier(0.34, 1.56, 0.64, 1), color .2s ease; }
+.suite-tab:hover { color: rgb(var(--c-ink)); background: rgb(var(--c-panel)); }
+.suite-tab:hover .ico { transform: scale(1.12); }
+.suite-tab[aria-selected="true"] { color: rgb(var(--c-ink)); background: rgb(var(--c-panel)); }
+.suite-tab[aria-selected="true"] .ico { color: rgb(var(--c-burgundy)); }
+.suite-tab .tick { position: absolute; left: 12px; right: 12px; bottom: 3px; height: 2px; border-radius: 2px; overflow: hidden; opacity: 0; }
+.suite-tab .tick i { display: block; height: 100%; background: rgb(var(--c-burgundy)); transform: scaleX(0); transform-origin: left; }
+@keyframes suite-tick { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+.suite.is-playing .suite-tab[aria-selected="true"] .tick { opacity: 1; }
+.suite.is-playing .suite-tab[aria-selected="true"] .tick i { animation: suite-tick 6.5s linear forwards; }
+.suite.is-paused .tick i, .suite-window:hover .tick i { animation-play-state: paused !important; }
+
+.suite-stage { padding: 20px 16px 24px; min-width: 0; }
+.suite-panel { display: grid; gap: 22px; align-items: center; }
+.suite-panel + .suite-panel { margin-top: 28px; padding-top: 28px; border-top: 1px solid rgb(var(--c-line)); }
+.js .suite-panel + .suite-panel { margin-top: 0; padding-top: 0; border-top: 0; }
+.js .suite-panel[hidden] { display: none; }
+.js .suite-panel.is-active { animation: suite-in .45s cubic-bezier(0.16, 1, 0.3, 1) both; }
+@keyframes suite-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.suite-panel:focus-visible { outline: 2px solid rgb(var(--c-burgundy)); outline-offset: 6px; border-radius: 4px; }
+.suite-panel .art-panel { transition: background-color .3s ease; }
+.suite-panel.is-active .art-panel { background-color: var(--t-panel-hover); }
+.suite-kicker { font: 500 11px/1.4 theme('fontFamily.mono'); letter-spacing: .08em; text-transform: uppercase; color: rgb(var(--c-oak)); margin-bottom: 8px; }
+.suite-copy h4 { font-family: theme('fontFamily.serif'); font-variation-settings: 'opsz' 72; font-size: 30px; line-height: 1.1; font-weight: 600; letter-spacing: -0.01em; color: rgb(var(--c-ink)); margin-bottom: 10px; }
+.suite-copy > p:not(.suite-kicker) { font-size: 16px; line-height: 1.65; font-weight: 300; color: rgb(var(--c-muted)); }
+.suite-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
+.suite-tags li { padding: 4px 10px; border: 1px solid rgb(var(--c-line)); border-radius: 999px; font: 400 11px/1.3 theme('fontFamily.mono'); color: rgb(var(--c-muted)); background: rgb(var(--c-ivory)); }
+.suite-links { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin-top: 20px; }
+
+@media (min-width: 768px) {
+  .suite-body { grid-template-columns: 176px minmax(0, 1fr); }
+  .js .suite-rail { flex-direction: column; padding: 14px 10px; overflow: visible; border-bottom: 0; border-right: 1px solid rgb(var(--c-line)); }
+  .suite-stage { padding: 30px 32px; }
+  .suite-panel { grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 32px; }
+  .js .suite-stage { min-height: 360px; display: flex; align-items: center; }
+  .js .suite-panel { width: 100%; }
+}
+
+/* Home: the tiles of the day fill in */
+.h-tile { transform-origin: center; }
+.h-count, .h-check { opacity: 0; }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .h-tile { animation: pop-in 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) both; }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .h-tile2 { animation-delay: 0.12s; }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .h-tile3 { animation-delay: 0.24s; }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .h-tile4 { animation-delay: 0.36s; }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .h-check { animation: pop-in 0.3s ease-out 0.7s both; }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .h-count { animation: pop-in 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) 0.9s both; }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .h-wait { animation: antenna 1.2s ease-in-out infinite; }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .h-tile1 .h-bg { fill: var(--t-warm-soft); }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .h-tile4 .h-bg { fill: var(--t-slate-soft); }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .h-frame { stroke: rgb(var(--c-burgundy-light)); }
+
+/* Runway: the outline is written, bars grow onto the timeline, today drops in */
+@keyframes grow-x { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+.rw-bar { transform-origin: left center !important; }
+.rw-today { stroke-dasharray: 56; --len: 56; }
+.rw-goal { opacity: 0; }
+.rw-o { transform-origin: left center !important; }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .rw-o { animation: grow-x 0.3s ease-out both; }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .rw-o2 { animation-delay: 0.1s; }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .rw-o3 { animation-delay: 0.2s; }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .rw-o4 { animation-delay: 0.3s; }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .rw-bar { animation: grow-x 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .rw-bar1 { animation-delay: 0.45s; fill: var(--t-warm); }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .rw-bar2 { animation-delay: 0.6s; fill: var(--t-slate); }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .rw-bar3 { animation-delay: 0.75s; fill: rgb(var(--c-sage) / .55); }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .rw-today { animation: draw-in 0.6s ease-out 1.1s both; }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .rw-goal { animation: pop-in 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) 1.5s both; }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .rw-doc { stroke: rgb(var(--c-burgundy-light)); }
+
+/* Notes: the link draws between two notes, the second one lifts, a tag pops on */
+.n-link { stroke-dasharray: 3 3; }
+@keyframes march { to { stroke-dashoffset: -12; } }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .n-link { animation: march 0.8s linear infinite; stroke: rgb(var(--c-slate)); }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .n-page2 { animation: bob 2.4s ease-in-out infinite; }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .n-sheet2 { stroke: rgb(var(--c-slate)); }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .n-tag { animation: pop-in 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) 0.4s both; fill: var(--t-warm); }
+:is(.card:hover, .card:focus-within, .suite-panel.is-active) .n-anchor { stroke: rgb(var(--c-burgundy)); }
+
+/* Tandem: the prompt is typed, steps run one by one, the agents blink, then it waits for a person */
+.td-prompt { transform-origin: left center !important; }
+:is(.card:hover, .card:focus-within) .td-prompt { animation: grow-x 0.5s ease-out both; }
+:is(.card:hover, .card:focus-within) .td-step { animation: slide-in 0.35s ease-out both; }
+:is(.card:hover, .card:focus-within) .td-step1 { animation-delay: 0.5s; }
+:is(.card:hover, .card:focus-within) .td-step2 { animation-delay: 0.85s; }
+:is(.card:hover, .card:focus-within) .td-step3 { animation-delay: 1.2s; }
+:is(.card:hover, .card:focus-within) .td-step1 .td-dot { fill: rgb(var(--c-sage-deep)); transition-delay: 0.6s; }
+:is(.card:hover, .card:focus-within) .td-step2 .td-dot { fill: rgb(var(--c-sage-deep)); transition-delay: 0.95s; }
+:is(.card:hover, .card:focus-within) .td-step3 .td-dot { fill: rgb(var(--c-burgundy-light)); transition-delay: 1.3s; }
+:is(.card:hover, .card:focus-within) .td-bot { stroke: rgb(var(--c-slate)); fill: var(--t-slate-soft); }
+:is(.card:hover, .card:focus-within) .td-agents .p-eye { animation: blink 2.4s ease-in-out infinite; }
+:is(.card:hover, .card:focus-within) .td-gate { fill: var(--t-warm); transition-delay: 1.4s; }
+:is(.card:hover, .card:focus-within) .td-you { animation: bob 1.4s ease-in-out 1.5s infinite; fill: rgb(var(--c-burgundy)); }
+:is(.card:hover, .card:focus-within) .td-frame { stroke: rgb(var(--c-burgundy-light)); }
 
 /* ---------- Field notes ---------- */
 .note-card {
