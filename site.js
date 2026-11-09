@@ -8,6 +8,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (reduceMotion) return;
 
+  // The featured project card (Hints) plays its animation while it's on screen, not just on hover
+  document.querySelectorAll('[data-feature]').forEach((el) => {
+    new IntersectionObserver((entries) => {
+      el.classList.toggle('is-live', entries[0].isIntersecting);
+    }, { threshold: 0.5 }).observe(el);
+  });
+
   // Paw prints walk across "Outside work" once
   const outside = document.getElementById('outside');
   if (outside) {
