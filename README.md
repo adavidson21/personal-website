@@ -14,9 +14,11 @@ npx tailwindcss@3.4.17 -c tailwind.config.js -i input.css -o site.css --minify
 
 The site follows the device's light or dark setting until you use the round toggle in the top right corner (`theme.js`, the same toggle as tools.alexisdavidson.org; the choice is saved per browser). Colors are CSS variables in `input.css`, so Tailwind classes like `bg-surface` or `text-ink` switch on their own. Illustrations draw with fixed hex colors; `input.css` maps their paper and line neutrals to dark versions (the cats' cream fur, `#F5F2EB` and `#E5DEC9`, is left alone). A new illustration that uses only those neutrals and the theme classes darkens without changes.
 
-## Tab icon
+## Signature color and icons
 
-`favicon.svg` is the source (serif A with the oak period on the ink tile). `favicon.ico` (16, 32, 48 px) and `apple-touch-icon.png` (180 px, square for iOS) are exported from it. New pages need the three `<link>` tags under `<title>`, as in `notes/_template.html`.
+Burgundy is the signature color, the same as Workshop's 2026 redesign: `#7A1B36` in light mode and `#E38AA3` in dark (`--c-burgundy` in `input.css`). It marks the hero period, section labels, links, and hover states.
+
+`favicon.svg` (serif A with a pink period on a burgundy tile) and `icon-maskable.svg` (full-bleed version with the mark inside Android's safe zone) are the sources. After changing either, run `scripts/build-icons.sh` to export `favicon.ico` (16, 32, 48 px), `apple-touch-icon.png` (180 px, square for iOS), `icon-192.png`, `icon-512.png`, and `icon-maskable-512.png`. Android picks its icons from `site.webmanifest`. New pages need the five `<link>` tags under `<title>`, as in `notes/_template.html`.
 
 ## Adding a field note
 

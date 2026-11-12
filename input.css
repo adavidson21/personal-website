@@ -11,9 +11,9 @@
    Same palette as tools.alexisdavidson.org (LifeKit). Dark follows the device until the toggle (theme.js)
    picks one; the choice is data-theme on <html>, saved per browser. Colors are channels so Tailwind's
    opacity modifiers (bg-oak/10) work. --t-* are the hover tints the illustrations use. */
-:root { --c-ivory: 244 241 234; --c-surface: 251 249 245; --c-ink: 42 38 39; --c-muted: 103 95 90; --c-burgundy: 130 38 60; --c-burgundy-light: 160 79 108; --c-oak: 139 99 64; --c-slate: 79 107 120; --c-sage: 139 158 139; --c-sage-deep: 94 115 94; --c-sage-faint: 238 241 238; --c-line: 220 212 198; --c-panel: 236 231 221; --t-warm: #E6D6C4; --t-warm-soft: #F5EFE8; --t-slate-soft: #EEF2F4; --t-slate: #E3E9EC; --t-sage-soft: #EEF1EE; --t-line: #E2DCD3; --t-panel-hover: #E6DFD2; color-scheme: light; }
-@media (prefers-color-scheme: dark) { :root:not([data-theme=light]) { --c-ivory: 22 21 20; --c-surface: 29 28 26; --c-ink: 238 235 231; --c-muted: 168 162 156; --c-burgundy: 189 146 154; --c-burgundy-light: 203 165 176; --c-oak: 203 166 132; --c-slate: 166 177 181; --c-sage: 193 200 190; --c-sage-deep: 173 181 169; --c-sage-faint: 29 30 27; --c-line: 52 49 46; --c-panel: 33 31 29; --t-warm: #3B3129; --t-warm-soft: #2E2925; --t-slate-soft: #253036; --t-slate: #2B373E; --t-sage-soft: #252B25; --t-line: #45413C; --t-panel-hover: #2A2724; color-scheme: dark; } }
-:root[data-theme=dark] { --c-ivory: 22 21 20; --c-surface: 29 28 26; --c-ink: 238 235 231; --c-muted: 168 162 156; --c-burgundy: 189 146 154; --c-burgundy-light: 203 165 176; --c-oak: 203 166 132; --c-slate: 166 177 181; --c-sage: 193 200 190; --c-sage-deep: 173 181 169; --c-sage-faint: 29 30 27; --c-line: 52 49 46; --c-panel: 33 31 29; --t-warm: #3B3129; --t-warm-soft: #2E2925; --t-slate-soft: #253036; --t-slate: #2B373E; --t-sage-soft: #252B25; --t-line: #45413C; --t-panel-hover: #2A2724; color-scheme: dark; }
+:root { --c-ivory: 244 241 234; --c-surface: 251 249 245; --c-ink: 42 38 39; --c-muted: 103 95 90; --c-burgundy: 122 27 54; --c-burgundy-light: 163 63 95; --c-oak: 139 99 64; --c-slate: 79 107 120; --c-sage: 139 158 139; --c-sage-deep: 94 115 94; --c-sage-faint: 238 241 238; --c-line: 220 212 198; --c-panel: 236 231 221; --t-warm: #E6D6C4; --t-warm-soft: #F5EFE8; --t-slate-soft: #EEF2F4; --t-slate: #E3E9EC; --t-sage-soft: #EEF1EE; --t-line: #E2DCD3; --t-panel-hover: #E6DFD2; color-scheme: light; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme=light]) { --c-ivory: 22 21 20; --c-surface: 29 28 26; --c-ink: 238 235 231; --c-muted: 168 162 156; --c-burgundy: 227 138 163; --c-burgundy-light: 237 176 193; --c-oak: 203 166 132; --c-slate: 166 177 181; --c-sage: 193 200 190; --c-sage-deep: 173 181 169; --c-sage-faint: 29 30 27; --c-line: 52 49 46; --c-panel: 33 31 29; --t-warm: #3B3129; --t-warm-soft: #2E2925; --t-slate-soft: #253036; --t-slate: #2B373E; --t-sage-soft: #252B25; --t-line: #45413C; --t-panel-hover: #2A2724; color-scheme: dark; } }
+:root[data-theme=dark] { --c-ivory: 22 21 20; --c-surface: 29 28 26; --c-ink: 238 235 231; --c-muted: 168 162 156; --c-burgundy: 227 138 163; --c-burgundy-light: 237 176 193; --c-oak: 203 166 132; --c-slate: 166 177 181; --c-sage: 193 200 190; --c-sage-deep: 173 181 169; --c-sage-faint: 29 30 27; --c-line: 52 49 46; --c-panel: 33 31 29; --t-warm: #3B3129; --t-warm-soft: #2E2925; --t-slate-soft: #253036; --t-slate: #2B373E; --t-sage-soft: #252B25; --t-line: #45413C; --t-panel-hover: #2A2724; color-scheme: dark; }
 
 /* Neutrals drawn into the illustrations follow the theme (not the cats' cream fur, #F5F2EB and #E5DEC9). :where() keeps these at zero specificity, so
    hover colors still win. */
@@ -84,10 +84,10 @@ a:focus-visible {
   border-radius: 4px;
 }
 
-/* Serif headings use the large optical size; the oak period finishes the hero title */
+/* Serif headings use the large optical size; the burgundy period (the signature color, same as the tab icon) finishes the hero title */
 .font-serif { font-variation-settings: 'opsz' 72; }
 .display { font-variation-settings: 'opsz' 144; }
-.dot { color: rgb(var(--c-oak)); }
+.dot { color: rgb(var(--c-burgundy)); }
 
 /* ---------- Hero ---------- */
 @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
