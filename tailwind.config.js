@@ -1,22 +1,27 @@
+// A brand color as a Tailwind color: <alpha-value> is 1 for bg-ink and 0.1 for bg-ink/10.
+const v = (name) => `color-mix(in srgb, var(--${name}) calc(<alpha-value> * 100%), transparent)`;
+
 module.exports = {
   content: ["./index.html", "./notes/**/*.html"],
   theme: {
     extend: {
-      // Colors are CSS variables (input.css), so dark mode only changes the variables.
+      // Colors are CSS variables, so dark mode only changes the variables. The shared ones come from the brand library
+      // (brand/tokens.css); oak, slate, sage and burgundy-light are this site's own (input.css). color-mix keeps
+      // Tailwind's opacity modifiers (bg-oak/10) working with plain hex variables.
       colors: {
-        ivory: 'rgb(var(--c-ivory) / <alpha-value>)',
-        surface: 'rgb(var(--c-surface) / <alpha-value>)',
-        ink: 'rgb(var(--c-ink) / <alpha-value>)',
-        muted: 'rgb(var(--c-muted) / <alpha-value>)',
-        burgundy: { DEFAULT: 'rgb(var(--c-burgundy) / <alpha-value>)', light: 'rgb(var(--c-burgundy-light) / <alpha-value>)' },
-        oak: 'rgb(var(--c-oak) / <alpha-value>)',
-        slate: 'rgb(var(--c-slate) / <alpha-value>)',
-        sage: { DEFAULT: 'rgb(var(--c-sage) / <alpha-value>)', deep: 'rgb(var(--c-sage-deep) / <alpha-value>)', faint: 'rgb(var(--c-sage-faint) / <alpha-value>)' },
-        line: 'rgb(var(--c-line) / <alpha-value>)',
-        panel: 'rgb(var(--c-panel) / <alpha-value>)',
-        hero: { DEFAULT: 'rgb(var(--c-hero) / <alpha-value>)', ink: 'rgb(var(--c-hero-ink) / <alpha-value>)', muted: 'rgb(var(--c-hero-muted) / <alpha-value>)' },
-        gold: { DEFAULT: 'rgb(var(--c-gold) / <alpha-value>)', ink: 'rgb(var(--c-gold-ink) / <alpha-value>)' },
-        soft: { DEFAULT: 'rgb(var(--c-soft) / <alpha-value>)', ink: 'rgb(var(--c-soft-ink) / <alpha-value>)' },
+        ivory: v('bg'),
+        surface: v('surface'),
+        ink: v('ink'),
+        muted: v('muted'),
+        burgundy: { DEFAULT: v('accent'), light: v('burgundy-light') },
+        oak: v('oak'),
+        slate: v('slate'),
+        sage: { DEFAULT: v('sage'), deep: v('sage-deep'), faint: v('sage-faint') },
+        line: v('line'),
+        panel: v('panel'),
+        hero: { DEFAULT: v('hero'), ink: v('hero-ink'), muted: v('hero-muted') },
+        gold: { DEFAULT: v('gold'), ink: v('gold-ink') },
+        soft: { DEFAULT: v('accent-soft'), ink: v('accent-soft-ink') },
       },
       fontFamily: {
         // Same pair as Hints: Bricolage Grotesque for headings and big numbers, Figtree for the rest.
