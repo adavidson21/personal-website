@@ -58,17 +58,17 @@
 @media (prefers-color-scheme: dark) { :root:not([data-theme=light]) :is(.cat, .peek-cat, .rule-cat, .sleepy) { filter: drop-shadow(0 0 1px rgb(243 236 238 / .7)); } }
 
 /* The light/dark toggle, top right: the same round button as on tools.alexisdavidson.org (theme.js adds it). */
-.theme-toggle { position: absolute; z-index: 20; top: calc(env(safe-area-inset-top, 0px) + 16px); right: calc(env(safe-area-inset-right, 0px) + 16px);
+.b-theme-toggle { position: absolute; z-index: 20; top: calc(env(safe-area-inset-top, 0px) + 16px); right: calc(env(safe-area-inset-right, 0px) + 16px);
   width: 44px; height: 44px; display: grid; place-items: center; padding: 0; margin: 0; cursor: pointer;
   border: 1.5px solid color-mix(in srgb, var(--hero-muted) 55%, transparent); border-radius: 50%; background: transparent; color: var(--hero-ink);
   transition: background-color .2s, border-color .2s, transform .2s; -webkit-tap-highlight-color: transparent; }
-.theme-toggle:hover { background: color-mix(in srgb, var(--hero-ink) 10%, transparent); border-color: var(--hero-muted); }
-.theme-toggle:active { transform: scale(.94); }
-.theme-toggle:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
-.theme-toggle svg { width: 18px; height: 18px; display: block; transition: transform .5s cubic-bezier(.34,1.56,.64,1); }
-.theme-toggle:hover svg { transform: rotate(-20deg); }
-@media (min-width: 720px) { .theme-toggle { top: 20px; right: 24px; } }
-@media (prefers-reduced-motion: reduce) { .theme-toggle, .theme-toggle svg { transition: none; } .suite-panel.is-active .suite-shot img { animation: none; } }
+.b-theme-toggle:hover { background: color-mix(in srgb, var(--hero-ink) 10%, transparent); border-color: var(--hero-muted); }
+.b-theme-toggle:active { transform: scale(.94); }
+.b-theme-toggle:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+.b-theme-toggle svg { width: 18px; height: 18px; display: block; transition: transform .5s cubic-bezier(.34,1.56,.64,1); }
+.b-theme-toggle:hover svg { transform: rotate(-20deg); }
+@media (min-width: 720px) { .b-theme-toggle { top: 20px; right: 24px; } }
+@media (prefers-reduced-motion: reduce) { .b-theme-toggle, .b-theme-toggle svg { transition: none; } .suite-panel.is-active .suite-shot img { animation: none; } }
 
 body {
   background-color: var(--bg);
