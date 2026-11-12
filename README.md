@@ -8,7 +8,10 @@ Everything is served from this repo: no CDNs, third-party scripts, trackers, or 
 
 ```
 npx tailwindcss@3.4.17 -c tailwind.config.js -i input.css -o site.css --minify
+scripts/stamp-assets.sh
 ```
+
+`stamp-assets.sh` adds a content hash to the `site.css`, `site.js` and `theme.js` links (`site.css?v=1a2b3c4d`). Without it, a phone that installed the site, or any browser with an old copy cached, can load new HTML with the old stylesheet and show unstyled buttons and giant icons. CI and the pre-commit hook fail if a stamp is out of date. Run it after editing any of those three files.
 
 ## Look
 
