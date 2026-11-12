@@ -20,8 +20,8 @@
   <link rel="preload" href="brand/fonts/bricolage-grotesque-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
   <script src="brand/theme.js?v=ecabe1d8"></script>
   <link rel="stylesheet" href="brand/tokens.css?v=bfd7003f">
-  <link rel="stylesheet" href="site.css?v=29039180">
-  <script src="site.js?v=d9991b38"></script>
+  <link rel="stylesheet" href="site.css?v=7c5c4d07">
+  <script src="site.js?v=78c474a6"></script>
 </head>
 <body class="font-sans text-lg ">
 
@@ -473,95 +473,86 @@
           </article>
         </div>
 
-        <!-- Tandem: a prompt goes in, steps run one by one, then it stops for a person -->
-        <div class="card group">
-          <article class="tilt-card relative h-full p-4 md:p-6">
-            <div class="art-panel relative mb-6 h-44 rounded-[14px] bg-panel transition-colors flex items-center justify-center overflow-hidden" aria-hidden="true">
-              <span class="live-badge open-badge">Open source</span>
-              <svg viewBox="0 0 160 80" class="art w-full h-full" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="22" y="10" width="116" height="60" rx="5" fill="#FDFCFA" stroke="#C4BDB4" stroke-width="1.5" class="art-shape td-frame"/>
-                <line x1="22" y1="20" x2="138" y2="20" stroke="#DED8CF" stroke-width="1.5"/>
-                <circle cx="29" cy="15" r="1.6" fill="#D4A8A0"/>
-                <circle cx="35" cy="15" r="1.6" fill="#D8C29F"/>
-                <circle cx="41" cy="15" r="1.6" fill="#B5C3B5"/>
-                <path d="M30 28 l3 2.5 -3 2.5" stroke="#7A1B36" stroke-width="1.5"/>
-                <line x1="37" y1="30.5" x2="80" y2="30.5" stroke="#A89F95" stroke-width="1.8" class="td-prompt"/>
-                <g class="td-step td-step1">
-                  <circle cx="33" cy="42" r="2.4" fill="#C4BDB4" class="art-shape td-dot"/>
-                  <line x1="39" y1="42" x2="74" y2="42" stroke="#C4BDB4" stroke-width="1.6"/>
-                </g>
-                <g class="td-step td-step2">
-                  <circle cx="33" cy="51" r="2.4" fill="#C4BDB4" class="art-shape td-dot"/>
-                  <line x1="39" y1="51" x2="66" y2="51" stroke="#C4BDB4" stroke-width="1.6"/>
-                </g>
-                <g class="td-step td-step3">
-                  <circle cx="33" cy="60" r="2.4" fill="#C4BDB4" class="art-shape td-dot"/>
-                  <line x1="39" y1="60" x2="78" y2="60" stroke="#C4BDB4" stroke-width="1.6"/>
-                </g>
-                <g class="td-agents">
-                  <rect x="94" y="34" width="16" height="14" rx="4" fill="#FDFCFA" stroke="#4F6B78" stroke-width="1.3" class="art-shape td-bot td-bot1"/>
-                  <circle cx="99" cy="41" r="1.3" fill="#4F6B78" class="p-eye"/>
-                  <circle cx="105" cy="41" r="1.3" fill="#4F6B78" class="p-eye"/>
-                  <rect x="114" y="34" width="16" height="14" rx="4" fill="#FDFCFA" stroke="#4F6B78" stroke-width="1.3" class="art-shape td-bot td-bot2"/>
-                  <circle cx="119" cy="41" r="1.3" fill="#4F6B78" class="p-eye"/>
-                  <circle cx="125" cy="41" r="1.3" fill="#4F6B78" class="p-eye"/>
-                </g>
-                <rect x="98" y="54" width="28" height="9" rx="4.5" fill="#EFEBE5" class="art-shape td-gate"/>
-                <circle cx="104" cy="58.5" r="1.8" fill="#A89F95" class="td-you"/>
-                <line x1="109" y1="58.5" x2="120" y2="58.5" stroke="#A89F95" stroke-width="1.3"/>
-              </svg>
+        <!-- Patch Notes: real screens with a made-up demo edition (no real outlets or stories). The middle phone is a
+             looping screen recording (images/patch-notes/); site.js plays it while the card is on screen. -->
+        <div class="card group feature md:col-span-2" data-feature>
+          <article class="tilt-card relative h-full p-4 md:p-6 grid md:grid-cols-12 gap-8 md:gap-10 items-center">
+            <div class="art-panel hn-stage relative md:col-span-7 md:order-last rounded-[14px] bg-panel transition-colors overflow-hidden" aria-hidden="true">
+              <span class="live-badge"><i></i>Live</span>
+              <img src="images/patch-notes/pn-cover.webp" class="hn-phone hn-side hn-left" width="360" height="779" loading="lazy" decoding="async" alt="">
+              <img src="images/patch-notes/pn-story-dark.webp" class="hn-phone hn-side hn-right" width="360" height="779" loading="lazy" decoding="async" alt="">
+              <video class="hn-phone hn-main" data-feature-video muted loop playsinline preload="metadata" poster="images/patch-notes/pn-demo-poster.webp" width="480" height="1038">
+                <source src="images/patch-notes/pn-demo.mp4" type="video/mp4">
+              </video>
             </div>
-            <h3 class="font-display text-[28px] font-bold text-ink mb-2 tracking-tight transition-colors group-hover:text-burgundy">
-              <a href="https://github.com/adavidson21/eng-agents" class="after:absolute after:inset-0 focus:outline-none">Tandem</a>
-            </h3>
+            <div class="md:col-span-5 md:pl-2 pb-2 md:pb-0">
+              <p class="suite-kicker">News without the doomscroll</p>
+              <h3 class="font-display text-4xl font-bold text-ink mb-4 tracking-tight">Patch Notes</h3>
+              <p class="text-muted text-base leading-relaxed">
+                What changed in the world today, as a short deck of story cards you tap through over coffee. Each card says what happened and why it matters, with links to the original publishers. Read the patch, then you're done.
+              </p>
+              <ul class="suite-tags"><li>Three editions a day</li><li>Pick your topics</li><li>Daily streak</li><li>Installs on your phone</li></ul>
+              <div class="suite-links">
+                <a href="https://patchnotes.alexisdavidson.org/" class="suite-go">Open Patch Notes<svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 8.5l5-5M4.5 3.5h4v4"/></svg></a>
+                <span class="host">patchnotes.alexisdavidson.org</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Tandem: its real work dashboard (Tandem's static dashboard, built from Workshop's synthetic example
+             workspace), with a terminal in front where the commands type in while the card is on screen. -->
+        <div class="card group feature" data-feature>
+          <article class="tilt-card relative h-full p-4 md:p-6 flex flex-col">
+            <div class="art-panel pv-stage relative mb-6 rounded-[14px] bg-panel transition-colors overflow-hidden" aria-hidden="true">
+              <span class="live-badge open-badge">Open source</span>
+              <div class="pv-window">
+                <div class="pv-bar"><span class="suite-dots"><i></i><i></i><i></i></span><span class="suite-url">.work/dashboard.html</span></div>
+                <img src="images/tandem/dashboard.webp" width="1344" height="840" loading="lazy" decoding="async" alt="">
+              </div>
+              <div class="pv-term">
+                <p class="pt-head">opencode <span>~/src/work</span></p>
+                <p class="pt-line pt1"><b>&gt;</b> /start 41502 feature</p>
+                <p class="pt-line pt2"><b>&gt;</b> /spec 41502</p>
+                <p class="pt-line pt3"><b>&gt;</b> /approve 41502</p>
+                <p class="pt-line pt4"><b>&gt;</b> /do-task 41502 2</p>
+                <p class="pt-line pt5 pt-note"># stops before every push</p>
+              </div>
+            </div>
+            <p class="suite-kicker">AI helpers that wait for you</p>
+            <h3 class="font-display text-[28px] font-bold text-ink mb-2 tracking-tight">Tandem</h3>
             <p class="text-muted text-base leading-relaxed">
               The agent scaffolding behind Dispatch. It gives opencode a small team of AI agents that scope the work, write code in small steps, and take a first pass at pull requests, then stop for a person at every step that matters.
             </p>
-            <div class="app-cta" aria-hidden="true">
-              <span class="open">View on GitHub<svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 8.5l5-5M4.5 3.5h4v4"/></svg></span>
+            <ul class="suite-tags"><li>Works with or without a tracker</li><li>You approve every push</li></ul>
+            <div class="suite-links mt-auto">
+              <a href="https://github.com/adavidson21/eng-agents" class="suite-go">View on GitHub<svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 8.5l5-5M4.5 3.5h4v4"/></svg></a>
               <span class="host">github.com/adavidson21/eng-agents</span>
             </div>
           </article>
         </div>
 
-        <!-- LifeKit: three little tools (listing tag, letter, report card) take turns -->
-        <div class="card group">
-          <article class="tilt-card relative h-full p-4 md:p-6">
-            <div class="art-panel relative mb-6 h-44 rounded-[14px] bg-panel transition-colors flex items-center justify-center overflow-hidden" aria-hidden="true">
+        <!-- LifeKit: a screen recording of the real page (picking categories, searching), with Class comments on a phone -->
+        <div class="card group feature" data-feature>
+          <article class="tilt-card relative h-full p-4 md:p-6 flex flex-col">
+            <div class="art-panel pv-stage relative mb-6 rounded-[14px] bg-panel transition-colors overflow-hidden" aria-hidden="true">
               <span class="live-badge"><i></i>Live</span>
-              <svg viewBox="0 0 160 80" class="art w-full h-full" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="20" y1="64" x2="140" y2="64" stroke="#DED8CF" stroke-width="1.5"/>
-                <g class="k-tile k-tile1">
-                  <rect x="24" y="24" width="30" height="30" rx="7" fill="#FDFCFA" stroke="#C4BDB4" stroke-width="1.5" class="art-shape k-bg"/>
-                  <path d="M31 32 H41 L48 39 L41 46 L34 46 L31 43 Z" stroke="#A89F95" stroke-width="1.5" class="art-shape k-ink"/>
-                  <circle cx="36" cy="37" r="1.6" fill="#A89F95"/>
-                </g>
-                <g class="k-tile k-tile2">
-                  <rect x="65" y="24" width="30" height="30" rx="7" fill="#FDFCFA" stroke="#C4BDB4" stroke-width="1.5" class="art-shape k-bg"/>
-                  <rect x="71" y="32" width="18" height="13" rx="2" stroke="#A89F95" stroke-width="1.5" class="art-shape k-ink"/>
-                  <path d="M71.5 33 L80 39.5 L88.5 33" stroke="#A89F95" stroke-width="1.5" class="art-shape k-ink"/>
-                </g>
-                <g class="k-tile k-tile3">
-                  <rect x="106" y="24" width="30" height="30" rx="7" fill="#FDFCFA" stroke="#C4BDB4" stroke-width="1.5" class="art-shape k-bg"/>
-                  <rect x="114" y="31" width="14" height="17" rx="2" stroke="#A89F95" stroke-width="1.5" class="art-shape k-ink"/>
-                  <line x1="118" y1="30" x2="124" y2="30" stroke="#A89F95" stroke-width="2.5"/>
-                  <line x1="117" y1="37" x2="125" y2="37" stroke="#C4BDB4" stroke-width="1.3"/>
-                  <line x1="117" y1="41" x2="123" y2="41" stroke="#C4BDB4" stroke-width="1.3"/>
-                  <line x1="117" y1="45" x2="124" y2="45" stroke="#C4BDB4" stroke-width="1.3"/>
-                </g>
-                <path d="M57 16 l1.2 3 3 1.2 -3 1.2 -1.2 3 -1.2 -3 -3 -1.2 3 -1.2 z" fill="#C9A27C" class="k-spark k-spark1"/>
-                <path d="M100 13 l1 2.4 2.4 1 -2.4 1 -1 2.4 -1 -2.4 -2.4 -1 2.4 -1 z" fill="#A33F5F" class="k-spark k-spark2"/>
-                <path d="M141 18 l1.2 3 3 1.2 -3 1.2 -1.2 3 -1.2 -3 -3 -1.2 3 -1.2 z" fill="#8B9E8B" class="k-spark k-spark3"/>
-              </svg>
+              <div class="pv-window">
+                <div class="pv-bar"><span class="suite-dots"><i></i><i></i><i></i></span><span class="suite-url">tools.alexisdavidson.org</span></div>
+                <video data-feature-video muted loop playsinline preload="metadata" poster="images/lifekit/lifekit-demo-poster.webp" width="1040" height="650">
+                  <source src="images/lifekit/lifekit-demo.mp4" type="video/mp4">
+                </video>
+              </div>
+              <img src="images/lifekit/class-comments.webp" class="pv-phone" width="360" height="779" loading="lazy" decoding="async" alt="">
             </div>
-            <h3 class="font-display text-[28px] font-bold text-ink mb-2 tracking-tight transition-colors group-hover:text-burgundy">
-              <a href="https://tools.alexisdavidson.org/" class="after:absolute after:inset-0 focus:outline-none">LifeKit</a>
-            </h3>
+            <p class="suite-kicker">Small tools for the people around me</p>
+            <h3 class="font-display text-[28px] font-bold text-ink mb-2 tracking-tight">LifeKit</h3>
             <p class="text-muted text-base leading-relaxed">
-              A growing collection of small tools for everyday life, from resale listing helpers to classroom tools for teachers. Whenever someone around me has a task that could be easier, it usually ends up here.
+              Every small app I've made for everyday life, on one page you can filter and search: resale listing helpers, classroom tools for teachers, our house chores. Whenever someone around me has a task that could be easier, it usually ends up here.
             </p>
-            <div class="app-cta" aria-hidden="true">
-              <span class="open">Open app<svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 8.5l5-5M4.5 3.5h4v4"/></svg></span>
+            <ul class="suite-tags"><li>One page, every app</li><li>Installs on your phone</li></ul>
+            <div class="suite-links mt-auto">
+              <a href="https://tools.alexisdavidson.org/" class="suite-go">Open LifeKit<svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 8.5l5-5M4.5 3.5h4v4"/></svg></a>
               <span class="host">tools.alexisdavidson.org</span>
             </div>
           </article>
