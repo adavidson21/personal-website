@@ -1,12 +1,24 @@
-name: HTTPS check
+name: Build and check
 
+# On main: builds field notes (so a note added from the GitHub app, the web editor, or LifeKit's Field Notes
+# app goes live without a local npm run build), commits what changed, and asks Pages to redeploy.
+# On pull requests: only checks.
 on:
   push:
     branches: [main]
   pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
-  https-check:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -15,6 +27,21 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - name: Build and commit generated files
+        if: github.event_name != 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          npm run build
+          if [ -z "$(git status --porcelain)" ]; then echo "Nothing to build."; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Build field notes"
+          git pull --rebase origin main
+          git push origin HEAD:main
+          # Pushes made with this token don't start other workflows, so ask Pages to deploy the new commit.
+          gh api -X POST "repos/${{ github.repository }}/pages/builds" --silent || echo "Pages build request failed; it may already be deploying."
       - run: node scripts/build-notes.mjs --check
       - run: bash scripts/check-https.sh
       - run: bash scripts/stamp-assets.sh --check
