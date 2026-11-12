@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (reduceMotion) return;
 
-  // The featured project card (Hints) plays its animation while it's on screen, not just on hover
+  // Project cards with real screens (Hints, Patch Notes, Tandem, LifeKit) animate while they're on screen, not just on hover
   document.querySelectorAll('[data-feature]').forEach((el) => {
     new IntersectionObserver((entries) => {
       el.classList.toggle('is-live', entries[0].isIntersecting);

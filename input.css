@@ -598,9 +598,35 @@ a:focus-visible {
   :is(.card:hover, .card:focus-within, .feature.is-live) .hn-left { transform: translate(-50%, -50%) translateX(-152px) rotate(-9deg); }
   :is(.card:hover, .card:focus-within, .feature.is-live) .hn-right { transform: translate(-50%, -50%) translateX(152px) rotate(9deg); }
 }
+/* Tandem and LifeKit: a real screen in a browser window that peeks out of the panel (cropped on the right and bottom),
+   with something in front of it: a terminal for Tandem, a phone for LifeKit. Same .is-live trigger as the Hints card. */
+.pv-stage { height: 17rem; }
+@media (min-width: 768px) { .pv-stage { height: 19rem; } }
+.pv-window { position: absolute; left: 22px; top: 52px; width: 560px; border: 1.5px solid var(--line); border-radius: 12px; overflow: hidden;
+  background: var(--surface); box-shadow: 0 18px 40px -22px rgb(42 31 34 / .45); transition: transform .6s cubic-bezier(0.16, 1, 0.3, 1); }
+.pv-window img, .pv-window video { display: block; width: 100%; height: auto; }
+.pv-bar { display: flex; align-items: center; gap: 10px; padding: 7px 10px; background: var(--panel); border-bottom: 1px solid var(--line); }
+.pv-bar .suite-url { margin: 0; padding: 2px 12px; font-size: 12px; }
+:is(.card:hover, .card:focus-within, .feature.is-live) .pv-window { transform: translate(-6px, -8px); }
+.pv-phone { position: absolute; right: 14px; bottom: -48px; width: 108px; height: auto; border-radius: 18px; border: 4px solid #2A1F22; background: #2A1F22;
+  box-shadow: 0 18px 40px -16px rgb(42 31 34 / .5); transform: rotate(5deg); transition: transform .6s cubic-bezier(0.16, 1, 0.3, 1); }
+:is(.card:hover, .card:focus-within, .feature.is-live) .pv-phone { transform: translateY(-14px) rotate(3deg); }
+.pv-term { position: absolute; right: 16px; bottom: 16px; width: 236px; padding: 11px 14px 12px; border-radius: 12px; background: #211A1D; color: #EDE6E8;
+  font-family: var(--mono); font-size: 12px; line-height: 1.75; box-shadow: 0 18px 40px -16px rgb(42 31 34 / .55); }
+.pv-term p { margin: 0; white-space: nowrap; }
+.pv-term .pt-head { margin-bottom: 4px; padding-bottom: 6px; border-bottom: 1px solid #3A2F33; color: #E59AAE; font-weight: 500; }
+.pv-term .pt-head span { color: #9C8F94; font-weight: 400; }
+.pv-term b { color: #D8B26E; font-weight: 500; }
+.pv-term .pt-note { color: #9FC2A8; }
+:is(.card:hover, .card:focus-within, .feature.is-live) .pt-line { animation: pt-in .35s ease-out both; }
+:is(.card:hover, .card:focus-within, .feature.is-live) .pt2 { animation-delay: .5s; }
+:is(.card:hover, .card:focus-within, .feature.is-live) .pt3 { animation-delay: 1s; }
+:is(.card:hover, .card:focus-within, .feature.is-live) .pt4 { animation-delay: 1.5s; }
+:is(.card:hover, .card:focus-within, .feature.is-live) .pt5 { animation-delay: 2.1s; }
+@keyframes pt-in { from { opacity: 0; transform: translateY(3px); } to { opacity: 1; transform: none; } }
 /* With reduced motion, show the finished picture: the mark, the eye and the invite, no movement. */
 @media (prefers-reduced-motion: reduce) {
-  .hn-phone { transition: none; }
+  .hn-phone, .pv-window, .pv-phone { transition: none; }
   .sl-who { opacity: 1; }
   .sl-check { stroke-dashoffset: 0; }
 }
