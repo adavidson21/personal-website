@@ -12,6 +12,9 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('[data-feature]').forEach((el) => {
     new IntersectionObserver((entries) => {
       el.classList.toggle('is-live', entries[0].isIntersecting);
+      // Its screen recording plays only while it's on screen
+      const video = el.querySelector('[data-feature-video]');
+      if (video) entries[0].isIntersecting ? video.play().catch(() => {}) : video.pause();
     }, { threshold: 0.5 }).observe(el);
   });
 

@@ -521,40 +521,32 @@ a:focus-visible {
 :is(.card:hover, .card:focus-within, .suite-panel.is-active) .sl-done2 .sl-check { animation-delay: 2.05s; }
 :is(.card:hover, .card:focus-within, .suite-panel.is-active) .sl-frame { stroke: rgb(var(--c-burgundy-light)); }
 
-/* Hints (featured): wishes land on the list, one is quietly marked as bought (hidden from the owner),
-   the hint runs to the gift, its lid lifts and the tag swings. Plays when scrolled into view (.is-live) and on hover. */
+/* Hints (featured): real app screens. A screen recording in the middle phone, two still screens tucked behind it.
+   site.js plays the video while the card is on screen (.is-live); with reduced motion it stays on its poster frame. */
 .feature .art-panel { transition: background-color .3s ease; }
 .feature.is-live .art-panel { background-color: var(--t-panel-hover); }
-.hn-got, .hn-got-check, .hn-hush, .hn-spark, .hn-env { opacity: 0; }
-.hn-link { stroke-dasharray: 3 3; }
-.hn-tag { transform-origin: 198px 68px !important; transform-box: view-box !important; }
-@keyframes hn-lift { 0%, 100% { transform: translateY(0) rotate(0); } 45%, 60% { transform: translateY(-7px) rotate(-6deg); } }
-@keyframes hn-env-in { from { opacity: 0; transform: translate(14px, -6px) rotate(8deg); } to { opacity: 1; transform: none; } }
-:is(.card:hover, .card:focus-within, .feature.is-live) .hn-row { animation: slide-in 0.4s ease-out both; }
-:is(.card:hover, .card:focus-within, .feature.is-live) .hn-row2 { animation-delay: 0.15s; }
-:is(.card:hover, .card:focus-within, .feature.is-live) .hn-row3 { animation-delay: 0.3s; }
-:is(.card:hover, .card:focus-within, .feature.is-live) .hn-thumb1 { fill: var(--t-warm); }
-:is(.card:hover, .card:focus-within, .feature.is-live) .hn-thumb2 { fill: var(--t-slate); }
-:is(.card:hover, .card:focus-within, .feature.is-live) .hn-thumb3 { fill: rgb(var(--c-sage) / .45); }
-:is(.card:hover, .card:focus-within, .feature.is-live) .hn-phone { stroke: rgb(var(--c-burgundy-light)); }
-:is(.card:hover, .card:focus-within, .feature.is-live) .hn-got { animation: pop-in 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) 0.7s both; }
-:is(.card:hover, .card:focus-within, .feature.is-live) .hn-got-check { animation: pop-in 0.25s ease-out 0.95s both; }
-:is(.card:hover, .card:focus-within, .feature.is-live) .hn-hush { animation: pop-in 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) 1.2s both; }
-:is(.card:hover, .card:focus-within, .feature.is-live) .hn-link { animation: march 0.8s linear infinite; stroke: rgb(var(--c-burgundy-light)); }
-:is(.card:hover, .card:focus-within, .feature.is-live) .hn-ribbon { fill: rgb(var(--c-burgundy-light)); }
-:is(.card:hover, .card:focus-within, .feature.is-live) .hn-bow { stroke: rgb(var(--c-burgundy-light)); fill: var(--t-warm-soft); }
-:is(.card:hover, .card:focus-within, .feature.is-live) .hn-box, :is(.card:hover, .card:focus-within, .feature.is-live) .hn-lidbox { stroke: rgb(var(--c-burgundy-light)); }
-:is(.card:hover, .card:focus-within, .feature.is-live) .hn-lid { animation: hn-lift 2.6s ease-in-out 1.4s infinite; }
-:is(.card:hover, .card:focus-within, .feature.is-live) .hn-tag { animation: swing 2.2s ease-in-out infinite; }
-:is(.card:hover, .card:focus-within, .feature.is-live) .hn-tagcard { fill: var(--t-warm-soft); stroke: rgb(var(--c-oak)); }
-:is(.card:hover, .card:focus-within, .feature.is-live) .hn-env { animation: hn-env-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both; }
-:is(.card:hover, .card:focus-within, .feature.is-live) .hn-envbox { stroke: rgb(var(--c-slate)); fill: var(--t-slate-soft); }
-:is(.card:hover, .card:focus-within, .feature.is-live) .hn-spark1 { animation: twinkle 1.6s ease-in-out 1.6s infinite; }
-:is(.card:hover, .card:focus-within, .feature.is-live) .hn-spark2 { animation: twinkle 1.6s ease-in-out 2.1s infinite; }
-:is(.card:hover, .card:focus-within, .feature.is-live) .hn-spark3 { animation: twinkle 1.6s ease-in-out 2.6s infinite; }
+.hn-stage { height: 27rem; }
+.hn-phone { position: absolute; left: 50%; top: 50%; display: block; height: auto; border-radius: 22px;
+  border: 5px solid #2A1F22; background: #2A1F22; box-shadow: 0 18px 40px -18px rgb(42 31 34 / .45);
+  transition: transform .6s cubic-bezier(0.16, 1, 0.3, 1); }
+.hn-main { width: 180px; transform: translate(-50%, -50%); z-index: 2; }
+.hn-side { width: 148px; z-index: 1; opacity: .96; }
+.hn-left { transform: translate(-50%, -50%) translateX(-118px) rotate(-7deg); }
+.hn-right { transform: translate(-50%, -50%) translateX(118px) rotate(7deg); }
+:is(.card:hover, .card:focus-within, .feature.is-live) .hn-left { transform: translate(-50%, -50%) translateX(-132px) rotate(-9deg); }
+:is(.card:hover, .card:focus-within, .feature.is-live) .hn-right { transform: translate(-50%, -50%) translateX(132px) rotate(9deg); }
+@media (min-width: 768px) {
+  .hn-stage { height: 30rem; }
+  .hn-main { width: 200px; }
+  .hn-side { width: 164px; }
+  .hn-left { transform: translate(-50%, -50%) translateX(-138px) rotate(-7deg); }
+  .hn-right { transform: translate(-50%, -50%) translateX(138px) rotate(7deg); }
+  :is(.card:hover, .card:focus-within, .feature.is-live) .hn-left { transform: translate(-50%, -50%) translateX(-152px) rotate(-9deg); }
+  :is(.card:hover, .card:focus-within, .feature.is-live) .hn-right { transform: translate(-50%, -50%) translateX(152px) rotate(9deg); }
+}
 /* With reduced motion, show the finished picture: the mark, the eye and the invite, no movement. */
 @media (prefers-reduced-motion: reduce) {
-  .hn-got, .hn-got-check, .hn-hush, .hn-env { opacity: 1; }
+  .hn-phone { transition: none; }
   .sl-who { opacity: 1; }
   .sl-check { stroke-dashoffset: 0; }
 }
