@@ -2,7 +2,7 @@
 const v = (name) => `color-mix(in srgb, var(--${name}) calc(<alpha-value> * 100%), transparent)`;
 
 module.exports = {
-  content: ["./index.html", "./notes/**/*.html"],
+  content: ["./index.html", "./notes/**/*.html", "./_notes/_layout.html", "./scripts/build-notes.mjs"],
   theme: {
     extend: {
       // Colors are CSS variables, so dark mode only changes the variables. The shared ones come from the brand library

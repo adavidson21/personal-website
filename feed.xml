@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Alexis Davidson: Field notes</title>
+  <subtitle>Things I've been thinking about</subtitle>
+  <link href="https://alexisdavidson.org/feed.xml" rel="self"/>
+  <link href="https://alexisdavidson.org/"/>
+  <id>https://alexisdavidson.org/</id>
+  <updated>2026-01-01T12:00:00Z</updated>
+  <author><name>Alexis Davidson</name></author>
+
+</feed>

@@ -10,7 +10,8 @@ check=false
 [[ "${1:-}" == "--check" ]] && check=true
 stale=0
 
-pages=$(git ls-files '*.html')
+# Tracked and new (not yet added) pages, so freshly built notes are stamped before their first commit. _notes/ isn't served.
+pages=$(git ls-files --cached --others --exclude-standard '*.html' | grep -v '^_notes/' | sort -u)
 for asset in site.css site.js brand/theme.js brand/tokens.css; do
   hash=$(sha256sum "$asset" | cut -c1-8)
   for page in $pages; do

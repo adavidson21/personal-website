@@ -422,6 +422,14 @@ a:focus-visible {
 .note-body ul { list-style: disc; padding-left: 1.4em; }
 .note-body ol { list-style: decimal; padding-left: 1.4em; }
 .note-body li + li { margin-top: 0.4em; }
+.note-body h3 { font-family: theme('fontFamily.display'); font-size: 1.3rem; font-weight: 700; color: var(--ink); margin-top: 1.8em; }
+.note-body strong { color: var(--ink); font-weight: 700; }
+.note-body hr { border: 0; height: 10px; width: 64px; margin: 2.5em auto; background: var(--gold);
+  -webkit-mask: url(images/squiggle.svg) center / 100% 100% no-repeat; mask: url(images/squiggle.svg) center / 100% 100% no-repeat; }
+.note-body img { border-radius: 14px; box-shadow: var(--shadow); }
+.note-body code { font-family: 'DM Mono', ui-monospace, monospace; font-size: .88em; padding: .1em .35em; border-radius: 6px; background: var(--panel); }
+.note-body pre { overflow-x: auto; padding: 1em 1.2em; border-radius: 14px; background: var(--panel); font-size: .85em; line-height: 1.6; }
+.note-body pre code { padding: 0; background: none; font-size: inherit; }
 
 /* ---------- Timeline ---------- */
 .era-year { display: inline-flex; margin-bottom: 10px; padding: 3px 12px; border-radius: 999px; background: var(--accent-soft); color: var(--accent-soft-ink); font-size: 14px; font-weight: 700; line-height: 1.4; }
