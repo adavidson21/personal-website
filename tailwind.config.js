@@ -14,14 +14,18 @@ module.exports = {
         sage: { DEFAULT: 'rgb(var(--c-sage) / <alpha-value>)', deep: 'rgb(var(--c-sage-deep) / <alpha-value>)', faint: 'rgb(var(--c-sage-faint) / <alpha-value>)' },
         line: 'rgb(var(--c-line) / <alpha-value>)',
         panel: 'rgb(var(--c-panel) / <alpha-value>)',
+        hero: { DEFAULT: 'rgb(var(--c-hero) / <alpha-value>)', ink: 'rgb(var(--c-hero-ink) / <alpha-value>)', muted: 'rgb(var(--c-hero-muted) / <alpha-value>)' },
+        gold: { DEFAULT: 'rgb(var(--c-gold) / <alpha-value>)', ink: 'rgb(var(--c-gold-ink) / <alpha-value>)' },
+        soft: { DEFAULT: 'rgb(var(--c-soft) / <alpha-value>)', ink: 'rgb(var(--c-soft-ink) / <alpha-value>)' },
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        serif: ['"Source Serif 4"', 'Georgia', 'serif'],
-        mono: ['"JetBrains Mono"', 'ui-monospace', 'Menlo', 'monospace'],
+        // Same pair as Hints: Bricolage Grotesque for headings and big numbers, Figtree for the rest.
+        sans: ['Figtree', '"Segoe UI Variable Text"', '"Segoe UI"', 'system-ui', '-apple-system', 'sans-serif'],
+        display: ['"Bricolage Grotesque"', 'Figtree', 'system-ui', 'sans-serif'],
       },
       boxShadow: {
-        card: '0 25px 50px -12px rgba(47, 43, 42, 0.14), 0 10px 15px -3px rgba(0, 0, 0, 0.05)',
+        card: 'var(--shadow)',
+        lift: 'var(--shadow-lift)',
       },
     },
   },

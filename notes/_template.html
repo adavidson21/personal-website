@@ -22,29 +22,33 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; script-src 'self'; form-action 'none'; base-uri 'none'; upgrade-insecure-requests">
   <script src="../theme.js"></script>
   <link rel="stylesheet" href="../site.css">
+  <meta name="theme-color" content="#4A0E22" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#2B0D18" media="(prefers-color-scheme: dark)">
 </head>
-<body class="font-sans text-lg selection:bg-burgundy selection:text-white">
-  <main class="max-w-2xl mx-auto px-6 py-20 md:py-28">
-    <a href="../#field-notes" class="link-underline text-base">&larr; Back to field notes</a>
+<body class="font-sans text-lg">
+  <header class="hero">
+    <div class="hero-in max-w-2xl mx-auto px-6 pt-20 md:pt-24 pb-12 md:pb-16">
+      <a href="../#field-notes" class="hero-btn">&larr; Back to field notes</a>
+      <p class="kicker mt-10">[TOPIC LABEL]</p>
+      <h1 class="font-display text-5xl md:text-6xl font-bold tracking-tight leading-none mt-2">[NOTE TITLE]</h1>
+      <svg class="squiggle" width="120" height="12" viewBox="0 0 120 12" aria-hidden="true"><path d="M2 7c10-6 18 4 28 0s18-6 28 0 18 4 28 0 18-5 32-1" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>
+      <p class="font-display text-xl md:text-2xl font-medium mt-6">[ONE SENTENCE SUMMARY]</p>
+      <p class="text-sm text-hero-muted mt-3">[Month Day, Year]</p>
+    </div>
+  </header>
 
-    <header class="mt-12 mb-12">
-      <span class="font-mono text-xs font-medium uppercase tracking-wider text-oak">[TOPIC LABEL]</span>
-      <h1 class="display font-serif text-5xl md:text-6xl text-ink font-semibold tracking-tight leading-none mt-4 mb-6">[NOTE TITLE]</h1>
-      <p class="font-serif text-xl text-muted font-normal">[ONE SENTENCE SUMMARY]</p>
-      <p class="font-mono text-xs text-muted/80 mt-4">[Month Day, Year]</p>
-    </header>
-
-    <div class="note-body text-ink/90 font-light leading-relaxed">
+  <main class="max-w-2xl mx-auto px-6 py-14 md:py-20">
+    <div class="note-body text-ink/90 leading-relaxed">
       <p>[Start writing here.]</p>
       <h2>[A section heading]</h2>
       <p>[More writing.]</p>
     </div>
   </main>
 
-  <footer class="bg-surface border-t border-line">
+  <footer class="border-t border-line">
     <div class="max-w-2xl mx-auto px-6 py-10 text-center">
-      <p class="text-muted font-light mb-4"><a href="../" class="link-underline">Alexis Davidson</a></p>
-      <p class="text-xs text-muted/70 font-light">This site has no trackers, cookies, or third-party scripts.</p>
+      <p class="text-muted mb-4"><a href="../" class="link-underline">Alexis Davidson</a></p>
+      <p class="text-xs text-muted/70">This site has no trackers, cookies, or third-party scripts.</p>
     </div>
   </footer>
 </body>

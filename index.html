@@ -13,34 +13,42 @@
   <meta name="color-scheme" content="light dark">
   <meta name="referrer" content="no-referrer">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; script-src 'self'; form-action 'none'; base-uri 'none'; upgrade-insecure-requests">
-  <link rel="preload" href="fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <meta name="theme-color" content="#4A0E22" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#2B0D18" media="(prefers-color-scheme: dark)">
+  <link rel="preload" href="fonts/figtree-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/bricolage-grotesque-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
   <script src="theme.js"></script>
   <link rel="stylesheet" href="site.css">
   <script src="site.js"></script>
 </head>
-<body class="font-sans text-lg selection:bg-burgundy selection:text-white">
+<body class="font-sans text-lg ">
 
   <main>
 
     <!-- Hero -->
-    <header class="max-w-5xl mx-auto px-6 pt-20 md:pt-32 pb-20 md:pb-28">
-      <div class="grid md:grid-cols-12 gap-12 items-center">
+    <header class="hero">
+      <div class="hero-in max-w-5xl mx-auto px-6 pt-20 md:pt-28 pb-16 md:pb-24">
+      <svg class="doodle" viewBox="0 0 230 170" aria-hidden="true"><path d="M8 150 C 50 90, 96 170, 120 104 S 176 18, 150 52 S 108 112, 168 84 S 222 30, 226 12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M150 52 c -14 -18 -40 -16 -34 -2 c 4 9 22 6 34 2 z M150 52 c 4 -22 28 -32 30 -16 c 1 10 -18 14 -30 16 z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+      <div class="relative grid md:grid-cols-12 gap-10 md:gap-12 items-center">
       <div class="md:col-span-7">
-        <p class="fade-in font-mono text-xs uppercase tracking-wider text-burgundy font-medium mb-6">Engineering Manager</p>
-        <h1 class="fade-in display font-serif text-6xl lg:text-7xl text-ink font-semibold tracking-tight leading-none mb-8">
+        <p class="fade-in kicker">Engineering manager</p>
+        <h1 class="fade-in font-display text-6xl lg:text-7xl font-bold tracking-tight leading-none mt-2">
           Hi, I'm Alexis<span class="dot">.</span>
         </h1>
-        <p class="fade-in fade-in-2 font-serif text-2xl lg:text-3xl text-ink font-normal leading-relaxed mb-8">
+        <svg class="squiggle" width="120" height="12" viewBox="0 0 120 12" aria-hidden="true"><path d="M2 7c10-6 18 4 28 0s18-6 28 0 18 4 28 0 18-5 32-1" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>
+        <p class="fade-in fade-in-2 font-display text-2xl lg:text-[28px] font-medium leading-snug mt-8 mb-5">
           I'm an engineering manager who cares about the people on both ends of the software: the team building it and the people it affects.
         </p>
-        <p class="fade-in fade-in-2 text-lg md:text-xl text-muted font-light leading-relaxed mb-10">
+        <p class="fade-in fade-in-2 text-lg text-hero-muted leading-relaxed mb-9">
           I've spent my career in health care technology, where a bug isn't just a bug. It can be someone's coverage or a letter they never understood. That has shaped how I think about building things, and it matters even more now that AI is part of so much of the work.
         </p>
-        <p class="fade-in fade-in-3 social text-base text-muted font-light">
-          <a href="https://www.linkedin.com/in/alexisdavidson/" class="link-underline" rel="me noopener">LinkedIn<svg class="ext" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 8.5l5-5M4.5 3.5h4v4"/></svg></a><span class="sep" aria-hidden="true">&middot;</span><a href="https://github.com/adavidson21" class="link-underline" rel="me noopener">GitHub<svg class="ext" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 8.5l5-5M4.5 3.5h4v4"/></svg></a>
-        </p>
+        <div class="fade-in fade-in-3 hero-ctas">
+          <a href="mailto:hello@alexisdavidson.org" class="hero-btn primary"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4.5" width="15" height="11" rx="2.5"/><path d="m3.5 6 6.5 5 6.5-5"/></svg>Email me</a>
+          <a href="https://www.linkedin.com/in/alexisdavidson/" class="hero-btn" rel="me noopener">LinkedIn<svg class="ext" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 8.5l5-5M4.5 3.5h4v4"/></svg></a>
+          <a href="https://github.com/adavidson21" class="hero-btn" rel="me noopener">GitHub<svg class="ext" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 8.5l5-5M4.5 3.5h4v4"/></svg></a>
+        </div>
       </div>
-        <div class="md:col-span-5 fade-in fade-in-3 max-w-sm mx-auto md:max-w-none w-full">
+        <div class="md:col-span-5 fade-in fade-in-3 max-w-[260px] sm:max-w-sm mx-auto md:max-w-none w-full">
           <svg viewBox="0 0 420 320" class="w-full h-auto" aria-hidden="true">
             <circle cx="210" cy="165" r="150" fill="#EFEBE5"/>
             <rect x="40" y="262" width="10" height="48" rx="3" fill="#DED8CF"/>
@@ -111,15 +119,16 @@
           </svg>
         </div>
       </div>
+      </div>
     </header>
 
     <!-- How I work -->
-    <section class="bg-surface border-y border-line">
-      <div class="max-w-5xl mx-auto px-6 py-20 md:py-24">
-        <h2 class="font-mono text-xs uppercase tracking-wider text-burgundy font-medium mb-10">How I work</h2>
-        <div class="grid md:grid-cols-2 gap-12 md:gap-10">
-          <div class="how-card relative border-t border-ink pt-7">
-            <div class="art-panel mb-6 h-40 rounded bg-panel transition-colors flex items-center justify-center overflow-hidden" aria-hidden="true">
+    <section>
+      <div class="max-w-5xl mx-auto px-6 pt-20 md:pt-28 pb-6">
+        <h2 class="section-title mb-14">How I work</h2>
+        <div class="grid md:grid-cols-2 gap-14 md:gap-6">
+          <div class="how-card soft-card relative p-5 md:p-6">
+            <div class="art-panel mb-6 h-40 rounded-[14px] bg-panel transition-colors flex items-center justify-center overflow-hidden" aria-hidden="true">
               <svg viewBox="0 0 200 90" class="w-full h-full" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="12" y1="78" x2="188" y2="78" stroke="#C4BDB4" stroke-width="1.5"/>
                 <rect x="110" y="24" width="32" height="54" fill="#FBF9F5"/>
@@ -141,10 +150,10 @@
                 <circle cx="154" cy="56" r="1.5" fill="#FBF9F5" class="pf-knob"/>
               </svg>
             </div>
-            <h3 class="font-serif text-2xl font-semibold text-ink mb-3 tracking-tight">People first</h3>
-            <p class="text-ink/80 font-light leading-relaxed">I try to be the kind of manager I'd want to have: honest, steady, and in the work with my team rather than above it. Most of my job is clearing the way so good people can do their best work and still have a life outside of it.</p>
+            <h3 class="font-display text-2xl font-semibold text-ink mb-3 tracking-tight">People first</h3>
+            <p class="text-ink/80 leading-relaxed">I try to be the kind of manager I'd want to have: honest, steady, and in the work with my team rather than above it. Most of my job is clearing the way so good people can do their best work and still have a life outside of it.</p>
           </div>
-          <div class="how-card relative border-t border-ink pt-7">
+          <div class="how-card soft-card relative p-5 md:p-6">
             <svg viewBox="0 0 80 50" class="peek-cat absolute -top-[55px] right-4 md:right-8 w-24 h-auto z-10" aria-hidden="true">
               <defs>
                 <clipPath id="peek-clip"><rect x="0" y="0" width="80" height="45"/></clipPath>
@@ -177,7 +186,7 @@
               <path d="M 19 45 C 19 39, 30 39, 30 45 Z" fill="#E5DEC9"/>
               <path d="M 50 45 C 50 39, 61 39, 61 45 Z" fill="#F5F2EB"/>
             </svg>
-            <div class="art-panel mb-6 h-40 rounded bg-panel transition-colors flex items-center justify-center overflow-hidden" aria-hidden="true">
+            <div class="art-panel mb-6 h-40 rounded-[14px] bg-panel transition-colors flex items-center justify-center overflow-hidden" aria-hidden="true">
               <svg viewBox="0 0 200 90" class="w-full h-full" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="12" y1="78" x2="188" y2="78" stroke="#C4BDB4" stroke-width="1.5"/>
                 <g class="ha-robot">
@@ -207,19 +216,16 @@
                 <line x1="141" y1="67" x2="147" y2="67" stroke="#C4BDB4" stroke-width="1.3"/>
               </svg>
             </div>
-            <h3 class="font-serif text-2xl font-semibold text-ink mb-3 tracking-tight">Humane AI</h3>
-            <p class="text-ink/80 font-light leading-relaxed">I'm hopeful about AI and use it every day. I also think it's on us to keep it safe and humane: protect people's private information, keep a person in the loop on decisions that affect someone's life, and be honest about what these tools get wrong.</p>
+            <h3 class="font-display text-2xl font-semibold text-ink mb-3 tracking-tight">Humane AI</h3>
+            <p class="text-ink/80 leading-relaxed">I'm hopeful about AI and use it every day. I also think it's on us to keep it safe and humane: protect people's private information, keep a person in the loop on decisions that affect someone's life, and be honest about what these tools get wrong.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Things I've built -->
-    <section class="max-w-5xl mx-auto px-6 py-24 md:py-32">
-      <h2 class="font-serif text-4xl text-ink font-semibold tracking-tight mb-14 flex items-center gap-6">
-        Things I've built
-        <span class="h-px flex-1 bg-line mt-1"></span>
-      </h2>
+    <section class="max-w-5xl mx-auto px-6 py-20 md:py-28">
+      <h2 class="section-title mb-16">Things I've built</h2>
 
 <div class="relative h-0 z-10" aria-hidden="true">
         <svg viewBox="35 12 140 80" class="rule-cat absolute right-2 md:right-8 -top-[44px] w-[130px] h-auto overflow-visible">
@@ -257,19 +263,19 @@
       </div>
       <!-- Workshop, the suite: a little window you can click through, like Workshop's own app rail (site.js).
            Without JS the rail is hidden and every app is listed one after another. -->
-      <div class="suite border-t border-ink pt-10 md:pt-12" data-suite>
+      <div class="suite soft-card p-5 pt-8 md:p-10" data-suite>
         <div class="grid md:grid-cols-12 gap-8 md:gap-12 items-end mb-10">
           <div class="md:col-span-7">
-            <h3 class="font-serif text-4xl md:text-5xl font-semibold text-ink tracking-tight mb-5 flex flex-wrap items-center gap-x-4 gap-y-2">
+            <h3 class="font-display text-4xl md:text-5xl font-bold text-ink tracking-tight mb-5 flex flex-wrap items-center gap-x-4 gap-y-2">
               Workshop
               <span class="live-badge live-badge-inline"><i></i>Live</span>
             </h3>
-            <p class="text-muted text-lg font-light leading-relaxed">
+            <p class="text-muted text-lg leading-relaxed">
               My home base as an engineering manager: seven apps behind one rail, with one look, one command palette and one list of people. There are no accounts and no server holding my data. It lives in my browser, or in files on my own computer.
             </p>
             <div class="suite-cta">
               <a href="https://workshop.alexisdavidson.org/" class="suite-open">Open Workshop<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 8.5l5-5M4.5 3.5h4v4"/></svg></a>
-              <a href="https://github.com/adavidson21/workshop" class="inline-flex items-center justify-center w-9 h-9 rounded text-muted hover:text-ink hover:bg-panel transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2" aria-label="Workshop source code on GitHub" title="View the source on GitHub"><svg viewBox="0 0 16 16" class="w-[18px] h-[18px]" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
+              <a href="https://github.com/adavidson21/workshop" class="inline-flex items-center justify-center w-11 h-11 rounded-full text-muted hover:text-ink hover:bg-panel transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2" aria-label="Workshop source code on GitHub" title="View the source on GitHub"><svg viewBox="0 0 16 16" class="w-[18px] h-[18px]" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
               <span class="host">workshop.alexisdavidson.org</span>
             </div>
           </div>
@@ -618,14 +624,14 @@
         </div>
       </div>
 
-      <h3 class="font-mono text-xs uppercase tracking-wider text-burgundy font-medium mt-20 md:mt-24 mb-6">Beyond Workshop</h3>
-      <div class="ruled grid grid-cols-1 md:grid-cols-2">
+      <h3 class="label-bar mt-16 md:mt-20 mb-5">Beyond Workshop</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
 
         <!-- Hints, the featured one: real screens from the app (demo family, no real data). The middle phone is a
              looping screen recording (images/hints/); site.js plays it while the card is on screen. -->
         <div class="card group feature md:col-span-2" data-feature>
-          <article class="tilt-card relative h-full px-1 py-8 md:p-8 grid md:grid-cols-12 gap-8 md:gap-10 items-center">
-            <div class="art-panel hn-stage relative md:col-span-7 rounded bg-panel transition-colors overflow-hidden" aria-hidden="true">
+          <article class="tilt-card relative h-full p-4 md:p-6 grid md:grid-cols-12 gap-8 md:gap-10 items-center">
+            <div class="art-panel hn-stage relative md:col-span-7 rounded-[14px] bg-panel transition-colors overflow-hidden" aria-hidden="true">
               <span class="live-badge"><i></i>Live</span>
               <img src="images/hints/hints-profile.webp" class="hn-phone hn-side hn-left" width="360" height="779" loading="lazy" decoding="async" alt="">
               <img src="images/hints/hints-budget.webp" class="hn-phone hn-side hn-right" width="360" height="779" loading="lazy" decoding="async" alt="">
@@ -633,10 +639,10 @@
                 <source src="images/hints/hints-demo.mp4" type="video/mp4">
               </video>
             </div>
-            <div class="md:col-span-5">
+            <div class="md:col-span-5 md:pr-2 pb-2 md:pb-0">
               <p class="suite-kicker">For everyone I gift with</p>
-              <h3 class="font-serif text-4xl font-semibold text-ink mb-4 tracking-tight">Hints</h3>
-              <p class="text-muted text-base font-light leading-relaxed">
+              <h3 class="font-display text-4xl font-bold text-ink mb-4 tracking-tight">Hints</h3>
+              <p class="text-muted text-base leading-relaxed">
                 Wish lists for both sides of the family, and anyone else you swap gifts with. Paste a link and it fills in the name, photo, price and size. Mark what you're getting someone and they never see it, keep private gift ideas and a budget for each person, and check live prices before you buy.
               </p>
               <ul class="suite-tags"><li>Surprises stay hidden</li><li>Paste a link, done</li><li>Christmas and birthdays</li><li>Installs on your phone</li></ul>
@@ -651,8 +657,8 @@
 
         <!-- Tandem: a prompt goes in, steps run one by one, then it stops for a person -->
         <div class="card group">
-          <article class="tilt-card relative h-full px-1 py-8 md:p-8">
-            <div class="art-panel relative mb-6 h-44 rounded bg-panel transition-colors flex items-center justify-center overflow-hidden" aria-hidden="true">
+          <article class="tilt-card relative h-full p-4 md:p-6">
+            <div class="art-panel relative mb-6 h-44 rounded-[14px] bg-panel transition-colors flex items-center justify-center overflow-hidden" aria-hidden="true">
               <span class="live-badge open-badge">Open source</span>
               <svg viewBox="0 0 160 80" class="art w-full h-full" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="22" y="10" width="116" height="60" rx="5" fill="#FDFCFA" stroke="#C4BDB4" stroke-width="1.5" class="art-shape td-frame"/>
@@ -687,10 +693,10 @@
                 <line x1="109" y1="58.5" x2="120" y2="58.5" stroke="#A89F95" stroke-width="1.3"/>
               </svg>
             </div>
-            <h3 class="font-serif text-[26px] font-semibold text-ink mb-3 tracking-tight transition-colors group-hover:text-burgundy">
+            <h3 class="font-display text-[28px] font-bold text-ink mb-2 tracking-tight transition-colors group-hover:text-burgundy">
               <a href="https://github.com/adavidson21/eng-agents" class="after:absolute after:inset-0 focus:outline-none">Tandem</a>
             </h3>
-            <p class="text-muted text-base font-light leading-relaxed">
+            <p class="text-muted text-base leading-relaxed">
               The agent scaffolding behind Dispatch. It gives opencode a small team of AI agents that scope the work, write code in small steps, and take a first pass at pull requests, then stop for a person at every step that matters.
             </p>
             <div class="app-cta" aria-hidden="true">
@@ -702,8 +708,8 @@
 
         <!-- LifeKit: three little tools (listing tag, letter, report card) take turns -->
         <div class="card group">
-          <article class="tilt-card relative h-full px-1 py-8 md:p-8">
-            <div class="art-panel relative mb-6 h-44 rounded bg-panel transition-colors flex items-center justify-center overflow-hidden" aria-hidden="true">
+          <article class="tilt-card relative h-full p-4 md:p-6">
+            <div class="art-panel relative mb-6 h-44 rounded-[14px] bg-panel transition-colors flex items-center justify-center overflow-hidden" aria-hidden="true">
               <span class="live-badge"><i></i>Live</span>
               <svg viewBox="0 0 160 80" class="art w-full h-full" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="20" y1="64" x2="140" y2="64" stroke="#DED8CF" stroke-width="1.5"/>
@@ -730,10 +736,10 @@
                 <path d="M141 18 l1.2 3 3 1.2 -3 1.2 -1.2 3 -1.2 -3 -3 -1.2 3 -1.2 z" fill="#8B9E8B" class="k-spark k-spark3"/>
               </svg>
             </div>
-            <h3 class="font-serif text-[26px] font-semibold text-ink mb-3 tracking-tight transition-colors group-hover:text-burgundy">
+            <h3 class="font-display text-[28px] font-bold text-ink mb-2 tracking-tight transition-colors group-hover:text-burgundy">
               <a href="https://tools.alexisdavidson.org/" class="after:absolute after:inset-0 focus:outline-none">LifeKit</a>
             </h3>
-            <p class="text-muted text-base font-light leading-relaxed">
+            <p class="text-muted text-base leading-relaxed">
               A growing collection of small tools for everyday life, from resale listing helpers to classroom tools for teachers. Whenever someone around me has a task that could be easier, it usually ends up here.
             </p>
             <div class="app-cta" aria-hidden="true">
@@ -754,18 +760,18 @@
         4. Rebuild CSS (see README).
     -->
     <!-- REMOVE TO ENABLE: start
-    <section id="field-notes" class="bg-surface border-y border-line">
-      <div class="max-w-5xl mx-auto px-6 py-24 md:py-32">
-        <h2 class="font-mono text-xs uppercase tracking-wider text-burgundy font-medium mb-3">Field notes</h2>
-        <p class="font-serif text-4xl text-ink font-semibold tracking-tight mb-12">Things I've been thinking about</p>
+    <section id="field-notes">
+      <div class="max-w-5xl mx-auto px-6 py-20 md:py-28">
+        <h2 class="section-title mb-4">Field notes</h2>
+        <p class="text-muted text-lg mb-12">Things I've been thinking about</p>
         <div class="grid md:grid-cols-2 gap-8">
 
-          <article class="note-card relative rounded-xl p-8 flex flex-col group">
-            <span class="font-mono text-xs font-medium uppercase tracking-wider text-oak mb-4">Topic label</span>
-            <h3 class="font-serif text-2xl font-semibold text-ink mb-3 leading-snug transition-colors group-hover:text-burgundy">
-              <a href="notes/your-note-name.html" class="after:absolute after:inset-0 after:rounded-xl focus:outline-none">Note title</a>
+          <article class="note-card soft-card relative p-7 flex flex-col group">
+            <span class="pill self-start mb-4">Topic label</span>
+            <h3 class="font-display text-2xl font-bold text-ink mb-3 leading-snug transition-colors group-hover:text-burgundy">
+              <a href="notes/your-note-name.html" class="after:absolute after:inset-0 after:rounded-[18px] focus:outline-none">Note title</a>
             </h3>
-            <p class="text-muted font-light italic mb-6 flex-1">One sentence summary of the note.</p>
+            <p class="text-muted mb-6 flex-1">One sentence summary of the note.</p>
             <span class="text-sm font-medium text-burgundy inline-flex items-center gap-2">Read note <span aria-hidden="true" class="transition-transform group-hover:translate-x-1">&rarr;</span></span>
           </article>
 
@@ -775,28 +781,25 @@
     REMOVE TO ENABLE: end -->
 
     <!-- How I got here -->
-    <section class="bg-sage-faint border-y border-sage/20 relative overflow-hidden">
-      <div class="max-w-5xl mx-auto px-6 py-24 md:py-32 relative">
-        <h2 class="font-serif text-4xl text-ink font-semibold tracking-tight mb-16 flex items-center gap-6">
-          How I got here
-          <span class="h-px flex-1 bg-sage/30 mt-1"></span>
-        </h2>
+    <section class="relative overflow-hidden">
+      <div class="max-w-5xl mx-auto px-6 py-12 md:py-16 relative">
+        <h2 class="section-title mb-14">How I got here</h2>
 
-        <div id="timeline" class="relative max-w-4xl mx-auto">
-        <div class="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 -translate-x-1/2 bg-line" aria-hidden="true">
+        <div id="timeline" class="relative max-w-3xl">
+        <div class="absolute left-7 top-0 bottom-0 w-0.5 -translate-x-1/2 bg-line rounded-full" aria-hidden="true">
           <div id="timeline-progress" class="timeline-progress absolute inset-0 rounded-full bg-burgundy"></div>
         </div>
-        <ol class="relative space-y-14 md:space-y-20">
+        <ol class="relative space-y-5">
 
           <!-- Before tech -->
-          <li class="era reveal relative pl-20 md:pl-0 md:grid md:grid-cols-2 md:gap-24">
-            <div class="md:text-right">
-              <div class="rounded-sm border border-line border-t-ink bg-surface p-6">
-                <span class="block font-mono text-xs uppercase tracking-wider text-sage-deep font-medium mb-2">Before tech</span>
-                <p class="text-ink/80 font-light leading-relaxed">Taught math, which taught me more about patience and explaining things than anything since.</p>
+          <li class="era reveal relative pl-[76px]">
+            <div>
+              <div class="soft-card p-5 md:p-6">
+                <span class="era-year">Before tech</span>
+                <p class="text-ink/80 leading-relaxed">Taught math, which taught me more about patience and explaining things than anything since.</p>
               </div>
             </div>
-            <div class="absolute left-8 md:left-1/2 top-2 -translate-x-1/2 w-14 h-14 rounded-full bg-ivory border-4 border-surface shadow-sm flex items-center justify-center" aria-hidden="true">
+            <div class="absolute left-7 top-1 -translate-x-1/2 w-14 h-14 rounded-full bg-surface border-4 border-ivory shadow-card flex items-center justify-center" aria-hidden="true">
               <svg viewBox="0 0 50 50" class="t-icon w-9 h-9" fill="none" stroke="#968D84" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <g class="i-compass"><path d="M25 13 L16 39 M25 13 L34 39"/><circle cx="25" cy="13" r="3" fill="#968D84"/></g>
                 <path d="M13 30 L37 30" stroke="#C4BDB4"/>
@@ -805,14 +808,14 @@
           </li>
 
           <!-- 2019 -->
-          <li class="era reveal relative pl-20 md:pl-0 md:grid md:grid-cols-2 md:gap-24">
-            <div class="md:col-start-2">
-              <div class="rounded-sm border border-line border-t-ink bg-surface p-6">
-                <span class="block font-mono text-xs uppercase tracking-wider text-slate font-medium mb-2">2019</span>
-                <p class="text-ink/80 font-light leading-relaxed">Joined a health care technology company as a junior developer while finishing a math and computer science degree.</p>
+          <li class="era reveal relative pl-[76px]">
+            <div>
+              <div class="soft-card p-5 md:p-6">
+                <span class="era-year">2019</span>
+                <p class="text-ink/80 leading-relaxed">Joined a health care technology company as a junior developer while finishing a math and computer science degree.</p>
               </div>
             </div>
-            <div class="absolute left-8 md:left-1/2 top-2 -translate-x-1/2 w-14 h-14 rounded-full bg-ivory border-4 border-surface shadow-sm flex items-center justify-center" aria-hidden="true">
+            <div class="absolute left-7 top-1 -translate-x-1/2 w-14 h-14 rounded-full bg-surface border-4 border-ivory shadow-card flex items-center justify-center" aria-hidden="true">
               <svg viewBox="0 0 50 50" class="t-icon w-9 h-9" fill="none" stroke="#968D84" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="8" y="12" width="34" height="26" rx="3"/>
                 <path d="M8 19 L42 19"/>
@@ -823,14 +826,14 @@
           </li>
 
           <!-- 2020 to 2024 -->
-          <li class="era reveal relative pl-20 md:pl-0 md:grid md:grid-cols-2 md:gap-24">
-            <div class="md:text-right">
-              <div class="rounded-sm border border-line border-t-ink bg-surface p-6">
-                <span class="block font-mono text-xs uppercase tracking-wider text-sage-deep font-medium mb-2">2020 to 2024</span>
-                <p class="text-ink/80 font-light leading-relaxed">Built tools that helped non-engineers write clearer letters to the people they serve.</p>
+          <li class="era reveal relative pl-[76px]">
+            <div>
+              <div class="soft-card p-5 md:p-6">
+                <span class="era-year">2020 to 2024</span>
+                <p class="text-ink/80 leading-relaxed">Built tools that helped non-engineers write clearer letters to the people they serve.</p>
               </div>
             </div>
-            <div class="absolute left-8 md:left-1/2 top-2 -translate-x-1/2 w-14 h-14 rounded-full bg-ivory border-4 border-surface shadow-sm flex items-center justify-center" aria-hidden="true">
+            <div class="absolute left-7 top-1 -translate-x-1/2 w-14 h-14 rounded-full bg-surface border-4 border-ivory shadow-card flex items-center justify-center" aria-hidden="true">
               <svg viewBox="0 0 50 50" class="t-icon w-9 h-9" fill="none" stroke="#968D84" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <g class="i-letter"><rect x="10" y="15" width="30" height="21" rx="2"/><path d="M10 17 L25 28 L40 17"/></g>
               </svg>
@@ -838,14 +841,14 @@
           </li>
 
           <!-- 2024 -->
-          <li class="era reveal relative pl-20 md:pl-0 md:grid md:grid-cols-2 md:gap-24">
-            <div class="md:col-start-2">
-              <div class="rounded-sm border border-line border-t-ink bg-surface p-6">
-                <span class="block font-mono text-xs uppercase tracking-wider text-oak font-medium mb-2">2024</span>
-                <p class="text-ink/80 font-light leading-relaxed">Moved into management. I now lead a platform team responsible for a wide range of products and the internal systems behind them.</p>
+          <li class="era reveal relative pl-[76px]">
+            <div>
+              <div class="soft-card p-5 md:p-6">
+                <span class="era-year">2024</span>
+                <p class="text-ink/80 leading-relaxed">Moved into management. I now lead a platform team responsible for a wide range of products and the internal systems behind them.</p>
               </div>
             </div>
-            <div class="absolute left-8 md:left-1/2 top-2 -translate-x-1/2 w-14 h-14 rounded-full bg-ivory border-4 border-surface shadow-sm flex items-center justify-center" aria-hidden="true">
+            <div class="absolute left-7 top-1 -translate-x-1/2 w-14 h-14 rounded-full bg-surface border-4 border-ivory shadow-card flex items-center justify-center" aria-hidden="true">
               <svg viewBox="0 0 50 50" class="t-icon w-9 h-9" fill="none" stroke="#968D84" stroke-width="2" stroke-linecap="round">
                 <path d="M25 17 L14 32 M25 17 L25 35 M25 17 L36 32"/>
                 <circle cx="14" cy="32" r="3" fill="#968D84" stroke="none" class="i-node"/>
@@ -857,10 +860,10 @@
           </li>
 
           <!-- 2025 -->
-          <li class="era reveal relative pl-20 md:pl-0 md:grid md:grid-cols-2 md:gap-24">
-            <div class="md:text-right">
-              <div class="relative rounded-sm border border-line border-t-ink bg-surface p-6">
-                <svg viewBox="0 -8 100 130" class="grad-cat absolute -top-[74px] left-6 md:left-8 w-16 h-auto" aria-hidden="true">
+          <li class="era reveal relative pl-[76px] !mt-24">
+            <div>
+              <div class="relative soft-card p-5 md:p-6">
+                <svg viewBox="0 -8 100 130" class="grad-cat absolute -top-[74px] right-6 w-16 h-auto" aria-hidden="true">
                   <g class="cat grad">
                     <!-- Curling Tail -->
                     <path d="M 68 118 C 94 118, 98 92, 84 82 C 74 75, 78 65, 86 60" stroke="#181617" stroke-width="8" stroke-linecap="round" fill="none" class="cat-tail"/>
@@ -898,11 +901,11 @@
                     <path d="M 52 4 L 55 17" stroke="#C9A27C" stroke-width="2" stroke-linecap="round" class="grad-tassel"/>
                   </g>
                 </svg>
-                <span class="block font-mono text-xs uppercase tracking-wider text-burgundy font-medium mb-2">2025</span>
-                <p class="text-ink/80 font-light leading-relaxed">Finished a master's in applied computer science, mostly on nights and weekends.</p>
+                <span class="era-year">2025</span>
+                <p class="text-ink/80 leading-relaxed">Finished a master's in applied computer science, mostly on nights and weekends.</p>
               </div>
             </div>
-            <div class="absolute left-8 md:left-1/2 top-2 -translate-x-1/2 w-14 h-14 rounded-full bg-ivory border-4 border-surface shadow-sm flex items-center justify-center" aria-hidden="true">
+            <div class="absolute left-7 top-1 -translate-x-1/2 w-14 h-14 rounded-full bg-surface border-4 border-ivory shadow-card flex items-center justify-center" aria-hidden="true">
               <svg viewBox="0 0 50 50" class="t-icon w-9 h-9" fill="none" stroke="#968D84" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <g class="i-cap"><path d="M25 12 L41 19 L25 26 L9 19 Z"/><path d="M15 22 L15 30 C15 34 35 34 35 30 L35 22"/></g>
                 <path d="M41 19 L41 29"/>
@@ -917,13 +920,10 @@
     <!-- Outside work -->
     <section id="outside" class="relative overflow-hidden">
       <svg viewBox="0 0 600 60" class="paw-trail absolute bottom-6 right-0 w-[600px] max-w-full h-auto" fill="#D6CEC3" aria-hidden="true"><g transform="translate(30 18) rotate(90)"><g class="paw paw1"><ellipse cx="0" cy="2" rx="7" ry="6"/><circle cx="-7" cy="-7" r="2.6"/><circle cx="-2.5" cy="-10.5" r="2.6"/><circle cx="2.5" cy="-10.5" r="2.6"/><circle cx="7" cy="-7" r="2.6"/></g></g><g transform="translate(102 42) rotate(90)"><g class="paw paw2"><ellipse cx="0" cy="2" rx="7" ry="6"/><circle cx="-7" cy="-7" r="2.6"/><circle cx="-2.5" cy="-10.5" r="2.6"/><circle cx="2.5" cy="-10.5" r="2.6"/><circle cx="7" cy="-7" r="2.6"/></g></g><g transform="translate(174 18) rotate(90)"><g class="paw paw3"><ellipse cx="0" cy="2" rx="7" ry="6"/><circle cx="-7" cy="-7" r="2.6"/><circle cx="-2.5" cy="-10.5" r="2.6"/><circle cx="2.5" cy="-10.5" r="2.6"/><circle cx="7" cy="-7" r="2.6"/></g></g><g transform="translate(246 42) rotate(90)"><g class="paw paw4"><ellipse cx="0" cy="2" rx="7" ry="6"/><circle cx="-7" cy="-7" r="2.6"/><circle cx="-2.5" cy="-10.5" r="2.6"/><circle cx="2.5" cy="-10.5" r="2.6"/><circle cx="7" cy="-7" r="2.6"/></g></g><g transform="translate(318 18) rotate(90)"><g class="paw paw5"><ellipse cx="0" cy="2" rx="7" ry="6"/><circle cx="-7" cy="-7" r="2.6"/><circle cx="-2.5" cy="-10.5" r="2.6"/><circle cx="2.5" cy="-10.5" r="2.6"/><circle cx="7" cy="-7" r="2.6"/></g></g><g transform="translate(390 42) rotate(90)"><g class="paw paw6"><ellipse cx="0" cy="2" rx="7" ry="6"/><circle cx="-7" cy="-7" r="2.6"/><circle cx="-2.5" cy="-10.5" r="2.6"/><circle cx="2.5" cy="-10.5" r="2.6"/><circle cx="7" cy="-7" r="2.6"/></g></g><g transform="translate(462 18) rotate(90)"><g class="paw paw7"><ellipse cx="0" cy="2" rx="7" ry="6"/><circle cx="-7" cy="-7" r="2.6"/><circle cx="-2.5" cy="-10.5" r="2.6"/><circle cx="2.5" cy="-10.5" r="2.6"/><circle cx="7" cy="-7" r="2.6"/></g></g><g transform="translate(534 42) rotate(90)"><g class="paw paw8"><ellipse cx="0" cy="2" rx="7" ry="6"/><circle cx="-7" cy="-7" r="2.6"/><circle cx="-2.5" cy="-10.5" r="2.6"/><circle cx="2.5" cy="-10.5" r="2.6"/><circle cx="7" cy="-7" r="2.6"/></g></g></svg>
-      <div class="max-w-5xl mx-auto px-6 py-24 md:py-32">
-      <h2 class="font-serif text-4xl text-ink font-semibold tracking-tight mb-12 flex items-center gap-6">
-        Outside work
-        <span class="h-px flex-1 bg-line mt-1"></span>
-      </h2>
+      <div class="max-w-5xl mx-auto px-6 py-20 md:py-28">
+      <h2 class="section-title mb-12">Outside work</h2>
       <div class="grid md:grid-cols-5 gap-10 md:gap-12 items-center mb-12">
-        <div class="md:col-span-3 space-y-6 text-ink/90 font-light leading-relaxed">
+        <div class="md:col-span-3 space-y-6 text-ink/90 leading-relaxed">
           <p>
             I share a home with my husband and our three cats, who supervise most of my work from the nearest keyboard.
           </p>
@@ -931,7 +931,7 @@
             I'm a problem solver at heart, at work and everywhere else. I also care a lot about fairness and about women having a real seat at the table, in tech and beyond.
           </p>
         </div>
-        <div class="md:col-span-2 rounded-sm border border-line border-t-ink bg-surface p-6">
+        <div class="md:col-span-2 soft-card p-6">
           <svg viewBox="0 0 320 135" class="w-full h-auto" aria-hidden="true">
             <defs>
               <!-- Exact Silhouette Clip Paths for Cheeto so stripes and shading never protrude -->
@@ -1098,34 +1098,34 @@
               </g>
             </g>
           </svg>
-          <p class="mt-4 text-center font-mono text-xs uppercase tracking-wider text-oak font-medium">The supervisors</p>
+          <p class="mt-4 text-center font-display text-lg font-semibold text-ink">The supervisors</p>
         </div>
       </div>
-      <p class="font-mono text-xs uppercase tracking-wider text-muted font-medium mb-5">When I'm not working</p>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <div class="tile flex items-center gap-4 border-t border-ink py-5">
-          <span class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-burgundy/10">
-            <svg viewBox="0 0 24 24" class="tile-icon h-6 w-6 text-burgundy" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9h12a4 4 0 0 1 4 4v1a3 3 0 0 1-5.2 2L15 14H9l-1.8 2A3 3 0 0 1 2 14v-1a4 4 0 0 1 4-4z"/><path d="M7 11.5v3M5.5 13h3"/><circle cx="16" cy="12.2" r="0.6" fill="currentColor"/><circle cx="18" cy="13.8" r="0.6" fill="currentColor"/></svg>
+      <h3 class="label-bar mb-5">When I'm not working</h3>
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
+        <div class="tile soft-card flex items-center gap-3 md:gap-4 p-3 md:p-4">
+          <span class="inline-flex h-9 w-9 md:h-11 md:w-11 shrink-0 items-center justify-center rounded-full bg-burgundy/10">
+            <svg viewBox="0 0 24 24" class="tile-icon h-5 w-5 md:h-6 md:w-6 text-burgundy" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9h12a4 4 0 0 1 4 4v1a3 3 0 0 1-5.2 2L15 14H9l-1.8 2A3 3 0 0 1 2 14v-1a4 4 0 0 1 4-4z"/><path d="M7 11.5v3M5.5 13h3"/><circle cx="16" cy="12.2" r="0.6" fill="currentColor"/><circle cx="18" cy="13.8" r="0.6" fill="currentColor"/></svg>
           </span>
-          <span class="text-base font-medium text-ink">Video games</span>
+          <span class="text-[15px] md:text-base font-semibold text-ink">Video games</span>
         </div>
-        <div class="tile flex items-center gap-4 border-t border-ink py-5">
-          <span class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-slate/10">
-            <svg viewBox="0 0 24 24" class="tile-icon h-6 w-6 text-slate" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 15v-3a8 8 0 0 1 16 0v3"/><rect x="3" y="14" width="4" height="6" rx="1.5"/><rect x="17" y="14" width="4" height="6" rx="1.5"/></svg>
+        <div class="tile soft-card flex items-center gap-3 md:gap-4 p-3 md:p-4">
+          <span class="inline-flex h-9 w-9 md:h-11 md:w-11 shrink-0 items-center justify-center rounded-full bg-slate/10">
+            <svg viewBox="0 0 24 24" class="tile-icon h-5 w-5 md:h-6 md:w-6 text-slate" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 15v-3a8 8 0 0 1 16 0v3"/><rect x="3" y="14" width="4" height="6" rx="1.5"/><rect x="17" y="14" width="4" height="6" rx="1.5"/></svg>
           </span>
-          <span class="text-base font-medium text-ink">Music</span>
+          <span class="text-[15px] md:text-base font-semibold text-ink">Music</span>
         </div>
-        <div class="tile flex items-center gap-4 border-t border-ink py-5">
-          <span class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-sage/15">
-            <svg viewBox="0 0 24 24" class="tile-icon h-6 w-6 text-sage-deep" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="15" height="14" rx="2"/><path d="M18 9h2a1 1 0 0 1 1 1v7a2 2 0 0 1-2 2H5"/><path d="M7 9h7M7 12.5h7M7 16h4"/></svg>
+        <div class="tile soft-card flex items-center gap-3 md:gap-4 p-3 md:p-4">
+          <span class="inline-flex h-9 w-9 md:h-11 md:w-11 shrink-0 items-center justify-center rounded-full bg-sage/15">
+            <svg viewBox="0 0 24 24" class="tile-icon h-5 w-5 md:h-6 md:w-6 text-sage-deep" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="15" height="14" rx="2"/><path d="M18 9h2a1 1 0 0 1 1 1v7a2 2 0 0 1-2 2H5"/><path d="M7 9h7M7 12.5h7M7 16h4"/></svg>
           </span>
-          <span class="text-base font-medium text-ink">Current events</span>
+          <span class="text-[15px] md:text-base font-semibold text-ink">Current events</span>
         </div>
-        <div class="tile flex items-center gap-4 border-t border-ink py-5">
-          <span class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-oak/10">
-            <svg viewBox="0 0 24 24" class="tile-icon h-6 w-6 text-oak" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.4 1 1.1 1 1.9V16h5v-.2c0-.8.4-1.5 1-1.9A6 6 0 0 0 12 3z"/></svg>
+        <div class="tile soft-card flex items-center gap-3 md:gap-4 p-3 md:p-4">
+          <span class="inline-flex h-9 w-9 md:h-11 md:w-11 shrink-0 items-center justify-center rounded-full bg-oak/10">
+            <svg viewBox="0 0 24 24" class="tile-icon h-5 w-5 md:h-6 md:w-6 text-oak" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.4 1 1.1 1 1.9V16h5v-.2c0-.8.4-1.5 1-1.9A6 6 0 0 0 12 3z"/></svg>
           </span>
-          <span class="text-base font-medium text-ink">Problem solving</span>
+          <span class="text-[15px] md:text-base font-semibold text-ink">Problem solving</span>
         </div>
       </div>
       </div>
@@ -1133,8 +1133,8 @@
 
   </main>
 
-  <footer class="bg-surface border-t border-line">
-    <div class="max-w-5xl mx-auto px-6 py-16 text-center">
+  <footer class="hero foot">
+    <div class="hero-in max-w-5xl mx-auto px-6 py-16 md:py-20 text-center">
       <svg viewBox="0 0 200 92" class="sleepy mx-auto mb-8 w-52 h-auto" aria-hidden="true">
         <!-- Keyboard Base -->
         <rect x="20" y="55" width="160" height="22" rx="4" fill="#DED8CF"/>
@@ -1161,18 +1161,19 @@
         <path d="M 51 33.5 Q 55 37 59 33.5" stroke="#8A827C" stroke-width="1.6" stroke-linecap="round" fill="none"/>
         <path d="M 69 33.5 Q 73 37 77 33.5" stroke="#8A827C" stroke-width="1.6" stroke-linecap="round" fill="none"/>
         <!-- Floating Zs -->
-        <text x="86" y="22" class="zz zz1" fill="#A89F95" font-size="10" font-family="JetBrains Mono, monospace" font-weight="600">z</text>
-        <text x="96" y="14" class="zz zz2" fill="#A89F95" font-size="12" font-family="JetBrains Mono, monospace" font-weight="600">z</text>
-        <text x="108" y="6" class="zz zz3" fill="#A89F95" font-size="14" font-family="JetBrains Mono, monospace" font-weight="600">z</text>
+        <text x="86" y="22" class="zz zz1" fill="#A89F95" font-size="10" font-family="Figtree, sans-serif" font-weight="600">z</text>
+        <text x="96" y="14" class="zz zz2" fill="#A89F95" font-size="12" font-family="Figtree, sans-serif" font-weight="600">z</text>
+        <text x="108" y="6" class="zz zz3" fill="#A89F95" font-size="14" font-family="Figtree, sans-serif" font-weight="600">z</text>
       </svg>
-      <p class="font-serif text-4xl text-ink font-normal tracking-tight mb-4">Let's talk<span class="dot">.</span></p>
-      <p class="text-muted font-light mb-4">
-        Email me at <a href="mailto:hello@alexisdavidson.org" class="link-underline">hello@alexisdavidson.org</a>.
-      </p>
-      <p class="social justify-center text-sm text-muted font-light mb-10">
-        <a href="https://www.linkedin.com/in/alexisdavidson/" class="link-underline" rel="me noopener">LinkedIn<svg class="ext" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 8.5l5-5M4.5 3.5h4v4"/></svg></a><span class="sep" aria-hidden="true">&middot;</span><a href="https://github.com/adavidson21" class="link-underline" rel="me noopener">GitHub<svg class="ext" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 8.5l5-5M4.5 3.5h4v4"/></svg></a>
-      </p>
-      <p class="text-xs text-muted/70 font-light">
+      <p class="font-display text-5xl font-bold tracking-tight">Let's talk<span class="dot">.</span></p>
+      <svg class="squiggle mx-auto" width="120" height="12" viewBox="0 0 120 12" aria-hidden="true"><path d="M2 7c10-6 18 4 28 0s18-6 28 0 18 4 28 0 18-5 32-1" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>
+      <p class="text-hero-muted text-lg mt-6 mb-7">Questions, ideas, or just want to say hi? My inbox is open.</p>
+      <div class="hero-ctas justify-center mb-12">
+        <a href="mailto:hello@alexisdavidson.org" class="hero-btn primary"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4.5" width="15" height="11" rx="2.5"/><path d="m3.5 6 6.5 5 6.5-5"/></svg>hello@alexisdavidson.org</a>
+        <a href="https://www.linkedin.com/in/alexisdavidson/" class="hero-btn" rel="me noopener">LinkedIn<svg class="ext" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 8.5l5-5M4.5 3.5h4v4"/></svg></a>
+          <a href="https://github.com/adavidson21" class="hero-btn" rel="me noopener">GitHub<svg class="ext" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 8.5l5-5M4.5 3.5h4v4"/></svg></a>
+      </div>
+      <p class="text-sm text-hero-muted/80">
         This site has no trackers, cookies, or third-party scripts.
       </p>
     </div>
