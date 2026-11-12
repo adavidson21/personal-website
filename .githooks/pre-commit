@@ -2,5 +2,10 @@
 # Enable once per clone: git config core.hooksPath .githooks
 set -e
 root="$(git rev-parse --show-toplevel)"
+if [ -d "$root/node_modules" ]; then
+  node "$root/scripts/build-notes.mjs" --check
+else
+  echo "Skipping the field notes check: run npm install once to enable it."
+fi
 "$root/scripts/check-https.sh"
 "$root/scripts/stamp-assets.sh" --check

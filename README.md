@@ -4,14 +4,15 @@ Source for [alexisdavidson.org](https://alexisdavidson.org), served by GitHub Pa
 
 Everything is served from this repo: no CDNs, third-party scripts, trackers, or cookies. The page's Content-Security-Policy blocks anything from another origin, so the brand library is copied in rather than linked (see below).
 
-`site.css` is compiled Tailwind. After changing classes in `index.html`, rebuild it:
+Build everything (field notes, `site.css`, asset stamps) with:
 
 ```
-npx tailwindcss@3.4.17 -c tailwind.config.js -i input.css -o site.css --minify
-scripts/stamp-assets.sh
+npm install   # once per clone
+npm run build
+npm run check # what CI runs
 ```
 
-`stamp-assets.sh` adds a content hash to the `site.css`, `site.js`, `brand/theme.js` and `brand/tokens.css` links (`site.css?v=1a2b3c4d`). Without it, a phone that installed the site, or any browser with an old copy cached, can load new HTML with the old stylesheet and show unstyled buttons and giant icons. CI and the pre-commit hook fail if a stamp is out of date. Run it after editing any of those three files.
+`site.css` is compiled Tailwind, so rebuild after changing classes in `index.html` or `input.css`. `npm run build` ends with `scripts/stamp-assets.sh`, which adds a content hash to the `site.css`, `site.js`, `brand/theme.js` and `brand/tokens.css` links (`site.css?v=1a2b3c4d`). Without it, a phone that installed the site, or any browser with an old copy cached, can load new HTML with the old stylesheet and show unstyled buttons and giant icons. CI and the pre-commit hook fail if a stamp is out of date.
 
 ## Brand library
 
@@ -38,14 +39,19 @@ The site follows the device's light or dark setting until you use the round togg
 
 Burgundy is the signature color: `#7A1B36` in light mode and `#E59AAE` in dark (`--accent` in the brand tokens). It marks buttons, links, pills, and hover states; the header and footer use the deeper wine `#4A0E22` (`--hero`).
 
-`favicon.svg` (a bold Bricolage Grotesque A with a pink period on a burgundy tile, like the headings) and `icon-maskable.svg` (full-bleed version with the mark inside Android's safe zone) are the sources. After changing either, run `scripts/build-icons.sh` to export `favicon.ico` (16, 32, 48 px), `apple-touch-icon.png` (180 px, square for iOS), `icon-192.png`, `icon-512.png`, and `icon-maskable-512.png`. Android picks its icons from `site.webmanifest`. New pages need the five `<link>` tags under `<title>`, as in `notes/_template.html`.
+`favicon.svg` (a bold Bricolage Grotesque A with a pink period on a burgundy tile, like the headings) and `icon-maskable.svg` (full-bleed version with the mark inside Android's safe zone) are the sources. After changing either, run `scripts/build-icons.sh` to export `favicon.ico` (16, 32, 48 px), `apple-touch-icon.png` (180 px, square for iOS), `icon-192.png`, `icon-512.png`, and `icon-maskable-512.png`. Android picks its icons from `site.webmanifest`. New pages need the five `<link>` tags under `<title>`, as in `_notes/_layout.html`.
 
-## Adding a field note
+## Field notes
 
-1. Copy `notes/_template.html` to `notes/your-note-name.html` and fill in the bracketed parts.
-2. In `index.html`, find the `FIELD NOTES` comment. The first time, delete the two `REMOVE TO ENABLE` lines to show the section.
-3. Copy one `<article class="note-card">` per note and update its link, label, title, and summary.
-4. Rebuild `site.css` with the command above.
+Notes are Markdown files in `_notes/`. GitHub Pages skips folders that start with `_`, so the sources aren't served (they are still public in the repo, drafts included).
+
+1. Copy `_notes/_example.md` to `_notes/your-note-name.md` (lowercase, dashes). The file name becomes the URL: `/notes/your-note-name.html`.
+2. Fill in the front matter (`title`, `summary`, `label`, `date`; optional `draft: true` and `updated`) and write below it.
+3. Run `npm run build` and commit everything it changed.
+
+`scripts/build-notes.mjs` turns each published note into `notes/your-note-name.html` (from `_notes/_layout.html`), lists the latest 4 in the Field notes section of `index.html` (between the `FIELD NOTES` markers; the section disappears when there are no notes), builds `notes/index.html` with all of them, and writes the Atom feed `feed.xml`. Deleting a note, renaming it, or setting it back to a draft removes its page on the next build. Don't edit generated pages; edit the `.md` file or the layout.
+
+The build fails on a missing field, a bad date, an `http://` link, or an em dash. Put note images in `images/notes/`.
 
 ## HTTPS safeguards
 

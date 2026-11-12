@@ -1,54 +1,56 @@
 <!DOCTYPE html>
 <!--
-  FIELD NOTE TEMPLATE
-  1. Copy this file to notes/your-note-name.html (lowercase, dashes, no spaces).
-  2. Replace everything in [BRACKETS].
-  3. Write the note inside <div class="note-body">. Plain <p>, <h2>, <ul>, <blockquote>, and <a> are styled for you.
-  4. Add a card for it in the Field notes section of index.html.
+  FIELD NOTE LAYOUT (used by scripts/build-notes.mjs, not served)
+  Every note page and the notes archive page are built from this file. {{name}} is filled in by the script.
+  Write notes in _notes/*.md, not here. See README "Field notes".
 -->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>[NOTE TITLE] | Alexis Davidson</title>
+  <title>{{pageTitle}} | Alexis Davidson</title>
   <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="icon" href="/icon-192.png" sizes="192x192" type="image/png">
   <link rel="manifest" href="/site.webmanifest">
-  <meta name="description" content="[ONE SENTENCE SUMMARY]">
+  <link rel="canonical" href="{{url}}">
+  <link rel="alternate" type="application/atom+xml" title="Alexis Davidson: Field notes" href="/feed.xml">
+  <meta name="description" content="{{summary}}">
+  <meta property="og:type" content="{{ogType}}">
+  <meta property="og:site_name" content="Alexis Davidson">
+  <meta property="og:title" content="{{pageTitle}}">
+  <meta property="og:description" content="{{summary}}">
+  <meta property="og:url" content="{{url}}">
+  {{articleMeta}}
   <meta name="color-scheme" content="light dark">
   <meta name="referrer" content="no-referrer">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; script-src 'self'; form-action 'none'; base-uri 'none'; upgrade-insecure-requests">
-  <script src="../brand/theme.js?v=ecabe1d8"></script>
-  <link rel="stylesheet" href="../brand/tokens.css?v=bfd7003f">
-  <link rel="stylesheet" href="../site.css?v=1eea1100">
+  <script src="../brand/theme.js"></script>
+  <link rel="stylesheet" href="../brand/tokens.css">
+  <link rel="stylesheet" href="../site.css">
   <meta name="theme-color" content="#4A0E22" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#2B0D18" media="(prefers-color-scheme: dark)">
 </head>
 <body class="font-sans text-lg">
   <header class="hero">
     <div class="hero-in max-w-2xl mx-auto px-6 pt-20 md:pt-24 pb-12 md:pb-16">
-      <a href="../#field-notes" class="hero-btn">&larr; Back to field notes</a>
-      <p class="kicker mt-10">[TOPIC LABEL]</p>
-      <h1 class="font-display text-5xl md:text-6xl font-bold tracking-tight leading-none mt-2">[NOTE TITLE]</h1>
+      <a href="{{backHref}}" class="hero-btn">&larr; {{backLabel}}</a>
+      <p class="kicker mt-10">{{kicker}}</p>
+      <h1 class="font-display text-5xl md:text-6xl font-bold tracking-tight leading-none mt-2">{{title}}</h1>
       <svg class="squiggle" width="120" height="12" viewBox="0 0 120 12" aria-hidden="true"><path d="M2 7c10-6 18 4 28 0s18-6 28 0 18 4 28 0 18-5 32-1" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>
-      <p class="font-display text-xl md:text-2xl font-medium mt-6">[ONE SENTENCE SUMMARY]</p>
-      <p class="text-sm text-hero-muted mt-3">[Month Day, Year]</p>
+      <p class="font-display text-xl md:text-2xl font-medium mt-6">{{summary}}</p>
+      <p class="text-sm text-hero-muted mt-3">{{meta}}</p>
     </div>
   </header>
 
   <main class="max-w-2xl mx-auto px-6 py-14 md:py-20">
-    <div class="note-body text-ink/90 leading-relaxed">
-      <p>[Start writing here.]</p>
-      <h2>[A section heading]</h2>
-      <p>[More writing.]</p>
-    </div>
+{{body}}
   </main>
 
   <footer class="border-t border-line">
     <div class="max-w-2xl mx-auto px-6 py-10 text-center">
-      <p class="text-muted mb-4"><a href="../" class="link-underline">Alexis Davidson</a></p>
+      <p class="text-muted mb-4"><a href="../" class="link-underline">Alexis Davidson</a> &middot; <a href="/feed.xml" class="link-underline">Feed</a></p>
       <p class="text-xs text-muted/70">This site has no trackers, cookies, or third-party scripts.</p>
     </div>
   </footer>

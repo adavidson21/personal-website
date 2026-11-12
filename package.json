@@ -1,0 +1,13 @@
+{
+  "name": "alexisdavidson.org",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build-notes.mjs && tailwindcss -c tailwind.config.js -i input.css -o site.css --minify && bash scripts/stamp-assets.sh",
+    "check": "node scripts/build-notes.mjs --check && bash scripts/check-https.sh && bash scripts/stamp-assets.sh --check"
+  },
+  "devDependencies": {
+    "marked": "^15.0.0",
+    "tailwindcss": "3.4.17"
+  }
+}
