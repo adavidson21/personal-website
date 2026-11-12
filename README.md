@@ -47,7 +47,7 @@ Notes are Markdown files in `_notes/`. GitHub Pages skips folders that start wit
 
 1. Copy `_notes/_example.md` to `_notes/your-note-name.md` (lowercase, dashes). The file name becomes the URL: `/notes/your-note-name.html`.
 2. Fill in the front matter (`title`, `summary`, `label`, `date`; optional `draft: true` and `updated`) and write below it.
-3. Run `npm run build` and commit everything it changed.
+3. Commit it. On `main`, the Build and check Action (`.github/workflows/https-check.yml`) runs `npm run build`, commits the generated pages, and redeploys, so you can add a note from the GitHub app, github.dev, or LifeKit's Field Notes app without building locally. Running `npm run build` yourself first is fine too.
 
 `scripts/build-notes.mjs` turns each published note into `notes/your-note-name.html` (from `_notes/_layout.html`), lists the latest 4 in the Field notes section of `index.html` (between the `FIELD NOTES` markers; the section disappears when there are no notes), builds `notes/index.html` with all of them, and writes the Atom feed `feed.xml`. Deleting a note, renaming it, or setting it back to a draft removes its page on the next build. Don't edit generated pages; edit the `.md` file or the layout.
 
