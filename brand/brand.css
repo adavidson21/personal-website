@@ -1,4 +1,4 @@
-/*! Alexis Davidson brand 1.0.0, full library. Source: personal-tools/brand. Fonts: SIL OFL 1.1 (fonts/OFL-*.txt). */
+/*! Alexis Davidson brand 1.5.0, full library. Source: personal-tools/brand. Fonts: SIL OFL 1.1 (fonts/OFL-*.txt). */
 /* Brand fonts, self-hosted (no third-party requests, works offline). All SIL OFL 1.1, notices in fonts/OFL-*.txt.
    Bricolage Grotesque: titles and big numbers. Figtree: everything else. DM Mono: code, keys and tabular labels.
    Sources: Fontsource (@fontsource-variable/bricolage-grotesque "standard", @fontsource-variable/figtree "wght",
@@ -93,6 +93,10 @@
   --sans:Figtree,"Segoe UI Variable Text","Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
   --mono:"DM Mono","Cascadia Mono",Consolas,"SF Mono",Menlo,ui-monospace,monospace;
   --text-size:17px;
+
+  /* cards (sticker style): outline, offset color, offset distance */
+  --card-line:var(--ink); --card-offset:var(--accent); --card-pop:4px;
+  --hero-edge:var(--gold); /* the stripe under the wine band */
 
   /* shape */
   --r-xs:6px; --r-sm:10px; --r-md:14px; --r-lg:18px; --r-xl:24px; --r-pill:999px;
@@ -203,7 +207,9 @@ input[type=checkbox],input[type=radio],progress{accent-color:var(--accent)}
 @media (min-width:1100px){.grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}.grid>.w2{grid-column:span 2}}
 
 /* ---------- hero: the wine header band ---------- */
+/* Sticker edge: an ink line and a gold stripe under the band, like the cards. --hero-edge changes the stripe. */
 .hero{position:relative;overflow:hidden;background:var(--hero);color:var(--hero-ink);
+  border-bottom:3px solid var(--card-line);box-shadow:0 5px 0 var(--hero-edge);margin-bottom:5px;
   padding:calc(env(safe-area-inset-top,0px) + 26px) max(20px,env(safe-area-inset-right,0px)) 24px max(20px,env(safe-area-inset-left,0px))}
 .hero-in{position:relative;max-width:var(--w-narrow);margin:0 auto}
 .hero.wide .hero-in{max-width:var(--w-page)}
@@ -253,16 +259,19 @@ input[type=checkbox],input[type=radio],progress{accent-color:var(--accent)}
 .btns{display:flex;flex-wrap:wrap;gap:8px}
 
 /* ---------- cards ---------- */
-.card{background:var(--surface);border-radius:var(--r-lg);padding:18px;box-shadow:var(--shadow)}
+/* Sticker cards: an ink outline and a solid offset in the accent. Cards you can tap lift a little on hover and press
+   flat. Change the look for one app with --card-line and --card-offset. */
+.card{background:var(--surface);border:1.5px solid var(--card-line);border-radius:16px;padding:18px;box-shadow:var(--card-pop) var(--card-pop) 0 var(--card-offset)}
 .card.flat{box-shadow:none;border:1px solid var(--line)}
-.card.soft{background:var(--panel);box-shadow:none}
-.card.draft{background:var(--panel);box-shadow:none;outline:1.5px dashed var(--line);outline-offset:-1.5px}
-.card.done{background:var(--ok-soft);box-shadow:none}
-.card.pick{box-shadow:inset 0 0 0 2px color-mix(in srgb,var(--gold) 70%,transparent),var(--shadow)}
-.card.hero-card{background:var(--hero);color:var(--hero-ink);box-shadow:none}
+.card.soft{background:var(--panel);border-color:transparent;box-shadow:none}
+.card.draft{background:var(--panel);box-shadow:none;border:1.5px dashed var(--rule)}
+.card.done{background:var(--ok-soft);--card-line:var(--ok);--card-offset:var(--ok)}
+.card.pick{--card-offset:var(--gold)}
+.card.hero-card{background:var(--hero);color:var(--hero-ink);border-color:var(--hero);--card-offset:var(--gold)}
 .card.hero-card :is(.subtle,.kicker){color:var(--hero-muted)}
-a.card,button.card{display:block;width:100%;text-align:left;color:inherit;text-decoration:none;border:0;transition:transform .14s var(--spring),box-shadow .2s}
-:is(a,button).card:active{transform:scale(.985)}
+a.card,button.card{display:block;width:100%;text-align:left;color:inherit;text-decoration:none;font:inherit;cursor:pointer;transition:transform .12s ease,box-shadow .12s ease}
+:is(a,button).card:hover{transform:translate(-1px,-1px);box-shadow:calc(var(--card-pop) + 1px) calc(var(--card-pop) + 1px) 0 var(--card-offset)}
+:is(a,button).card:active{transform:translate(calc(var(--card-pop) - 1px),calc(var(--card-pop) - 1px));box-shadow:1px 1px 0 var(--card-offset)}
 .card>:is(h2,h3){margin-bottom:6px}
 /* a list inside one card, rows on hairlines */
 .list{list-style:none;margin:0;padding:0}
@@ -280,11 +289,11 @@ a.card,button.card{display:block;width:100%;text-align:left;color:inherit;text-d
 .tile.photo img{width:100%;height:100%;object-fit:contain;border-radius:9px}
 /* stats: the small number cards */
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:10px}
-.stat{display:flex;flex-direction:column;min-width:0;padding:12px 12px 10px;border-radius:16px;background:var(--surface);box-shadow:var(--shadow)}
+.stat{display:flex;flex-direction:column;min-width:0;padding:12px 12px 10px;border:1.5px solid var(--card-line);border-radius:14px;background:var(--surface);box-shadow:3px 3px 0 var(--card-offset)}
 .stat b{font:600 26px/1.1 var(--display);color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .stat span{font-size:13px;font-weight:600;color:var(--muted)}
-.stat.ok{background:var(--ok-soft);box-shadow:none}.stat.ok b{color:var(--ok)}
-.stat.gold{box-shadow:inset 0 0 0 2px color-mix(in srgb,var(--gold) 70%,transparent),var(--shadow)}
+.stat.ok{background:var(--ok-soft);--card-line:var(--ok);--card-offset:var(--ok)}.stat.ok b{color:var(--ok)}
+.stat.gold{--card-offset:var(--gold)}
 /* meter: <div class="meter"><i><b style="width:40%"></b></i><span>40%</span></div> */
 .meter{display:flex;align-items:center;gap:12px;font-size:.88em;font-weight:600}
 .meter>i{flex:1;height:8px;border-radius:4px;background:var(--panel);overflow:hidden}
@@ -292,15 +301,23 @@ a.card,button.card{display:block;width:100%;text-align:left;color:inherit;text-d
 @keyframes b-fill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 
 /* ---------- chips and tags ---------- */
-/* filter chips: pills in a sideways-scrolling row; pressed ones fill with the accent */
+/* filter chips (soft tint): borderless pills on the panel color; the selected one turns pale accent with a ring and
+   a check. Pressed state from aria-pressed, aria-selected or .on. */
 .chips{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
 .chips::-webkit-scrollbar{display:none}
-.chip{display:inline-flex;align-items:center;gap:7px;flex:none;min-height:var(--tap);padding:0 16px;border:1.5px solid var(--line);border-radius:var(--r-pill);
-  background:var(--surface);color:var(--ink);font-weight:700;font-size:.88em;white-space:nowrap;transition:transform .14s var(--spring),background-color .2s,border-color .2s}
+.chip{display:inline-flex;align-items:center;gap:7px;flex:none;min-height:var(--tap);padding:0 16px;border:0;border-radius:var(--r-pill);
+  background:var(--panel);color:var(--ink);font-weight:700;font-size:.88em;white-space:nowrap;
+  transition:transform .14s var(--spring),background-color .2s,color .2s,box-shadow .2s}
+.chip:hover{background:color-mix(in srgb,var(--ink) 6%,var(--panel))}
 .chip:active{transform:scale(.97)}
-.chip:is([aria-pressed=true],[aria-selected=true],.on){background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
-.chip .n,.count{display:inline-grid;place-items:center;min-width:22px;height:22px;padding:0 7px;border-radius:var(--r-pill);background:var(--panel);color:var(--muted);font-size:13px;font-weight:700}
-.chip:is([aria-pressed=true],[aria-selected=true],.on) .n{background:color-mix(in srgb,var(--on-accent) 22%,transparent);color:var(--on-accent)}
+.chip:is([aria-pressed=true],[aria-selected=true],.on){background:var(--accent-soft);color:var(--accent-soft-ink);box-shadow:inset 0 0 0 1.5px var(--accent)}
+.chip:is([aria-pressed=true],[aria-selected=true],.on)::before{content:"";width:14px;height:14px;margin-left:-3px;background:currentColor;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http%3A//www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m5 12.5 4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/contain no-repeat;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http%3A//www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m5 12.5 4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/contain no-repeat;
+  animation:b-check .35s var(--spring) both}
+.chip .n,.count{display:inline-grid;place-items:center;min-width:22px;height:22px;padding:0 7px;border-radius:var(--r-pill);background:var(--surface);color:var(--muted);font-size:13px;font-weight:700}
+.count{background:var(--panel)}
+.chip:is([aria-pressed=true],[aria-selected=true],.on) .n{background:var(--accent);color:var(--on-accent)}
 /* tags: small labels on a card */
 .tags{display:flex;flex-wrap:wrap;gap:6px}
 .tag{display:inline-flex;align-items:center;gap:5px;min-height:26px;padding:0 10px;border-radius:var(--r-pill);background:var(--panel);color:var(--ink);font-size:13px;font-weight:600;white-space:nowrap}
@@ -320,10 +337,14 @@ a.card,button.card{display:block;width:100%;text-align:left;color:inherit;text-d
 .field>span,.field>.lbl{display:block;margin-bottom:7px;font-weight:700;font-size:.94em}
 .field>span em,.field>.lbl em{font-style:normal;font-weight:500;color:var(--muted)}
 .field>small{display:block;margin-top:6px;color:var(--muted);font-size:.84em}
-.input{display:block;width:100%;min-height:calc(var(--tap) + 10px);padding:12px 15px;border:1.5px solid var(--line);border-radius:var(--r-md);background:var(--surface);color:var(--ink);transition:border-color .2s,box-shadow .2s}
+/* Inputs (soft filled): no border at rest, on the panel color; white with an accent ring while typing */
+.input{display:block;width:100%;min-height:calc(var(--tap) + 10px);padding:12px 15px;border:1.5px solid transparent;border-radius:var(--r-md);background:var(--panel);color:var(--ink);transition:border-color .2s,box-shadow .2s,background-color .2s}
+.input:hover{background:color-mix(in srgb,var(--ink) 5%,var(--panel))}
 .dense .input{padding:7px 12px;border-radius:var(--r-sm)}
-.input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 22%,transparent)}
-.input[aria-invalid=true]{border-color:var(--danger)}
+.input:focus{outline:none;background:var(--surface);border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 14%,transparent)}
+:is(.card.soft,.card.draft,.note) .input{background:var(--surface)}
+:is(.card.soft,.card.draft,.note) .input:hover{background:color-mix(in srgb,var(--ink) 3%,var(--surface))}
+.input[aria-invalid=true]{border-color:var(--danger);background:var(--danger-soft)}
 textarea.input{min-height:96px;resize:vertical;line-height:1.45}
 select.input{appearance:none;padding-right:40px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http%3A//www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%236B5E62' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 8 4 4 4-4'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;background-size:20px}
 .check{display:inline-flex;align-items:center;gap:10px;min-height:var(--tap);font-weight:600;cursor:pointer}
@@ -371,32 +392,42 @@ select.input{appearance:none;padding-right:40px;background-image:url("data:image
 .tip{position:fixed;z-index:70;max-width:16rem;padding:6px 10px;border-radius:var(--r-sm);background:var(--ink);color:var(--bg);font-size:13px;line-height:1.35;pointer-events:none;opacity:0;transition:opacity .12s}
 .tip.show{opacity:1}
 @media (hover:none){.tip{display:none}}
-/* toast: <div class="toast show" role="status"><svg>..</svg><span>Saved</span><button>Undo</button></div> */
-.toast{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 24px);z-index:60;display:flex;align-items:center;gap:10px;max-width:min(30rem,calc(100vw - 32px));
-  padding:10px 10px 10px 16px;border-radius:var(--r-md);background:#2A1E22;color:#FAF6F1;font-size:15px;font-weight:600;box-shadow:var(--shadow-lg);
+/* toast (sticker): white with an ink outline and a pine offset; .err switches the offset and icon to danger.
+   <div class="toast show" role="status"><svg>..</svg><span>Saved</span><button>Undo</button></div> */
+.toast{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 24px);z-index:60;display:flex;align-items:center;gap:10px;width:max-content;max-width:min(30rem,calc(100vw - 32px));
+  padding:10px 10px 10px 16px;border:1.5px solid var(--card-line);border-radius:12px;background:var(--surface);color:var(--ink);font-size:15px;font-weight:600;box-shadow:3px 3px 0 var(--ok);
   transform:translate(-50%,16px);opacity:0;pointer-events:none;transition:opacity .2s,transform .3s var(--spring)}
 .toast.show{transform:translate(-50%,0);opacity:1;pointer-events:auto}
-.toast svg{flex:none;width:20px;height:20px;color:#9FD3B4}
-.toast.err svg{color:#F4A49B}
+.toast svg{flex:none;width:20px;height:20px;color:var(--ok)}
+.toast.err{box-shadow:3px 3px 0 var(--danger)}
+.toast.err svg{color:var(--danger)}
 .toast span{flex:1;min-width:0}
-.toast button{flex:none;min-height:36px;padding:0 10px;border:0;border-radius:var(--r-sm);background:none;color:#E0B75E;font-weight:800}
-.toast button:hover{background:rgba(255,255,255,.08)}
-/* sheet: a <dialog class="sheet">. Slides up from the bottom on phones, a centered card on wider screens. */
-dialog.sheet{width:100%;max-width:var(--w-narrow);max-height:92dvh;margin:auto auto 0;padding:0;border:0;border-radius:var(--r-xl) var(--r-xl) 0 0;background:var(--bg);color:var(--ink);overflow:auto}
+.toast button{flex:none;min-height:36px;padding:0 10px;border:0;border-radius:var(--r-sm);background:none;color:var(--accent);font-weight:800;text-decoration:underline;text-underline-offset:3px}
+.toast button:hover{background:var(--hover)}
+/* sheet (sticker): a <dialog class="sheet">. Slides up from the bottom on phones with an ink outline and a gold
+   stripe on top; a centered card with a gold offset on wider screens. */
+dialog.sheet{width:100%;max-width:var(--w-narrow);max-height:calc(92dvh - 4px);margin:auto auto 0;padding:0;border:1.5px solid var(--card-line);border-bottom:0;border-radius:18px 18px 0 0;
+  background:var(--surface);color:var(--ink);box-shadow:0 -4px 0 var(--hero-edge);overflow:auto}
 dialog.sheet[open]{animation:b-sheet-up .42s var(--ease-out) both}
 dialog.sheet::backdrop{background:var(--scrim);animation:b-fade .25s ease both}
 dialog.sheet>.sheet-in{padding:20px 20px calc(env(safe-area-inset-bottom,0px) + 22px)}
+dialog.sheet>.sheet-in::before{content:"";display:block;width:36px;height:4px;margin:-8px auto 14px;border-radius:2px;background:var(--line)}
 dialog.sheet .sheet-close{position:absolute;top:12px;right:12px}
-@media (min-width:720px){dialog.sheet{margin:auto;border-radius:var(--r-xl);box-shadow:var(--shadow-lg)}dialog.sheet[open]{animation:b-pop .25s var(--ease-out) both}}
+@media (min-width:720px){
+  dialog.sheet{margin:auto;border-bottom:1.5px solid var(--card-line);border-radius:18px;box-shadow:5px 5px 0 var(--hero-edge)}
+  dialog.sheet>.sheet-in::before{display:none}
+  dialog.sheet[open]{animation:b-pop .25s var(--ease-out) both}
+}
 
 /* ---------- the light/dark toggle (theme.js adds it to the top right corner) ---------- */
+/* Sticker: ink outline with a small accent offset; on the wine band (.on-hero) it goes clear with a gold offset. */
 .theme-toggle{position:absolute;z-index:20;top:var(--theme-top,calc(env(safe-area-inset-top,0px) + 16px));right:calc(env(safe-area-inset-right,0px) + 16px);
-  display:grid;place-items:center;width:40px;height:40px;padding:0;margin:0;border:1px solid var(--line);border-radius:50%;background:var(--surface);color:var(--muted);
-  cursor:pointer;transition:color .2s,border-color .2s,transform .2s}
-.theme-toggle:hover{color:var(--ink);border-color:color-mix(in srgb,var(--ink) 30%,var(--line))}
-.theme-toggle:active{transform:scale(.94)}
+  display:grid;place-items:center;width:40px;height:40px;padding:0;margin:0;border:1.5px solid var(--card-line);border-radius:50%;background:var(--surface);color:var(--ink);
+  box-shadow:2px 2px 0 var(--card-offset);cursor:pointer;transition:transform .12s ease,box-shadow .12s ease}
+.theme-toggle:hover{transform:translate(-1px,-1px);box-shadow:3px 3px 0 var(--card-offset)}
+.theme-toggle:active{transform:translate(2px,2px);box-shadow:0 0 0 var(--card-offset)}
 .theme-toggle svg{width:18px;height:18px;transition:transform .5s cubic-bezier(.34,1.56,.64,1)}
 .theme-toggle:hover svg{transform:rotate(-20deg)}
-.theme-toggle.on-hero{background:transparent;color:var(--hero-ink);border-color:color-mix(in srgb,var(--hero-muted) 55%,transparent)}
+.theme-toggle.on-hero{background:transparent;color:var(--hero-ink);border-color:var(--hero-muted);--card-offset:var(--hero-edge)}
 @media (min-width:720px){.theme-toggle{top:var(--theme-top,20px);right:24px}}
 }

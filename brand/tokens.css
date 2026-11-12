@@ -1,4 +1,4 @@
-/*! Alexis Davidson brand 1.0.0, fonts and tokens. Source: personal-tools/brand. Fonts: SIL OFL 1.1 (fonts/OFL-*.txt). */
+/*! Alexis Davidson brand 1.5.0, fonts and tokens. Source: personal-tools/brand. Fonts: SIL OFL 1.1 (fonts/OFL-*.txt). */
 /* Brand fonts, self-hosted (no third-party requests, works offline). All SIL OFL 1.1, notices in fonts/OFL-*.txt.
    Bricolage Grotesque: titles and big numbers. Figtree: everything else. DM Mono: code, keys and tabular labels.
    Sources: Fontsource (@fontsource-variable/bricolage-grotesque "standard", @fontsource-variable/figtree "wght",
@@ -93,6 +93,10 @@
   --sans:Figtree,"Segoe UI Variable Text","Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
   --mono:"DM Mono","Cascadia Mono",Consolas,"SF Mono",Menlo,ui-monospace,monospace;
   --text-size:17px;
+
+  /* cards (sticker style): outline, offset color, offset distance */
+  --card-line:var(--ink); --card-offset:var(--accent); --card-pop:4px;
+  --hero-edge:var(--gold); /* the stripe under the wine band */
 
   /* shape */
   --r-xs:6px; --r-sm:10px; --r-md:14px; --r-lg:18px; --r-xl:24px; --r-pill:999px;

@@ -1,4 +1,4 @@
-/*! Alexis Davidson brand 1.0.0, theme.js */
+/*! Alexis Davidson brand 1.5.0, theme.js */
 /* Brand light/dark theme. One behavior for every app: Hints' round toggle in the top right corner, Workshop's API.
 
    Load it in <head> WITHOUT defer or async, so the saved theme is set before the page paints (no flash):
