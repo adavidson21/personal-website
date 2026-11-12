@@ -282,6 +282,10 @@ a:focus-visible {
 .suite-stats > div { display: flex; flex-direction: column; gap: 8px; }
 .suite-stats dt { font-size: 14px; font-weight: 600; line-height: 1.3; color: var(--muted); }
 
+/* The window wears Workshop's own colors (workshop shared/themes.css), so its screenshots don't sit on a different beige */
+.suite-window { --bg:#F4F2F3; --surface:#FFFFFF; --panel:#ECE6E8; --line:#E5DEE1; --muted:#6B6064; --accent-soft:#F3E3E8; }
+:root[data-theme=dark] .suite-window { --bg:#141012; --surface:#1E181B; --panel:#272023; --line:#31292C; --muted:#A79BA0; --accent-soft:#3A2129; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme]) .suite-window { --bg:#141012; --surface:#1E181B; --panel:#272023; --line:#31292C; --muted:#A79BA0; --accent-soft:#3A2129; } }
 .suite-window { border: 1.5px solid var(--line); border-radius: 16px; background: var(--bg); overflow: hidden; }
 .suite-bar { display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: var(--panel); border-bottom: 1px solid var(--line); }
 .suite-dots { display: inline-flex; gap: 6px; flex: none; }
