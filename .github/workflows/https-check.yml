@@ -11,3 +11,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: bash scripts/check-https.sh
+      - run: bash scripts/stamp-assets.sh --check
