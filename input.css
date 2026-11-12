@@ -68,7 +68,7 @@
 .theme-toggle svg { width: 18px; height: 18px; display: block; transition: transform .5s cubic-bezier(.34,1.56,.64,1); }
 .theme-toggle:hover svg { transform: rotate(-20deg); }
 @media (min-width: 720px) { .theme-toggle { top: 20px; right: 24px; } }
-@media (prefers-reduced-motion: reduce) { .theme-toggle, .theme-toggle svg { transition: none; } }
+@media (prefers-reduced-motion: reduce) { .theme-toggle, .theme-toggle svg { transition: none; } .suite-panel.is-active .suite-shot img { animation: none; } }
 
 body {
   background-color: var(--bg);
@@ -326,6 +326,11 @@ a:focus-visible {
 .js .suite-panel.is-active { animation: suite-in .45s cubic-bezier(0.16, 1, 0.3, 1) both; }
 @keyframes suite-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 .suite-panel:focus-visible { outline: 3px solid var(--accent); outline-offset: 6px; border-radius: 14px; }
+.suite-shot { margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--line); background: var(--surface);
+  box-shadow: 0 14px 36px -20px rgb(42 31 34 / .35); }
+.suite-shot img { display: block; width: 100%; height: auto; transition: transform .6s cubic-bezier(0.16, 1, 0.3, 1); transform-origin: top left; }
+.suite-panel.is-active .suite-shot img { animation: suite-shot-in .7s cubic-bezier(0.16, 1, 0.3, 1) both; }
+@keyframes suite-shot-in { from { transform: scale(1.03); } to { transform: none; } }
 .suite-panel .art-panel { border-radius: 14px; background-color: var(--surface); transition: background-color .3s ease; }
 .suite-panel.is-active .art-panel { background-color: var(--t-panel-hover); }
 .suite-kicker { font-size: 15px; font-weight: 700; line-height: 1.4; color: var(--accent); margin-bottom: 4px; }
@@ -339,7 +344,7 @@ a:focus-visible {
   .suite-body { grid-template-columns: 200px minmax(0, 1fr); }
   .js .suite-rail { flex-direction: column; padding: 14px 10px; overflow: visible; border-bottom: 0; border-right: 1px solid var(--line); }
   .suite-stage { padding: 30px 32px; }
-  .suite-panel { grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 32px; }
+  .suite-panel { gap: 24px; }
   .js .suite-stage { min-height: 360px; display: flex; align-items: center; }
   .js .suite-panel { width: 100%; }
 }
