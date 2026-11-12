@@ -12,12 +12,10 @@
   <link rel="manifest" href="/site.webmanifest">
   <meta name="referrer" content="no-referrer">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self'; script-src 'none'; frame-ancestors 'none'; form-action 'none'; base-uri 'none'; upgrade-insecure-requests">
+  <!-- Fonts and colors from the brand library. No scripts here, so the page follows the device's light or dark setting. -->
+  <link rel="stylesheet" href="/brand/tokens.css">
   <style>
-    @font-face { font-family: "Bricolage Grotesque"; font-weight: 200 800; font-display: swap; src: url(/fonts/bricolage-grotesque-latin-standard-normal.woff2) format("woff2"); }
-    @font-face { font-family: Figtree; font-weight: 300 900; font-display: swap; src: url(/fonts/figtree-latin-wght-normal.woff2) format("woff2"); }
-    :root { --bg: #FAF6F1; --hero: #4A0E22; --hero-ink: #FFF8F2; --hero-muted: #E8C3CD; --gold: #D9A94A; --text: #2A1E22; --muted: #6B5E62; --link: #7A1B36; color-scheme: light; }
-    @media (prefers-color-scheme: dark) { :root { --bg: #1A1517; --hero: #2B0D18; --hero-ink: #FFF1F4; --hero-muted: #D9A7B5; --gold: #E0B75E; --text: #F3ECEE; --muted: #B6A9AD; --link: #E59AAE; color-scheme: dark; } }
-    body { margin: 0; background: var(--bg); color: var(--text); font: 17px/1.6 Figtree, system-ui, -apple-system, "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.6 Figtree, system-ui, -apple-system, "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; }
     header { background: var(--hero); color: var(--hero-ink); }
     .in { max-width: 640px; margin: 0 auto; padding: 96px 24px 56px; }
     .eyebrow { font-weight: 600; font-size: 16px; color: var(--hero-muted); margin: 0 0 8px; }
@@ -26,7 +24,7 @@
     .squiggle { display: block; margin-top: 14px; color: var(--gold); }
     main { max-width: 640px; margin: 0 auto; padding: 40px 24px 96px; }
     p { color: var(--muted); }
-    .home { display: inline-flex; align-items: center; min-height: 48px; padding: 0 20px; border-radius: 14px; background: var(--link); color: var(--bg); font-weight: 700; text-decoration: none; }
+    .home { display: inline-flex; align-items: center; min-height: 48px; padding: 0 20px; border-radius: 14px; background: var(--accent); color: var(--bg); font-weight: 700; text-decoration: none; }
   </style>
 </head>
 <body>

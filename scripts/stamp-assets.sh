@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Adds a content hash to every site.css, site.js and theme.js link in the pages (site.css?v=1a2b3c4d).
+# Adds a content hash to every site.css, site.js, brand/theme.js and brand/tokens.css link in the pages (site.css?v=1a2b3c4d).
 # A changed file gets a new address, so browsers and installed copies of the site fetch it instead of
 # reusing an old cached one. Run after rebuilding site.css or editing a script.
 #   --check  only report pages whose stamps are out of date (used by CI and the pre-commit hook)
@@ -11,7 +11,7 @@ check=false
 stale=0
 
 pages=$(git ls-files '*.html')
-for asset in site.css site.js theme.js; do
+for asset in site.css site.js brand/theme.js brand/tokens.css; do
   hash=$(sha256sum "$asset" | cut -c1-8)
   for page in $pages; do
     grep -q "$asset" "$page" || continue
