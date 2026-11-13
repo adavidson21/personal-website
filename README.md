@@ -16,7 +16,7 @@ npm run check # what CI runs
 
 ## Brand library
 
-The fonts (Bricolage Grotesque and Figtree, OFL), the shared colors and the light/dark toggle come from my brand
+The fonts (Inter Tight and Figtree, OFL), the shared colors and the light/dark toggle come from my brand
 library ([tools.alexisdavidson.org/brand/](https://tools.alexisdavidson.org/brand/), source in
 personal-tools/brand), the same one LifeKit uses. `brand/` is a copy of it, because this site's CSP only allows its
 own origin. The page loads `brand/theme.js` and `brand/tokens.css` (fonts and color tokens only; the site's
@@ -29,7 +29,7 @@ scripts/stamp-assets.sh
 
 ## Look
 
-The site shares its look with [Hints](https://hints.alexisdavidson.org): cream paper, white rounded cards with a soft shadow, a wine band for the header and footer, burgundy for actions, and gold accents. Headings are Bricolage Grotesque with a gold squiggle under them (`.section-title`, drawn from `images/squiggle.svg`); everything else is Figtree. The reusable pieces in `input.css` are `.soft-card`, `.pill`, `.label-bar`, `.hero` and `.hero-btn`.
+The site shares its look with [Hints](https://hints.alexisdavidson.org): cream paper, white rounded cards with a soft shadow, a wine band for the header and footer, burgundy for actions, and gold accents. Headings are Inter Tight with a gold squiggle under them (`.section-title`, drawn from `images/squiggle.svg`); everything else is Figtree. The reusable pieces in `input.css` are `.soft-card`, `.pill`, `.label-bar`, `.hero` and `.hero-btn`.
 
 ## Light and dark
 
