@@ -1,4 +1,4 @@
-/* Fonts (Bricolage Grotesque, Figtree) and the shared colors come from the brand library: brand/tokens.css, loaded
+/* Fonts (Inter Tight, Figtree) and the shared colors come from the brand library: brand/tokens.css, loaded
    before this file. This file only adds what is the site's own. */
 
 @tailwind base;
@@ -87,7 +87,7 @@ a:focus-visible {
   border-radius: 6px;
 }
 
-/* Headings: Bricolage Grotesque with a gold squiggle under them, the same accent Hints uses under its titles.
+/* Headings: Inter Tight with a gold squiggle under them, the same accent Hints uses under its titles.
    The squiggle is a mask over images/squiggle.svg (a file, since the CSP allows no data: URLs). */
 .font-display { letter-spacing: -0.015em; }
 .dot { color: var(--accent); }

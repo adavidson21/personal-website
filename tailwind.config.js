@@ -24,9 +24,9 @@ module.exports = {
         soft: { DEFAULT: v('accent-soft'), ink: v('accent-soft-ink') },
       },
       fontFamily: {
-        // Same pair as Hints: Bricolage Grotesque for headings and big numbers, Figtree for the rest.
+        // Same pair as Hints: Inter Tight for headings and big numbers, Figtree for the rest.
         sans: ['Figtree', '"Segoe UI Variable Text"', '"Segoe UI"', 'system-ui', '-apple-system', 'sans-serif'],
-        display: ['"Bricolage Grotesque"', 'Figtree', 'system-ui', 'sans-serif'],
+        display: ['"Inter Tight"', 'Figtree', 'system-ui', 'sans-serif'],
       },
       boxShadow: {
         card: 'var(--shadow)',
