@@ -18,8 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.5 }).observe(el);
   });
 
-  // Paw prints walk across "Outside work" once
-  const outside = document.getElementById('outside');
+  // Paw prints walk across the About section once
+  const outside = document.getElementById('about');
   if (outside) {
     const pawObserver = new IntersectionObserver((entries) => {
       if (entries[0].isIntersecting) { outside.classList.add('walking'); pawObserver.disconnect(); }
