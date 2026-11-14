@@ -113,8 +113,9 @@ const latest = notes.slice(0, HOME_LIMIT);
 const section = !notes.length ? '' : `
     <section id="field-notes">
       <div class="max-w-5xl mx-auto px-6 py-20 md:py-28">
+        <p class="text-sm font-bold uppercase tracking-wider text-burgundy mb-2">Blog</p>
         <h2 class="section-title mb-4">Field notes</h2>
-        <p class="text-muted text-lg mb-12">Things I've been thinking about</p>
+        <p class="text-muted text-lg mb-12">Short posts on leading engineering teams, building with AI, and making software simple to use.</p>
         <div class="grid md:grid-cols-2 gap-8">
 ${latest.map((n) => card(n, `notes/${n.slug}.html`)).join('\n\n')}
         </div>
