@@ -448,6 +448,8 @@ a:focus-visible {
 .era:hover .i-letter { animation: bob 2s ease-in-out infinite; stroke: var(--sage-deep); }
 .era:hover .i-node { fill: var(--accent); transform: scale(1.25); transform-origin: center; }
 .era:hover .i-cap { animation: bob 3s ease-in-out infinite; stroke: var(--accent); }
+@keyframes nudge { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(3px); } }
+.era:hover .i-arrow { animation: nudge 1.6s ease-in-out infinite; stroke: var(--accent); }
 
 /* ---------- Personality illustrations (cats redrawn as tuxedos, Mochi cameos) ---------- */
 .cat *, .plant *, .sleepy *, .paw, .tile-icon, .how-icon { transform-box: fill-box; }
