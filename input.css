@@ -658,3 +658,26 @@ a:focus-visible {
 /* ---------- Footer topics ---------- */
 .talk-pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; max-width: 760px; margin-left: auto; margin-right: auto; padding: 0; list-style: none; }
 .talk-pills li { padding: 8px 16px; border-radius: 999px; background: color-mix(in srgb, var(--hero-ink) 10%, transparent); color: var(--hero-ink); font-size: 15px; font-weight: 600; }
+
+/* ---------- Whole-card link: the title's link stretches over its card; inner links stay clickable on top ---------- */
+.card-link { color: inherit; text-decoration: none; }
+.card-link::after { content: ""; position: absolute; inset: 0; z-index: 1; border-radius: inherit; }
+.card-link:focus-visible { outline: none; }
+.card-link:focus-visible::after { outline: 3px solid var(--accent); outline-offset: 3px; }
+article:has(.card-link) { cursor: pointer; }
+article:has(.card-link) .lk-favs a,
+article:has(.card-link) .suite-go { position: relative; z-index: 2; }
+
+/* ---------- Compact Hints / Patch Notes cards (inside LifeKit row): same stage, scaled down ---------- */
+.hn-stage.hn-compact { height: 20rem; }
+.hn-compact .hn-main { width: 140px; }
+.hn-compact .hn-side { width: 116px; }
+@media (min-width: 768px) {
+  .hn-stage.hn-compact { height: 21rem; }
+  .hn-compact .hn-main { width: 148px; }
+  .hn-compact .hn-side { width: 122px; }
+}
+.hn-compact .hn-left { transform: translate(-50%, -50%) translateX(-96px) rotate(-7deg); }
+.hn-compact .hn-right { transform: translate(-50%, -50%) translateX(96px) rotate(7deg); }
+:is(.card:hover, .card:focus-within, .feature.is-live) .hn-compact .hn-left { transform: translate(-50%, -50%) translateX(-108px) rotate(-9deg); }
+:is(.card:hover, .card:focus-within, .feature.is-live) .hn-compact .hn-right { transform: translate(-50%, -50%) translateX(108px) rotate(9deg); }
